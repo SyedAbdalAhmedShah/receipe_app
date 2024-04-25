@@ -3,6 +3,7 @@ import 'package:receipe_app/constants/app_colors.dart';
 
 class ThemeConfig {
   static ThemeData get themeData => ThemeData(
+    
         // primaryColor: AppColor.primaryColor,
         // floatingActionButtonTheme: FloatingActionButtonThemeData(
         //     backgroundColor: AppColor.primaryColor),
