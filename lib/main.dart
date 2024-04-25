@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:receipe_app/config/theme_config.dart';
+import 'package:receipe_app/constants/app_colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Reciepe App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: ThemeConfig.themeData,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
