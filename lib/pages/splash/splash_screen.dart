@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/app_strings.dart';
+import 'package:receipe_app/pages/auth/sign_in.dart';
 import 'package:receipe_app/widgets/primary_button.dart';
 
 class splashscreen extends StatelessWidget {
@@ -14,29 +15,29 @@ class splashscreen extends StatelessWidget {
       decoration: const BoxDecoration(
           image:
               DecorationImage(image: AssetImage(AppAssets.splashBackground))),
-      child: const Scaffold(
+      child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Gap(60),
-              Image(
+              const Gap(60),
+              const Image(
                 image: AssetImage(
                   AppAssets.splashCap,
                 ),
                 height: 100,
               ),
-              Gap(10),
-              Text(
+              const Gap(10),
+              const Text(
                 AppStrings.hundardK,
                 style: TextStyle(
                     color: AppColor.whiteColor,
                     fontSize: 20,
                     fontWeight: FontWeight.w700),
               ),
-              Spacer(),
-              Text(
+              const Spacer(),
+              const Text(
                 AppStrings.getCooking,
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -44,19 +45,22 @@ class splashscreen extends StatelessWidget {
                     fontSize: 60,
                     fontWeight: FontWeight.w700),
               ),
-              Text(
+              const Text(
                 AppStrings.simpleWay,
                 style: TextStyle(
                     color: AppColor.whiteColor,
                     fontSize: 18,
                     fontWeight: FontWeight.w200),
               ),
-              Gap(60),
+              const Gap(60),
               PrimaryButton(
                 buttonName: "Start Cooking",
                 icon: Icons.arrow_forward,
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SignInScreen(),
+                )),
               ),
-              Gap(40),
+              const Gap(40),
             ],
           ),
         ),
