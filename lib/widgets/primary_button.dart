@@ -6,10 +6,12 @@ class PrimaryButton extends StatelessWidget {
   final String buttonName;
   final IconData icon;
   final Function() onTap;
+  final double? width;
 
   const PrimaryButton(
       {required this.buttonName,
       required this.onTap,
+      this.width,
       required this.icon,
       super.key});
 
@@ -20,10 +22,10 @@ class PrimaryButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: size.height * 0.08,
-        width: size.width * 0.7,
+        width: width ?? size.width * 0.7,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
             borderRadius: BorderRadius.circular(10.0)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

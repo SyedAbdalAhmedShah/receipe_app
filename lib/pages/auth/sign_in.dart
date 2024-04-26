@@ -9,6 +9,7 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: SafeArea(
         minimum: const EdgeInsets.symmetric(horizontal: 20),
@@ -50,10 +51,16 @@ class SignInScreen extends StatelessWidget {
               ),
             ),
             const Gap(20),
-            PrimaryButton(
-                buttonName: AppStrings.signIn,
-                onTap: () {},
-                icon: Icons.adaptive.arrow_forward)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                PrimaryButton(
+                    buttonName: AppStrings.signIn,
+                    width: size.width * 0.9,
+                    onTap: () {},
+                    icon: Icons.adaptive.arrow_forward),
+              ],
+            )
           ],
         ),
       ),
