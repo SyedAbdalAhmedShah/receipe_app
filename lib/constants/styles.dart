@@ -8,4 +8,11 @@ class Styles {
 
   static TextStyle get hintTextStyle =>
       const TextStyle(fontWeight: FontWeight.w300, fontSize: 12);
+
+  static TextStyle get miniBold =>
+      const TextStyle(fontWeight: FontWeight.w800, fontSize: 16);
+  static TextStyle get miniBoldSeconndaryColo => const TextStyle(
+      fontWeight: FontWeight.w800,
+      fontSize: 16,
+      color: AppColor.secondaryColor);
 }

@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_strings.dart';
+import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
 import 'package:receipe_app/widgets/auth_method_image-box.dart';
 import 'package:receipe_app/widgets/primary_button.dart';
@@ -41,7 +42,7 @@ class SignInScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
             const Gap(5),
-            const AppTextField(hint: AppStrings.enterEmail),
+            const AppTextField(hint: AppStrings.enterPass),
             const Gap(20),
             TextButton(
               onPressed: () {},
@@ -72,7 +73,7 @@ class SignInScreen extends StatelessWidget {
                   ),
                 ),
                 Gap(10),
-                Text("Or Sign in With"),
+                Text(AppStrings.orSignUp),
                 Gap(10),
                 Expanded(
                     child: Divider(
@@ -90,6 +91,24 @@ class SignInScreen extends StatelessWidget {
                 Gap(20),
                 AuthMethodImagebox(
                   imagePath: AppAssets.facebook,
+                )
+              ],
+            ),
+            const Gap(20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  AppStrings.dontHaveAcc,
+                  style: Styles.miniBold,
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                  onPressed: () {},
+                  child: Text(
+                    AppStrings.signUp,
+                    style: Styles.miniBoldSeconndaryColo,
+                  ),
                 )
               ],
             )
