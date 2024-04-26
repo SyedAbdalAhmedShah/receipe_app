@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/app_strings.dart';
+import 'package:receipe_app/widgets/primary_button.dart';
 
 class splashscreen extends StatelessWidget {
   const splashscreen({super.key});
@@ -50,7 +51,12 @@ class splashscreen extends StatelessWidget {
                     fontSize: 18,
                     fontWeight: FontWeight.w200),
               ),
-              
+              Gap(60),
+              PrimaryButton(
+                buttonName: "Start Cooking",
+                icon: Icons.arrow_forward,
+              ),
+              Gap(40),
             ],
           ),
         ),
