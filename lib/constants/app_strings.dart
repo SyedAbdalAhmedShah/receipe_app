@@ -5,4 +5,12 @@ class AppStrings {
   static const String getCooking = "Get \nCooking";
   static const String simpleWay = "Simple way to find Tasty Recipe";
   static const String startCooking = "Start Cooking";
+  static const String hello = "Hello";
+  static const String welcome = "Welcome back!";
+  static const String enterEmail = "Enter Email";
+  static const String enterPass = "Enter Password";
+  static const String forgotPass = "Forgot Password?";
+  static const String signIn = "Sign In";
+
+  static const String email = "Email";
 }
