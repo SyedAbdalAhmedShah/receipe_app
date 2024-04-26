@@ -6,11 +6,13 @@ class PrimaryButton extends StatelessWidget {
   final String buttonName;
   final IconData icon;
   final Function() onTap;
+  final double? gapBTWidget;
   final double? width;
 
   const PrimaryButton(
       {required this.buttonName,
       required this.onTap,
+      this.gapBTWidget,
       this.width,
       required this.icon,
       super.key});
@@ -37,7 +39,7 @@ class PrimaryButton extends StatelessWidget {
                   fontSize: 20,
                   fontWeight: FontWeight.w600),
             ),
-            const Gap(10),
+            Gap(gapBTWidget ?? 10),
             Icon(
               icon,
               color: AppColor.whiteColor,
