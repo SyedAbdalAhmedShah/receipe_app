@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:receipe_app/widgets/app_text_field.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -6,8 +7,10 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [],
+      body: SafeArea(
+        child: Column(
+          children: [AppTextField()],
+        ),
       ),
     );
   }
