@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:receipe_app/config/theme_config.dart';
 import 'package:receipe_app/constants/app_colors.dart';
+import 'package:receipe_app/constants/app_strings.dart';
+import 'package:receipe_app/pages/auth/sign_in.dart';
 import 'package:receipe_app/pages/splash/splash_screen.dart';
 
 void main() {
@@ -13,9 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Reciepe App',
+      debugShowCheckedModeBanner: false,
+      title: AppStrings.APP_NAME,
       theme: ThemeConfig.themeData,
-      home: const splashscreen(),
+      home: const SignInScreen(),
     );
   }
 }
