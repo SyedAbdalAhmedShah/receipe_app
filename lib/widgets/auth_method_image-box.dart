@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../constants/app_assets.dart';
-
 class AuthMethodImagebox extends StatelessWidget {
   final String imagePath;
   const AuthMethodImagebox({required this.imagePath, super.key});
