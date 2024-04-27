@@ -1,16 +1,41 @@
+import 'dart:developer';
+
+import 'package:appwrite/appwrite.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/pages/auth/sign_in.dart';
+import 'package:receipe_app/server/server_constants.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
 import 'package:receipe_app/widgets/auth_method_image-box.dart';
 import 'package:receipe_app/widgets/or_divider.dart';
 import 'package:receipe_app/widgets/primary_button.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passController = TextEditingController();
+  TextEditingController confirmPassController = TextEditingController();
+  late Client client;
+  late Account account;
+
+  @override
+  void initState() {
+    client = Client()
+        .setEndpoint(ServerConstants.serverEndPoint) // Your API Endpoint
+        .setProject(ServerConstants.projectId);
+    account = Account(client);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,28 +64,40 @@ class SignUpScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               const Gap(5),
-              const AppTextField(hint: AppStrings.enterName),
+              AppTextField(
+                hint: AppStrings.enterName,
+                controller: nameController,
+              ),
               const Gap(25),
               const Text(
                 AppStrings.email,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               const Gap(5),
-              const AppTextField(hint: AppStrings.enterName),
+              AppTextField(
+                hint: AppStrings.enterName,
+                controller: emailController,
+              ),
               const Gap(25),
               const Text(
                 AppStrings.pass,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               const Gap(5),
-              const AppTextField(hint: AppStrings.enterPass),
+              AppTextField(
+                hint: AppStrings.enterPass,
+                controller: passController,
+              ),
               const Gap(25),
               const Text(
                 AppStrings.confirmPass,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               const Gap(5),
-              const AppTextField(hint: AppStrings.retypePass),
+              AppTextField(
+                hint: AppStrings.retypePass,
+                controller: confirmPassController,
+              ),
               const Gap(25),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +106,14 @@ class SignUpScreen extends StatelessWidget {
                       gapBTWidget: 20,
                       buttonName: AppStrings.signUp,
                       width: size.width * 0.9,
-                      onTap: () {},
+                      onTap: () async {
+                        final user = await account.create(
+                            userId: ID.unique(),
+                            email: emailController.text.trim(),
+                            name: nameController.text,
+                            password: passController.text);
+                        log("user info ${user.$id}, ${user.name} , ${user.email}");
+                      },
                       icon: Icons.adaptive.arrow_forward),
                 ],
               ),

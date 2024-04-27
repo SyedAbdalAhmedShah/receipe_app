@@ -7,9 +7,7 @@ import 'package:receipe_app/server/server_constants.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  final client = Client()
-      .setEndpoint(ServerConstants.serverEndPoint) // Your API Endpoint
-      .setProject(ServerConstants.projectId);
+  
   runApp(const MyApp());
 }
 

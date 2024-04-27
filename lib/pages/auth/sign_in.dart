@@ -9,9 +9,16 @@ import 'package:receipe_app/widgets/auth_method_image-box.dart';
 import 'package:receipe_app/widgets/or_divider.dart';
 import 'package:receipe_app/widgets/primary_button.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -36,14 +43,20 @@ class SignInScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
             const Gap(5),
-            const AppTextField(hint: AppStrings.enterEmail),
+            AppTextField(
+              hint: AppStrings.enterEmail,
+              controller: emailController,
+            ),
             const Gap(30),
             const Text(
               AppStrings.enterPass,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
             const Gap(5),
-            const AppTextField(hint: AppStrings.enterPass),
+            AppTextField(
+              hint: AppStrings.enterPass,
+              controller: passController,
+            ),
             const Gap(20),
             TextButton(
               onPressed: () {},

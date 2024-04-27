@@ -4,11 +4,17 @@ import 'package:receipe_app/constants/styles.dart';
 class AppTextField extends StatelessWidget {
   final String hint;
   final String? Function(String?)? validator;
-  const AppTextField({required this.hint, this.validator, super.key});
+  final TextEditingController controller;
+  const AppTextField(
+      {required this.hint,
+      required this.controller,
+      this.validator,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       validator: validator,
       decoration: InputDecoration(
           hintText: hint,
