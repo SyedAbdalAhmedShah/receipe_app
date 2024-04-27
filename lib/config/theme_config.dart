@@ -3,14 +3,6 @@ import 'package:receipe_app/constants/app_colors.dart';
 
 class ThemeConfig {
   static ThemeData get themeData => ThemeData(
-        // primaryColor: AppColor.primaryColor,
-        // floatingActionButtonTheme: FloatingActionButtonThemeData(
-        //     backgroundColor: AppColor.primaryColor),
-        // elevatedButtonTheme: ElevatedButtonThemeData(
-        //     style: ElevatedButton.styleFrom(
-        //         foregroundColor: AppColor.primaryColor,
-        //         backgroundColor: AppColor.primaryColor)),
-        // buttonTheme: ButtonThemeData(buttonColor: AppColor.primaryColor),
         colorScheme: const ColorScheme.dark(
           brightness: Brightness.dark,
           primary: AppColor.primaryColor,

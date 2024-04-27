@@ -6,8 +6,8 @@ import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/pages/auth/sign_in.dart';
 import 'package:receipe_app/widgets/primary_button.dart';
 
-class splashscreen extends StatelessWidget {
-  const splashscreen({super.key});
+class Splashscreen extends StatelessWidget {
+  const Splashscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
