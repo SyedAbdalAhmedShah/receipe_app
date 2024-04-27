@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/constants/styles.dart';
+import 'package:receipe_app/pages/auth/sign_up.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
 import 'package:receipe_app/widgets/auth_method_image-box.dart';
 import 'package:receipe_app/widgets/primary_button.dart';
@@ -81,7 +82,7 @@ class SignInScreen extends StatelessWidget {
                 ))
               ],
             ),
-            const Gap(20),
+            const Gap(30),
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -104,7 +105,9 @@ class SignInScreen extends StatelessWidget {
                 ),
                 TextButton(
                   style: TextButton.styleFrom(padding: EdgeInsets.zero),
-                  onPressed: () {},
+                  onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const SignUpScreen(),
+                  )),
                   child: Text(
                     AppStrings.signUp,
                     style: Styles.miniBoldSeconndaryColo,
