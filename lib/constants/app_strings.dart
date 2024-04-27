@@ -26,4 +26,7 @@ class AppStrings {
   static const String enterName = "Enter Name";
   static const String confirmPass = "Confirm Password";
   static const String retypePass = "Retype Password ";
+
+  //--------------VALIDATIONS ERRORS ----------------//
+  static const String nameNotNull = "Name field can not be empty ";
 }

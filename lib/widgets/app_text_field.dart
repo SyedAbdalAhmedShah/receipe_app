@@ -21,6 +21,7 @@ class AppTextField extends StatelessWidget {
           hintStyle: Styles.hintTextStyle,
           border: InputBorder.none,
           enabled: true,
+          errorBorder: Styles.textFieldErrorBorder,
           focusedBorder: Styles.textFieldBorder,
           enabledBorder: Styles.textFieldBorder,
           disabledBorder: Styles.textFieldBorder),
