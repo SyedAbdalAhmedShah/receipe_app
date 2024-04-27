@@ -7,6 +7,7 @@ import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/pages/auth/sign_up.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
 import 'package:receipe_app/widgets/auth_method_image-box.dart';
+import 'package:receipe_app/widgets/or_divider.dart';
 import 'package:receipe_app/widgets/primary_button.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -66,22 +67,7 @@ class SignInScreen extends StatelessWidget {
               ],
             ),
             const Gap(20),
-            const Row(
-              children: [
-                Expanded(
-                  child: Divider(
-                    color: Colors.grey,
-                  ),
-                ),
-                Gap(10),
-                Text(AppStrings.orSignUp),
-                Gap(10),
-                Expanded(
-                    child: Divider(
-                  color: Colors.grey,
-                ))
-              ],
-            ),
+            const OrDivider(),
             const Gap(30),
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,

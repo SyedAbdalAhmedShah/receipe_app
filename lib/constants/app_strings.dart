@@ -5,9 +5,14 @@ class AppStrings {
   static const String getCooking = "Get \nCooking";
   static const String simpleWay = "Simple way to find Tasty Recipe";
   static const String dontHaveAcc = "Don’t have an account?";
+  static const String alreadyMember = "Already a member?";
+
   static const String startCooking = "Start Cooking";
   static const String hello = "Hello";
   static const String welcome = "Welcome back!";
+  static const String letsHelp =
+      "Let’s help you set up your account,\nit won’t take long.";
+  static const String createAccount = "Create an accounnt";
   static const String enterEmail = "Enter Email";
   static const String enterPass = "Enter Password";
   static const String forgotPass = "Forgot Password?";
@@ -16,4 +21,9 @@ class AppStrings {
   static const String orSignUp = "Or Sign in With";
 
   static const String email = "Email";
+  static const String name = "Name";
+  static const String pass = "Password";
+  static const String enterName = "Enter Name";
+  static const String confirmPass = "Confirm Password";
+  static const String retypePass = "Retype Password ";
 }
