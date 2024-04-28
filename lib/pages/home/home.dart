@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
+import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
 import 'package:receipe_app/widgets/profile_picture.dart';
@@ -74,33 +75,17 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: SafeArea(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SvgPicture.asset(
-              AppAssets.homeIcon,
-              height: 30,
-              excludeFromSemantics: true,
-              theme: const SvgTheme(currentColor: Colors.black, xHeight: 30),
-            ),
-            Image(
-              image: AssetImage(AppAssets.favIcon),
-              height: 30,
-              color: Colors.amber,
-            ),
-            Image(
-              image: AssetImage(AppAssets.notificationIcon),
-              height: 30,
-              color: Colors.grey,
-            ),
-            Image(
-              image: AssetImage(AppAssets.profileIcon),
-              height: 30,
-            )
-          ],
-        ),
-      ),
+      // floatingActionButton: Container(
+      //   padding: const EdgeInsets.all(15.0),
+      //   decoration: BoxDecoration(
+      //       color: Theme.of(context).colorScheme.primary,
+      //       shape: BoxShape.circle),
+      //   child: const Icon(Icons.add),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // bottomNavigationBar:
+
+      // SafeArea(
     );
   }
 }
