@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: SafeArea(
-        minimum: EdgeInsets.symmetric(horizontal: 20),
+        minimum: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -72,7 +72,13 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           ],
         ),
+      
       ),
+    bottomNavigationBar: Row(
+      children: [
+        Image(image: image)
+      ],
+    ),
     );
   }
 }
