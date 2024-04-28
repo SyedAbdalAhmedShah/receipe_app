@@ -16,6 +16,8 @@ class AppStrings {
   static const String enterEmail = "Enter Email";
   static const String enterPass = "Enter Password";
   static const String forgotPass = "Forgot Password?";
+  static const String searchReciepe = "Search recipe";
+
   static const String signIn = "Sign In";
   static const String signUp = "Sign up";
   static const String orSignUp = "Or Sign in With";
@@ -26,6 +28,8 @@ class AppStrings {
   static const String enterName = "Enter Name";
   static const String confirmPass = "Confirm Password";
   static const String retypePass = "Retype Password ";
+  static const String dumyName = "Hello, Jega!";
+  static const String whatCooking = "What are you cooking today?";
 
   //--------------VALIDATIONS ERRORS ----------------//
   static const String nameNotNull = "Name field can not be empty ";
