@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:receipe_app/config/theme_config.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/pages/home/home.dart';
-import 'package:receipe_app/pages/splash/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

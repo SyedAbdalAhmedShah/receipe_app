@@ -1,13 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
-import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/app_strings.dart';
+import 'package:receipe_app/pages/home/home_floating_button.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
-import 'package:receipe_app/widgets/bottom_nav_bar.dart';
+import 'package:receipe_app/pages/home/bottom_nav_bar.dart';
 import 'package:receipe_app/widgets/profile_picture.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -72,20 +69,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: const Image(image: AssetImage(AppAssets.settingIcon)),
                 )
               ],
-            )
+            ),
+            
           ],
         ),
       ),
-      floatingActionButton: Container(
-        padding: const EdgeInsets.all(15.0),
-        decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.primary,
-            shape: BoxShape.circle),
-        child: const Icon(Icons.add),
-      ),
+      floatingActionButton: const HomeFloatingButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: const AppBottomNavBar(),
-      // SafeArea(
     );
   }
 }

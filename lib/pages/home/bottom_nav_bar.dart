@@ -7,7 +7,6 @@ class AppBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const BottomAppBar(
-      
       notchMargin: 10,
       shape: CircularNotchedRectangle(),
       child: Row(
@@ -36,6 +35,5 @@ class AppBottomNavBar extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }
