@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_strings.dart';
@@ -72,13 +73,34 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           ],
         ),
-      
       ),
-    bottomNavigationBar: Row(
-      children: [
-        Image(image: image)
-      ],
-    ),
+      bottomNavigationBar: SafeArea(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            SvgPicture.asset(
+              AppAssets.homeIcon,
+              height: 30,
+              excludeFromSemantics: true,
+              theme: const SvgTheme(currentColor: Colors.black, xHeight: 30),
+            ),
+            Image(
+              image: AssetImage(AppAssets.favIcon),
+              height: 30,
+              color: Colors.amber,
+            ),
+            Image(
+              image: AssetImage(AppAssets.notificationIcon),
+              height: 30,
+              color: Colors.grey,
+            ),
+            Image(
+              image: AssetImage(AppAssets.profileIcon),
+              height: 30,
+            )
+          ],
+        ),
+      ),
     );
   }
 }

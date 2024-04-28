@@ -10,7 +10,7 @@ class AppAssets {
 
   //-----------Icons -------------------
   static const String settingIcon = "$iconBasePath/setting_icon.png";
-  static const String homeIcon = "$iconBasePath/home.png";
+  static const String homeIcon = "$iconBasePath/Vector.svg";
   static const String notificationIcon = "$iconBasePath/notification-bing.png";
   static const String profileIcon = "$iconBasePath/profile.png";
   static const String favIcon = "$iconBasePath/fav_icon.png";
