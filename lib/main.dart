@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:receipe_app/config/theme_config.dart';
 import 'package:receipe_app/constants/app_strings.dart';
+import 'package:receipe_app/pages/home/home.dart';
 import 'package:receipe_app/pages/splash/splash_screen.dart';
-import 'package:appwrite/appwrite.dart';
-import 'package:receipe_app/server/server_constants.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   runApp(const MyApp());
 }
 
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: AppStrings.APP_NAME,
       theme: ThemeConfig.themeData,
-      home: const Splashscreen(),
+      home: const HomeScreen(),
     );
   }
 }
