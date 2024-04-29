@@ -75,7 +75,14 @@ class _HomeScreenState extends State<HomeScreen> {
             const Gap(20),
             const ReciepeCategorySection(),
             const Gap(20),
-            const ReciepCard(),
+            SizedBox(
+              height: size.height * 0.3,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => const ReciepCard(),
+                itemCount: 10,
+              ),
+            )
           ],
         ),
       ),

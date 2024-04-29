@@ -7,6 +7,7 @@ class AppAssets {
   static const String google = "$imageBasePath/google.png";
   static const String facebook = "$imageBasePath/facebook.png";
   static const String dummyProfile = "$imageBasePath/dummy_profile.png";
+  static const String dummyDish = "$imageBasePath/dummy_dish.jpg";
 
   //-----------Icons -------------------
   static const String settingIcon = "$iconBasePath/setting_icon.png";
