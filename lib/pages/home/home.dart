@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_strings.dart';
-import 'package:receipe_app/pages/home/home_floating_button.dart';
-import 'package:receipe_app/pages/home/reciep_category_section.dart';
+import 'package:receipe_app/pages/home/widgets/home_floating_button.dart';
+import 'package:receipe_app/pages/home/widgets/reciep_category_section.dart';
+import 'package:receipe_app/pages/home/widgets/recipe_card.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
-import 'package:receipe_app/pages/home/bottom_nav_bar.dart';
+import 'package:receipe_app/pages/home/widgets/bottom_nav_bar.dart';
 import 'package:receipe_app/widgets/profile_picture.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -73,6 +74,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const Gap(20),
             const ReciepeCategorySection(),
+            const Gap(20),
+            const ReciepCard(),
           ],
         ),
       ),
