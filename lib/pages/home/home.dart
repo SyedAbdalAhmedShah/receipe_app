@@ -50,20 +50,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 ProfilePictureSection(),
               ],
             ),
-            const Gap(40),
+            const Gap(20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
                   child: SizedBox(
-                    height: size.height * 0.07,
+                    height: size.height * 0.05,
                     child: AppTextField(
                         hint: AppStrings.searchReciepe,
                         controller: searchController),
                   ),
                 ),
                 Container(
-                  height: size.height * 0.07,
+                  height: size.height * 0.05,
                   margin: EdgeInsets.only(left: size.width * 0.03),
                   decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.primary,

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
@@ -72,7 +70,5 @@ class ReciepCard extends StatelessWidget {
         ],
       ),
     );
-
-    ;
   }
 }
