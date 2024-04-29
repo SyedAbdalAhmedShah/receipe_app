@@ -25,7 +25,7 @@ class ReciepCard extends StatelessWidget {
             width: double.maxFinite,
             height: size.height * 0.15,
             decoration: BoxDecoration(
-                color: Colors.amber,
+            
                 borderRadius: BorderRadius.circular(10.0),
                 image: const DecorationImage(
                     image: AssetImage(AppAssets.dummyDish), fit: BoxFit.fill)),

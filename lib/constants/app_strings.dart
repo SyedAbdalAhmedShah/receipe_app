@@ -29,6 +29,8 @@ class AppStrings {
   static const String confirmPass = "Confirm Password";
   static const String retypePass = "Retype Password ";
   static const String dumyName = "Hello, Jega!";
+  static const String newRecipes = "New Recipes";
+
   static const String whatCooking = "What are you cooking today?";
 
   //--------------VALIDATIONS ERRORS ----------------//
