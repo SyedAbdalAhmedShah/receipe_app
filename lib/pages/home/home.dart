@@ -3,12 +3,10 @@ import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/app_strings.dart';
-import 'package:receipe_app/pages/home/widgets/home_floating_button.dart';
 import 'package:receipe_app/pages/home/widgets/new_reciepe_card.dart';
 import 'package:receipe_app/pages/home/widgets/reciep_category_section.dart';
 import 'package:receipe_app/pages/home/widgets/recipe_card.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
-import 'package:receipe_app/pages/home/widgets/bottom_nav_bar.dart';
 import 'package:receipe_app/widgets/profile_picture.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -103,7 +101,6 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: size.height * 0.3,
                 child: AnimatedList(
-                  key: GlobalKey<AnimatedListState>(),
                   initialItemCount: 10,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index, aanim) => NewReciepeCard(

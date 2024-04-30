@@ -4,7 +4,6 @@ import 'package:receipe_app/blocs/nav_bar_bloc/cubit/navigation_bar_cubit.dart';
 import 'package:receipe_app/config/theme_config.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/pages/home/bottom_nav_screen.dart';
-import 'package:receipe_app/pages/home/home.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

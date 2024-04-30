@@ -12,7 +12,7 @@ class NewReciepeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-    return Row(
+    return      Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SlideTransition(
