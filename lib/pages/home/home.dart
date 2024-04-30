@@ -84,11 +84,11 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: size.height * 0.3,
                 child: ListView.separated(
+                  itemCount: 10,
                   scrollDirection: Axis.horizontal,
                   separatorBuilder: (context, index) => Padding(
                       padding: EdgeInsets.only(right: size.width * 0.05)),
                   itemBuilder: (context, index) => const ReciepCard(),
-                  itemCount: 10,
                 ),
               ),
               const Gap(20),
@@ -100,7 +100,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: AppColor.secondaryColor),
               ),
               const Gap(20),
-              const NewReciepeCard(),
+              SizedBox(
+                height: size.height * 0.3,
+                child: ListView.separated(
+                  itemCount: 10,
+                  scrollDirection: Axis.horizontal,
+                  separatorBuilder: (context, index) => Padding(
+                      padding: EdgeInsets.only(right: size.width * 0.05)),
+                  itemBuilder: (context, index) => const NewReciepeCard(),
+                ),
+              ),
             ],
           ),
         ),

@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/styles.dart';
@@ -12,10 +11,12 @@ class NewReciepeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           padding: const EdgeInsets.all(20.0),
-          width: size.width * 0.7,
+          width: size.width * 0.8,
+          height: size.height * 0.13,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.0),
             color: Theme.of(context).colorScheme.primary.withOpacity(0.4),
@@ -26,18 +27,35 @@ class NewReciepeCard extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    width: size.width * 0.4,
-                    child: Text(
-                      "Steak with tomato sauce and bulgur rice.",
-                      overflow: TextOverflow.ellipsis,
-                      style:
-                          Styles.miniBold.copyWith(color: AppColor.borderColor),
-                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: size.width * 0.5,
+                        child: Text(
+                          "Steak with tomato sauce and bulgur rice.",
+                          overflow: TextOverflow.ellipsis,
+                          style: Styles.miniBold
+                              .copyWith(color: AppColor.borderColor),
+                        ),
+                      ),
+                      const Gap(10),
+                      const Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage: AssetImage(AppAssets.person),
+                            foregroundImage: AssetImage(AppAssets.person),
+                          ),
+                          Gap(5),
+                          Text("By James Milner")
+                        ],
+                      )
+                    ],
                   ),
                   Expanded(
                     flex: 1,
                     child: Container(
+                      alignment: Alignment.centerRight,
                       height: size.height * 0.08,
                       decoration: const BoxDecoration(
                           shape: BoxShape.circle,

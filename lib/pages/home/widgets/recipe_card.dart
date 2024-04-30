@@ -11,7 +11,7 @@ class ReciepCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return Container(
-      width: size.width * 0.45,
+      width: size.width * 0.5,
       height: size.height * 0.23,
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       decoration: BoxDecoration(
@@ -25,7 +25,6 @@ class ReciepCard extends StatelessWidget {
             width: double.maxFinite,
             height: size.height * 0.15,
             decoration: BoxDecoration(
-            
                 borderRadius: BorderRadius.circular(10.0),
                 image: const DecorationImage(
                     image: AssetImage(AppAssets.dummyDish), fit: BoxFit.fill)),
