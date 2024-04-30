@@ -102,12 +102,13 @@ class _HomeScreenState extends State<HomeScreen> {
               const Gap(20),
               SizedBox(
                 height: size.height * 0.3,
-                child: ListView.separated(
-                  itemCount: 10,
+                child: AnimatedList(
+                  key: GlobalKey<AnimatedListState>(),
+                  initialItemCount: 10,
                   scrollDirection: Axis.horizontal,
-                  separatorBuilder: (context, index) => Padding(
-                      padding: EdgeInsets.only(right: size.width * 0.05)),
-                  itemBuilder: (context, index) => const NewReciepeCard(),
+                  itemBuilder: (context, index, aanim) => NewReciepeCard(
+                    anim: aanim,
+                  ),
                 ),
               ),
             ],
