@@ -4,6 +4,7 @@ import 'package:receipe_app/blocs/nav_bar_bloc/cubit/navigation_bar_cubit.dart';
 import 'package:receipe_app/config/theme_config.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/pages/home/bottom_nav_screen.dart';
+import 'package:receipe_app/pages/splash/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: AppStrings.APP_NAME,
         theme: ThemeConfig.themeData,
-        home: const BottomNavScreen(),
+        home: const Splashscreen(),
       ),
     );
   }

@@ -4,6 +4,8 @@ import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/pages/auth/sign_in.dart';
+import 'package:receipe_app/pages/home/bottom_nav_screen.dart';
+import 'package:receipe_app/pages/home/home.dart';
 import 'package:receipe_app/widgets/primary_button.dart';
 
 class Splashscreen extends StatelessWidget {
@@ -57,7 +59,7 @@ class Splashscreen extends StatelessWidget {
                 buttonName: AppStrings.startCooking,
                 icon: Icons.arrow_forward,
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const SignInScreen(),
+                  builder: (context) => const BottomNavScreen(),
                 )),
               ),
               const Gap(40),
