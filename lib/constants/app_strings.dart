@@ -6,6 +6,7 @@ class AppStrings {
   static const String simpleWay = "Simple way to find Tasty Recipe";
   static const String dontHaveAcc = "Don’t have an account?";
   static const String alreadyMember = "Already a member?";
+  static const String followers = "Followers";
 
   static const String startCooking = "Start Cooking";
   static const String hello = "Hello";
@@ -17,6 +18,8 @@ class AppStrings {
   static const String enterPass = "Enter Password";
   static const String forgotPass = "Forgot Password?";
   static const String searchReciepe = "Search recipe";
+  static const String reciepe = "Recipe";
+  static const String following = "following";
 
   static const String signIn = "Sign In";
   static const String signUp = "Sign up";
