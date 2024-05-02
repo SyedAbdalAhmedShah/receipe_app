@@ -25,7 +25,7 @@ class ProfileInfoSection extends StatelessWidget {
           subtitle: "2.5M",
           title: AppStrings.followers,
         ),
-        const InfoTitlenSubtitle(
+        const InfoTitlenSubtitle(     
           subtitle: "259",
           title: AppStrings.following,
         )
