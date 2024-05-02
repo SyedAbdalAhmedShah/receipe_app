@@ -38,8 +38,11 @@ class ProfileScreen extends StatelessWidget {
               delegate: SliverChildListDelegate.fixed([
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children:
-                      List.generate(2, (index) => const ProfileInfoButton()),
+                  children: List.generate(
+                      2,
+                      (index) => ProfileInfoButton(
+                            index: index,
+                          )),
                 )
               ]),
             ),
