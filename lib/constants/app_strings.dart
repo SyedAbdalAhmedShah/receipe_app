@@ -19,6 +19,8 @@ class AppStrings {
   static const String forgotPass = "Forgot Password?";
   static const String searchReciepe = "Search recipe";
   static const String reciepe = "Recipe";
+  static const String videos = "Videos";
+
   static const String following = "following";
 
   static const String signIn = "Sign In";

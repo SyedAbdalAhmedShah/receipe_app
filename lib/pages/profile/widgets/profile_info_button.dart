@@ -9,11 +9,12 @@ class ProfileInfoButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ProfileBloc profileBloc = context.read<ProfileBloc>();
     final size = MediaQuery.of(context).size;
     return Row(
       children: [
         GestureDetector(
-          onTap: () => print("index $index"),
+          onTap: () => profileBloc.add(SelectProfileSectionEvent(index: index)),
           child: BlocBuilder<ProfileBloc, ProfileState>(
             builder: (context, state) {
               return AnimatedContainer(
@@ -22,11 +23,15 @@ class ProfileInfoButton extends StatelessWidget {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
-                    color: index == 0
+                    color: profileBloc.selectionProfileSection == index
                         ? Theme.of(context).colorScheme.primary.withAlpha(60)
                         : Colors.transparent),
-                duration: Durations.extralong4,
-                child: const Text(AppStrings.reciepe),
+                duration: Durations.extralong1,
+                child: Text(index == 0 ? AppStrings.reciepe : AppStrings.videos,
+                    style: TextStyle(
+                        color: profileBloc.selectionProfileSection != index
+                            ? Theme.of(context).colorScheme.primary
+                            : Colors.white)),
               );
             },
           ),
