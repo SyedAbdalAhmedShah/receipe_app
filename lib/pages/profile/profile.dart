@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:readmore/readmore.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/pages/profile/widgets/profile_info.dart';
+import 'package:receipe_app/pages/profile/widgets/profile_info_button.dart';
 import 'package:receipe_app/pages/profile/widgets/user_name_n_bio.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -13,20 +15,35 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          AppStrings.profile,
-          style: Styles.miniBold.copyWith(fontSize: 20),
-        ),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz))
-        ],
-      ),
       body: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: size.width * 0.05, vertical: size.height * 0.01),
-        child: const Column(
-          children: [ProfileInfoSection(), UserNameAndBio()],
+        padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
+        child: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              title: Text(
+                AppStrings.profile,
+                style: Styles.miniBold.copyWith(fontSize: 22),
+              ),
+            ),
+            const SliverList(
+              delegate: SliverChildListDelegate.fixed(
+                [
+                  ProfileInfoSection(),
+                  UserNameAndBio(),
+                  Gap(20),
+                ],
+              ),
+            ),
+            SliverList(
+              delegate: SliverChildListDelegate.fixed([
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children:
+                      List.generate(2, (index) => const ProfileInfoButton()),
+                )
+              ]),
+            ),
+          ],
         ),
       ),
     );
