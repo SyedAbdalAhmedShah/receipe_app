@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:readmore/readmore.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/pages/profile/widgets/profile_info.dart';
+import 'package:receipe_app/pages/profile/widgets/user_name_n_bio.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -23,9 +26,7 @@ class ProfileScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(
             horizontal: size.width * 0.05, vertical: size.height * 0.01),
         child: const Column(
-          children: [
-            ProfileInfoSection(),
-          ],
+          children: [ProfileInfoSection(), UserNameAndBio()],
         ),
       ),
     );
