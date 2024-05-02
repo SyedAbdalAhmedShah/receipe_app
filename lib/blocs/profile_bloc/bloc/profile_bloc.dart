@@ -5,9 +5,12 @@ part 'profile_event.dart';
 part 'profile_state.dart';
 
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
+  int selectionProfileSection = 0;
+
   ProfileBloc() : super(ProfileInitial()) {
-    on<ProfileEvent>((event, emit) {
-      // TODO: implement event handler
+    on<SelectProfileSectionEvent>((event, emit) {
+      selectionProfileSection = event.index;
+      emit(ProfileSectionSelectionSstate());
     });
   }
 }
