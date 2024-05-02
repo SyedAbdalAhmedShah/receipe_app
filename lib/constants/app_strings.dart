@@ -21,6 +21,7 @@ class AppStrings {
   static const String signIn = "Sign In";
   static const String signUp = "Sign up";
   static const String orSignUp = "Or Sign in With";
+  static const String profile = "Profile";
 
   static const String email = "Email";
   static const String name = "Name";

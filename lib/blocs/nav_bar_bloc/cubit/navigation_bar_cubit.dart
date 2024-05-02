@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 part 'navigation_bar_state.dart';
 
 class NavigationBarCubit extends Cubit<NavigationBarState> {
-  int navPageIndex = 0;
+  int navPageIndex = 3;
   NavigationBarCubit() : super(NavigationBarInitial());
 
   updateNavPage(int index) {
