@@ -30,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
                 [
                   ProfileInfoSection(),
                   UserNameAndBio(),
-                  Gap(20),
+                  Gap(40),
                 ],
               ),
             ),
