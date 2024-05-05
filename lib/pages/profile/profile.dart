@@ -62,7 +62,9 @@ class ProfileScreen extends StatelessWidget {
                           child: DishCard(),
                         ));
               },
-            )
+            ),
+
+            
           ],
         ),
       ),
