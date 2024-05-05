@@ -45,7 +45,15 @@ class ProfileScreen extends StatelessWidget {
                           )),
                 ),
                 const Gap(10),
-                DishCard()
+                Column(
+                  
+                  children: List.generate(
+                      20,
+                      (index) => const Padding(
+                            padding: EdgeInsets.only(bottom: 8.0),
+                            child: DishCard(),
+                          )),
+                )
               ]),
             ),
           ],
