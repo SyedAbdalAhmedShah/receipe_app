@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
-import 'package:readmore/readmore.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/constants/styles.dart';
+import 'package:receipe_app/pages/profile/widgets/dish_card.dart';
 import 'package:receipe_app/pages/profile/widgets/profile_info.dart';
 import 'package:receipe_app/pages/profile/widgets/profile_info_button.dart';
 import 'package:receipe_app/pages/profile/widgets/user_name_n_bio.dart';
@@ -43,7 +43,9 @@ class ProfileScreen extends StatelessWidget {
                       (index) => ProfileInfoButton(
                             index: index,
                           )),
-                )
+                ),
+                const Gap(10),
+                DishCard()
               ]),
             ),
           ],

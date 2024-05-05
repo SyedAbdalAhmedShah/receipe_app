@@ -56,9 +56,11 @@ class Splashscreen extends StatelessWidget {
               PrimaryButton(
                 buttonName: AppStrings.startCooking,
                 icon: Icons.arrow_forward,
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const BottomNavScreen(),
-                )),
+                onTap: () => Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNavScreen(),
+                    ),
+                    (route) => false),
               ),
               const Gap(40),
             ],

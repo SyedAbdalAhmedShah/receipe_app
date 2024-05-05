@@ -9,7 +9,7 @@ class AppAssets {
   static const String dummyProfile = "$imageBasePath/dummy_profile.png";
   static const String dummyDish = "$imageBasePath/dummy_dish.jpg";
   static const String person = "$imageBasePath/person.png";
-  
+  static const String dummyDish2 = "$imageBasePath/dish.png";
   static const String dummyCheif = "$imageBasePath/chef.png";
 
   //-----------Icons -------------------
