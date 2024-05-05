@@ -17,23 +17,25 @@ class DishCard extends StatelessWidget {
       width: size.width,
       padding: EdgeInsets.symmetric(
           horizontal: size.width * 0.02, vertical: size.height * 0.02),
-      // foregroundDecoration: BoxDecoration(
-      //   borderRadius: BorderRadius.circular(15.0),
-      //   gradient: const LinearGradient(
-      //     colors: [
-      //       Colors.black45,
-      //       Colors.transparent,
-      //     ],
-      //     begin: Alignment.bottomCenter,
-      //     end: Alignment.topCenter,
-      //     stops: [0, 0.8],
-      //   ),
-      // ),
+      foregroundDecoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15.0),
+        gradient: const LinearGradient(
+          colors: [
+            Colors.black45,
+            Colors.transparent,
+          ],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+          stops: [0, 0.8],
+        ),
+      ),
       decoration: BoxDecoration(
         boxShadow: kElevationToShadow[0],
         borderRadius: BorderRadius.circular(15.0),
         image: DecorationImage(
-          image: const AssetImage(AppAssets.dummyDish2),
+          image: const AssetImage(
+            AppAssets.dummyDish2,
+          ),
           fit: BoxFit.cover,
           colorFilter: ColorFilter.mode(
               Colors.black.withOpacity(0.6), BlendMode.dstATop),

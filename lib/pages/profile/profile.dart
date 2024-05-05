@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:receipe_app/blocs/profile_bloc/bloc/profile_bloc.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/pages/profile/widgets/dish_card.dart';
@@ -35,7 +37,7 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             SliverList(
-              delegate: SliverChildListDelegate.fixed([
+              delegate: SliverChildListDelegate([
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: List.generate(
@@ -45,17 +47,22 @@ class ProfileScreen extends StatelessWidget {
                           )),
                 ),
                 const Gap(10),
-                Column(
-                  
-                  children: List.generate(
-                      20,
-                      (index) => const Padding(
-                            padding: EdgeInsets.only(bottom: 8.0),
-                            child: DishCard(),
-                          )),
-                )
               ]),
             ),
+            BlocBuilder<ProfileBloc, ProfileState>(
+              builder: (context, state) {
+                return     SliverList.builder(
+                    addAutomaticKeepAlives: true,
+                    findChildIndexCallback: (key) {
+                      return 0;
+                    },
+                    itemCount: 20,
+                    itemBuilder: (context, index) => const Padding(
+                          padding: EdgeInsets.only(bottom: 8.0),
+                          child: DishCard(),
+                        ));
+              },
+            )
           ],
         ),
       ),
