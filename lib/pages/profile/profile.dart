@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:receipe_app/blocs/profile_bloc/bloc/profile_bloc.dart';
@@ -51,7 +51,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             BlocBuilder<ProfileBloc, ProfileState>(
               builder: (context, state) {
-                return     SliverList.builder(
+                return SliverList.builder(
                     addAutomaticKeepAlives: true,
                     findChildIndexCallback: (key) {
                       return 0;
@@ -63,8 +63,6 @@ class ProfileScreen extends StatelessWidget {
                         ));
               },
             ),
-
-            
           ],
         ),
       ),
