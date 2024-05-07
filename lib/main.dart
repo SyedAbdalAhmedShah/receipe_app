@@ -5,10 +5,11 @@ import 'package:receipe_app/blocs/profile_bloc/bloc/profile_bloc.dart';
 import 'package:receipe_app/config/theme_config.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/pages/splash/splash_screen.dart';
+import 'package:receipe_app/utils/dependency.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
+  setUp();
   runApp(const MyApp());
 }
 
