@@ -3,7 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/app_strings.dart';
-import 'package:receipe_app/pages/home/bottom_nav_screen.dart';
+import 'package:receipe_app/pages/auth/sign_in.dart';
 import 'package:receipe_app/widgets/primary_button.dart';
 
 class Splashscreen extends StatelessWidget {
@@ -58,7 +58,7 @@ class Splashscreen extends StatelessWidget {
                 icon: Icons.arrow_forward,
                 onTap: () => Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
-                      builder: (context) => const BottomNavScreen(),
+                      builder: (context) => const SignInScreen(),
                     ),
                     (route) => false),
               ),

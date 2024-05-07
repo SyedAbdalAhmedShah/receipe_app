@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:receipe_app/blocs/auth_bloc/bloc/auth_bloc.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/constants/styles.dart';
@@ -19,6 +21,14 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
+  late AuthBloc authBloc;
+
+  @override
+  void initState() {
+    authBloc = BlocProvider.of<AuthBloc>(context);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -74,7 +84,11 @@ class _SignInScreenState extends State<SignInScreen> {
                     gapBTWidget: 20,
                     buttonName: AppStrings.signIn,
                     width: size.width * 0.9,
-                    onTap: () {},
+                    onTap: () {
+                      authBloc.add(SignInEvent(
+                          email: emailController.text,
+                          password: passController.text));
+                    },
                     icon: Icons.adaptive.arrow_forward),
               ],
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:receipe_app/blocs/auth_bloc/bloc/auth_bloc.dart';
 import 'package:receipe_app/blocs/nav_bar_bloc/cubit/navigation_bar_cubit.dart';
 import 'package:receipe_app/blocs/profile_bloc/bloc/profile_bloc.dart';
 import 'package:receipe_app/config/theme_config.dart';
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ProfileBloc(),
+        ),
+        BlocProvider(
+          create: (context) => AuthBloc(),
         ),
       ],
       child: MaterialApp(

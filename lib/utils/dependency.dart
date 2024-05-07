@@ -5,4 +5,6 @@ final serviceLocator = GetIt.instance;
 
 void setUp() {
   serviceLocator.registerSingleton<ServerClient>(ServerClient());
+  ServerClient serverClient = serviceLocator.get<ServerClient>();
+  serverClient.setupAccount();
 }
