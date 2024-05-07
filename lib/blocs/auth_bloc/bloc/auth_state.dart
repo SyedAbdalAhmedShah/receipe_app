@@ -4,3 +4,7 @@ part of 'auth_bloc.dart';
 sealed class AuthState {}
 
 final class AuthInitial extends AuthState {}
+
+final class SignedState extends AuthState {}
+
+final class SignedFailureState extends AuthState {}
