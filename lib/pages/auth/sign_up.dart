@@ -1,13 +1,11 @@
-import 'dart:developer';
-
-import 'package:appwrite/appwrite.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:receipe_app/blocs/auth_bloc/bloc/auth_bloc.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/pages/auth/sign_in.dart';
-import 'package:receipe_app/server/server_constants.dart';
 import 'package:receipe_app/utils/app_validations.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
 import 'package:receipe_app/widgets/auth_method_image-box.dart';
@@ -27,15 +25,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController passController = TextEditingController();
   TextEditingController confirmPassController = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  late Client client;
-  late Account account;
+  late AuthBloc authBloc;
 
   @override
   void initState() {
-    client = Client()
-        .setEndpoint(ServerConstants.serverEndPoint) // Your API Endpoint
-        .setProject(ServerConstants.projectId);
-    account = Account(client);
+    authBloc = BlocProvider.of<AuthBloc>(context);
     super.initState();
   }
 
@@ -113,12 +107,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         width: size.width * 0.9,
                         onTap: () async {
                           if (formKey.currentState?.validate() ?? false) {
-                            final user = await account.create(
-                                userId: ID.unique(),
+                            authBloc.add(SignUpEvent(
                                 email: emailController.text.trim(),
-                                name: nameController.text,
-                                password: passController.text);
-                            log("user info ${user.$id}, ${user.name} , ${user.email}");
+                                password: passController.text,
+                                userName: nameController.text));
                           }
                         },
                         icon: Icons.adaptive.arrow_forward),
