@@ -13,8 +13,19 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitial()) {
     on<SignInEvent>((event, emit) async {
       try {
-        await authRepository.signInWithEmail(
-            email: event.email, password: event.password);
+        // await authRepository.createEmailPassword(
+        //     email: event.email, password: event.password);
+      } catch (e) {
+        log("ERROR $e");
+      }
+    });
+
+    on<SignUpEvent>((event, emit) async {
+      try {
+        await authRepository.createEmailPassword(
+            email: event.email,
+            password: event.password,
+            userName: event.userName);
       } catch (e) {
         log("ERROR $e");
       }
