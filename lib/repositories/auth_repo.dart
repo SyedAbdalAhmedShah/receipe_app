@@ -14,11 +14,8 @@ class AuthRepository {
     User user = await serverClient.account.create(
         userId: ID.unique(), email: email, password: password, name: userName);
 
-       
-
-    Preferences preferences = await serverClient.account.getPrefs();
-
-    log("Prefrences ${preferences.data}");
+    Token token = await serverClient.account.createVerification(url: email);
+    log("TOEKN DATA ${token.expire} === ${token.secret}");
   }
 
   Future signInWithEmailAndPassword({
