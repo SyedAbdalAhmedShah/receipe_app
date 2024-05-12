@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:receipe_app/constants/styles.dart';
 
@@ -45,6 +43,7 @@ class _AppTextFieldState extends State<AppTextField> {
           suffixIcon: Visibility(
             visible: widget.obscureText,
             child: InkWell(
+              borderRadius: BorderRadius.circular(30.0),
               onTap: toggleShowPassword,
               child: showPassword
                   ? const Icon(Icons.visibility_off_outlined)

@@ -64,6 +64,7 @@ class _SignInScreenState extends State<SignInScreen> {
             ),
             const Gap(5),
             AppTextField(
+              obscureText: true,
               hint: AppStrings.enterPass,
               controller: passController,
             ),
