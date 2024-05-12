@@ -20,6 +20,7 @@ class AppStrings {
   static const String searchReciepe = "Search recipe";
   static const String reciepe = "Recipe";
   static const String videos = "Videos";
+  static const String opps = "OPPS!!";
 
   static const String following = "following";
 

@@ -13,10 +13,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitial()) {
     on<SignInEvent>((event, emit) async {
       try {
+        emit(AuthLoadingState());
         await authRepository.signInWithEmailAndPassword(
             email: event.email, password: event.password);
+        emit(SignedState());
       } catch (e) {
         log("ERROR $e");
+        emit(AuthFailureState(errorMessage: e.toString()));
       }
     });
 
@@ -28,6 +31,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             userName: event.userName);
       } catch (e) {
         log("ERROR $e");
+
+        emit(AuthFailureState(errorMessage: e.toString()));
       }
     });
   }
