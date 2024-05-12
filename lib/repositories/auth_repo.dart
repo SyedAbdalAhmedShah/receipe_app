@@ -14,8 +14,7 @@ class AuthRepository {
     User user = await serverClient.account.create(
         userId: ID.unique(), email: email, password: password, name: userName);
 
-    Token token = await serverClient.account.createVerification(url: email);
-    log("TOEKN DATA ${token.expire} === ${token.secret}");
+    log("TOEKN DATA ${user.toMap()} === ");
   }
 
   Future signInWithEmailAndPassword({
