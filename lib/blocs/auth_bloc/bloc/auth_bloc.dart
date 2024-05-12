@@ -25,10 +25,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     on<SignUpEvent>((event, emit) async {
       try {
+        emit(AuthLoadingState());
         await authRepository.createEmailPassword(
             email: event.email,
             password: event.password,
             userName: event.userName);
+        emit(SignedState());
       } catch (e) {
         log("ERROR $e");
 

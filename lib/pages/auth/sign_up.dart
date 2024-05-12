@@ -49,6 +49,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
         bloc: authBloc,
         builder: (context, state) {
           return ModalProgressHUD(
+            blur: 2,
+            progressIndicator: const CircularProgressIndicator.adaptive(),
             inAsyncCall: state is AuthLoadingState,
             child: Scaffold(
               appBar: AppBar(),
