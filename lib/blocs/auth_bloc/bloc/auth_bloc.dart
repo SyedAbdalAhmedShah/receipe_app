@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:appwrite/appwrite.dart';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:receipe_app/repositories/auth_repo.dart';
@@ -31,9 +32,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             password: event.password,
             userName: event.userName);
         emit(SignedState());
+      } on AppwriteException catch (appW) {
+        log('app writee exception ${appW.message}');
       } catch (e) {
-        log("ERROR $e");
-
         emit(AuthFailureState(errorMessage: e.toString()));
       }
     });
