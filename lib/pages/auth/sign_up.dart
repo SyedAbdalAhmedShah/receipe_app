@@ -107,6 +107,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         AppTextField(
                           hint: AppStrings.enterPass,
                           controller: passController,
+                          obscureText: true,
                         ),
                         const Gap(25),
                         const Text(
@@ -116,6 +117,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         const Gap(5),
                         AppTextField(
+                          obscureText: true,
                           hint: AppStrings.retypePass,
                           controller: confirmPassController,
                         ),
