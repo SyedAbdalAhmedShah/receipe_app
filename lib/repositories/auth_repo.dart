@@ -12,12 +12,12 @@ class AuthRepository {
     User user =
         await serverClient.account.create(userId: ID.unique(), email: email, password: password, name: userName);
 
-    log("TOEKN DATA ${user.toMap()} === ");
-    Document document = await serverClient.databases.createDocument(
-        databaseId: ServerConfig.recipeDatabaseId,
-        collectionId: ServerConfig.userCollectionId,
-        documentId: ID.unique(),
-        data: {"userId": user.$id.toString()});
+    log("TOEKN DATA ${user.toMap()} === ${user} ");
+    // Document document = await serverClient.databases.createDocument(
+    //     databaseId: ServerConfig.recipeDatabaseId,
+    //     collectionId: ServerConfig.userCollectionId,
+    //     documentId: ID.unique(),
+    //     data: {"userId": user.$id.toString()});
   }
 
   Future signInWithEmailAndPassword({
