@@ -55,6 +55,7 @@ class _AppTextFieldState extends State<AppTextField> {
           border: InputBorder.none,
           enabled: true,
           errorBorder: Styles.textFieldErrorBorder,
+          focusedErrorBorder: Styles.textFieldBorder,
           focusedBorder: Styles.textFieldBorder,
           enabledBorder: Styles.textFieldBorder,
           disabledBorder: Styles.textFieldBorder),

@@ -7,6 +7,7 @@ import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/pages/auth/sign_up.dart';
+import 'package:receipe_app/utils/app_dialog.dart';
 import 'package:receipe_app/utils/app_validations.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
 import 'package:receipe_app/widgets/auth_method_image-box.dart';
@@ -104,9 +105,14 @@ class _SignInScreenState extends State<SignInScreen> {
                             buttonName: AppStrings.signIn,
                             width: size.width * 0.9,
                             onTap: () {
-                              authBloc.add(SignInEvent(
-                                  email: emailController.text,
-                                  password: passController.text));
+                              if (_formKey.currentState?.validate() ?? false) {
+                                authBloc.add(SignInEvent(
+                                    email: emailController.text,
+                                    password: passController.text));
+                              } else {
+                                AppDialogs.customDialog(context,
+                                    AppStrings.opps, AppStrings.fillOutFields);
+                              }
                             },
                             icon: Icons.adaptive.arrow_forward),
                       ],

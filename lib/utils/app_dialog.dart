@@ -8,8 +8,7 @@ class AppDialogs {
       dialogType: DialogType.error,
       animType: AnimType.rightSlide,
       title: title,
-      desc: desc  ,
-      btnCancelOnPress: () {},
+      desc: desc,
       btnOkOnPress: () {},
     ).show();
   }

@@ -4,7 +4,7 @@ import 'package:receipe_app/utils/extensions.dart';
 class AppValidations {
   static String? nameValidtion(String? value) {
     if (value == null || value.isEmpty) {
-      return AppStrings.nameNotNull;
+      return AppStrings.fieldNotEmpty;
     }
     return null;
   }

@@ -11,7 +11,8 @@ class AppStrings {
   static const String startCooking = "Start Cooking";
   static const String hello = "Hello";
   static const String welcome = "Welcome back!";
-   static const String fieldNotEmpty = 'field Cant be Empty';
+  static const String fieldNotEmpty = 'field Cant be Empty';
+  static const String fillOutFields = 'Please Fill Out All Fields';
   static const String letsHelp =
       "Let’s help you set up your account,\nit won’t take long.";
   static const String createAccount = "Create an accounnt";
