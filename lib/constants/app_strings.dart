@@ -7,10 +7,11 @@ class AppStrings {
   static const String dontHaveAcc = "Don’t have an account?";
   static const String alreadyMember = "Already a member?";
   static const String followers = "Followers";
-
+  static const String fieldNotValid = 'Field not valid';
   static const String startCooking = "Start Cooking";
   static const String hello = "Hello";
   static const String welcome = "Welcome back!";
+   static const String fieldNotEmpty = 'field Cant be Empty';
   static const String letsHelp =
       "Let’s help you set up your account,\nit won’t take long.";
   static const String createAccount = "Create an accounnt";

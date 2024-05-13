@@ -21,10 +21,14 @@ class AuthRepository {
     required String email,
     required String password,
   }) async {
-    Session session = await serverClient.account.createEmailPasswordSession(
-      email: email,
-      password: password,
-    );
-    log("DEVICE INFO ${session.deviceBrand} == ${session.deviceModel} == ${session.deviceName} == ${session.userId}");
+    // User user = await serverClient.account.get();
+    await serverClient.account.deleteSessions();
+
+    // Session session = await serverClient.account.createEmailPasswordSession(
+    //   email: email,
+    //   password: password,
+    // );
+    // // log("USER ${user.toMap()}");
+    // log("DEVICE INFO ${session.deviceBrand} == ${session.deviceModel} == ${session.deviceName} == ${session.userId}");
   }
 }
