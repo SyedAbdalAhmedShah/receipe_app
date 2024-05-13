@@ -15,9 +15,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<SignInEvent>((event, emit) async {
       try {
         emit(AuthLoadingState());
-        await authRepository.signInWithEmailAndPassword(
-            email: event.email, password: event.password);
+        await authRepository.signInWithEmailAndPassword(email: event.email, password: event.password);
         emit(SignedState());
+      } on AppwriteException catch (appW) {
+        log('app writee exception ${appW.message}');
       } catch (e) {
         log("ERROR $e");
         emit(AuthFailureState(errorMessage: e.toString()));
@@ -28,15 +29,23 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       try {
         emit(AuthLoadingState());
         await authRepository.createEmailPassword(
-            email: event.email,
-            password: event.password,
-            userName: event.userName);
-        emit(SignedState());
+            email: event.email, password: event.password, userName: event.userName);
+        emit(SignedUpState());
       } on AppwriteException catch (appW) {
         log('app writee exception ${appW.message}');
       } catch (e) {
         emit(AuthFailureState(errorMessage: e.toString()));
       }
     });
+
+    on<LogOut>(
+      (event, emit) async {
+        try {
+          await authRepository.logOut();
+        } catch (error) {
+          emit(AuthFailureState(errorMessage: error.toString()));
+        }
+      },
+    );
   }
 }

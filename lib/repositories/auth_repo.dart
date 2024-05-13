@@ -7,12 +7,9 @@ import 'package:receipe_app/utils/dependency.dart';
 
 class AuthRepository {
   ServerClient serverClient = serviceLocator.get<ServerClient>();
-  Future createEmailPassword(
-      {required String email,
-      required String password,
-      required String userName}) async {
-    User user = await serverClient.account.create(
-        userId: ID.unique(), email: email, password: password, name: userName);
+  Future createEmailPassword({required String email, required String password, required String userName}) async {
+    User user =
+        await serverClient.account.create(userId: ID.unique(), email: email, password: password, name: userName);
 
     log("TOEKN DATA ${user.toMap()} === ");
   }
@@ -22,13 +19,17 @@ class AuthRepository {
     required String password,
   }) async {
     // User user = await serverClient.account.get();
-    await serverClient.account.deleteSessions();
+    // await serverClient.account.deleteSessions();
 
-    // Session session = await serverClient.account.createEmailPasswordSession(
-    //   email: email,
-    //   password: password,
-    // );
+    Session session = await serverClient.account.createEmailPasswordSession(
+      email: email,
+      password: password,
+    );
     // // log("USER ${user.toMap()}");
-    // log("DEVICE INFO ${session.deviceBrand} == ${session.deviceModel} == ${session.deviceName} == ${session.userId}");
+    log("DEVICE INFO ${session.deviceBrand} == ${session.deviceModel} == ${session.deviceName} == ${session.userId}");
+  }
+
+  Future logOut() async {
+    await serverClient.account.deleteSessions();
   }
 }
