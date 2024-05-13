@@ -19,6 +19,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(SignedState());
       } on AppwriteException catch (appW) {
         log('app writee exception ${appW.message}');
+        emit(AuthFailureState(errorMessage: appW.message.toString()));
       } catch (e) {
         log("ERROR $e");
         emit(AuthFailureState(errorMessage: e.toString()));
@@ -33,6 +34,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(SignedUpState());
       } on AppwriteException catch (appW) {
         log('app writee exception ${appW.message}');
+        emit(AuthFailureState(errorMessage: appW.message.toString()));
       } catch (e) {
         emit(AuthFailureState(errorMessage: e.toString()));
       }

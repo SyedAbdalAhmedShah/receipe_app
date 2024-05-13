@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29053906-943b-4fda-96bf-fde4991c0693" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blocs/auth_bloc/bloc/auth_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blocs/auth_bloc/bloc/auth_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blocs/auth_bloc/bloc/auth_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blocs/auth_bloc/bloc/auth_event.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blocs/auth_bloc/bloc/auth_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blocs/auth_bloc/bloc/auth_state.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/auth/sign_up.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/auth/sign_up.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repositories/auth_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repositories/auth_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/extensions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/extensions.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/receipe_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/receipe_app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/auth/sign_in.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/auth/sign_in.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
