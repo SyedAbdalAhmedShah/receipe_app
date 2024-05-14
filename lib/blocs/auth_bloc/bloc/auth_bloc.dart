@@ -1,11 +1,11 @@
 import 'dart:convert';
-import 'dart:developer';
-
 import 'package:appwrite/appwrite.dart';
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:receipe_app/constants/server_strings.dart';
 import 'package:receipe_app/dependency_injection/shared_pref.dart';
+import 'package:receipe_app/model/cache_user.dart';
 import 'package:receipe_app/model/user/app_user.dart';
 import 'package:receipe_app/repositories/auth_repo.dart';
 import 'package:receipe_app/utils/dependency.dart';
@@ -54,8 +54,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           String? userData = sharedPref.getString(ServerStrings.userDataKey);
           if (userData != null) {
             AppUser appUser = AppUser.fromJson(json.decode(userData));
+            CacheUser.user = appUser;
 
-            log("APP USER ${appUser.userId} == ${appUser.userName} == ${appUser.profileUrl} == ${appUser.databaseId} === ${appUser.collectionId}");
             emit(UserAlreadyLoggedIn());
           } else {
             emit(NewUserLogedIn());
@@ -73,7 +73,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<LogOut>((event, emit) async {
       try {
         emit(AuthLoadingState());
-
+        await sharedPref.remove(ServerStrings.userDataKey);
         await authRepository.logOut();
       } catch (error) {
         emit(AuthFailureState(
