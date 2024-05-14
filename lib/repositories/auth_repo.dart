@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:appwrite/appwrite.dart';
@@ -6,6 +7,7 @@ import 'package:receipe_app/config/server_config.dart';
 import 'package:receipe_app/constants/server_strings.dart';
 import 'package:receipe_app/dependency_injection/server_client.dart';
 import 'package:receipe_app/utils/dependency.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthRepository {
   ServerClient serverClient = serviceLocator.get<ServerClient>();
@@ -17,16 +19,20 @@ class AuthRepository {
         userId: ID.unique(), email: email, password: password, name: userName);
 
     log("TOEKN DATA ${user.toMap()} === ${user} ");
+    final userData = {
+      ServerStrings.userId: user.$id.toString(),
+      ServerStrings.userName: userName,
+      ServerStrings.createdAt: user.$createdAt.toString()
+    };
+
     Document document = await serverClient.databases.createDocument(
         databaseId: ServerConfig.recipeDatabaseId,
         collectionId: ServerConfig.userCollectionId,
         documentId: ID.unique(),
-        data: {
-          ServerStrings.userId: user.$id.toString(),
-          ServerStrings.userName: userName,
-          ServerStrings.createdAt: user.$createdAt.toString()
-        });
-        log("UPLOADED DOCUMENT ${document.data}");
+        data: userData);
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.setString(
+        ServerStrings.userDataKey, json.encode(document.data));
   }
 
   Future signInWithEmailAndPassword({

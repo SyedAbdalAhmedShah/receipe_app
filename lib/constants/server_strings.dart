@@ -3,4 +3,7 @@ class ServerStrings {
   static const String createdAt = "createdAt";
   static const String profileUrl = "profileUrl";
   static const String userName = "userName";
+
+  // SharedPrefrences Key //
+  static const String userDataKey = "userData";
 }
