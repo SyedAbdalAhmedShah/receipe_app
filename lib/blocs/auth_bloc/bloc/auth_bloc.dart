@@ -1,9 +1,13 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:appwrite/appwrite.dart';
+import 'package:appwrite/models.dart';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:receipe_app/constants/server_strings.dart';
 import 'package:receipe_app/repositories/auth_repo.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -15,13 +19,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<SignInEvent>((event, emit) async {
       try {
         emit(AuthLoadingState());
-        await authRepository.signInWithEmailAndPassword(email: event.email, password: event.password);
+        await authRepository.signInWithEmailAndPassword(
+            email: event.email, password: event.password);
         emit(SignedState());
       } on AppwriteException catch (appW) {
-        log('app writee exception ${appW.message}');
+    
         emit(AuthFailureState(errorMessage: appW.message.toString()));
       } catch (e) {
-        log("ERROR $e");
+    
         emit(AuthFailureState(errorMessage: e.toString()));
       }
     });
@@ -30,10 +35,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       try {
         emit(AuthLoadingState());
         await authRepository.createEmailPassword(
-            email: event.email, password: event.password, userName: event.userName);
+            email: event.email,
+            password: event.password,
+            userName: event.userName);
         emit(SignedUpState());
       } on AppwriteException catch (appW) {
-        log('app writee exception ${appW.message}');
+
         emit(AuthFailureState(errorMessage: appW.message.toString()));
       } catch (e) {
         emit(AuthFailureState(errorMessage: e.toString()));
@@ -43,7 +50,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<LogOut>(
       (event, emit) async {
         try {
-          await authRepository.logOut();
+          SharedPreferences preferences = await SharedPreferences.getInstance();
+          String? userData = preferences.getString(ServerStrings.userDataKey);
+          log("USer data ====== $userData");
+          log("USer data ====== ${json.decode(userData!)}");
+        
+
+          // await authRepository.logOut();
         } catch (error) {
           emit(AuthFailureState(errorMessage: error.toString()));
         }
