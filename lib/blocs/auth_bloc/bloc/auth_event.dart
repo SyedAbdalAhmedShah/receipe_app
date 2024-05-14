@@ -15,7 +15,10 @@ final class SignUpEvent extends AuthEvent {
   final String password;
   final String userName;
 
-  SignUpEvent({required this.email, required this.password, required this.userName});
+  SignUpEvent(
+      {required this.email, required this.password, required this.userName});
 }
 
 final class IsUserLogedIn extends AuthEvent {}
+
+final class LogOut extends AuthEvent {}
