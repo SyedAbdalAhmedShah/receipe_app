@@ -44,14 +44,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
     });
 
-    on<LogOut>(
+    on<IsUserLogedIn>(
       (event, emit) async {
         try {
+          emit(AuthLoadingState());
           SharedPreferences preferences = await SharedPreferences.getInstance();
           String? userData = preferences.getString(ServerStrings.userDataKey);
-          AppUser appUser = AppUser.fromJson(json.decode(userData!));
+          if (userData != null) {
+            AppUser appUser = AppUser.fromJson(json.decode(userData!));
 
-          log("APP USER ${appUser.userId} == ${appUser.userName} == ${appUser.profileUrl} == ${appUser.databaseId} === ${appUser.collectionId}");
+            log("APP USER ${appUser.userId} == ${appUser.userName} == ${appUser.profileUrl} == ${appUser.databaseId} === ${appUser.collectionId}");
+            emit(UserAlreadyLoggedIn());
+          } else {
+            emit(NewUserLogedIn());
+          }
 
           // await authRepository.logOut();
         } catch (error) {

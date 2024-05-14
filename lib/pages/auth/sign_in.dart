@@ -32,7 +32,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   void initState() {
     authBloc = BlocProvider.of<AuthBloc>(context);
-    authBloc.add(LogOut());
+    // authBloc.add(LogOut());
     super.initState();
   }
 
@@ -66,16 +66,19 @@ class _SignInScreenState extends State<SignInScreen> {
                       const Gap(40),
                       const Text(
                         AppStrings.hello,
-                        style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800),
+                        style: TextStyle(
+                            fontSize: 28, fontWeight: FontWeight.w800),
                       ),
                       const Text(
                         AppStrings.welcome,
-                        style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                            fontSize: 28, fontWeight: FontWeight.w500),
                       ),
                       const Gap(30),
                       const Text(
                         AppStrings.email,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w500),
                       ),
                       const Gap(5),
                       AppTextField(
@@ -86,7 +89,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       const Gap(30),
                       const Text(
                         AppStrings.enterPass,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w500),
                       ),
                       const Gap(5),
                       AppTextField(
@@ -102,7 +106,8 @@ class _SignInScreenState extends State<SignInScreen> {
                             style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w300,
-                                color: Theme.of(context).colorScheme.secondary)),
+                                color:
+                                    Theme.of(context).colorScheme.secondary)),
                       ),
                       const Gap(20),
                       Row(
@@ -113,10 +118,16 @@ class _SignInScreenState extends State<SignInScreen> {
                               buttonName: AppStrings.signIn,
                               width: size.width * 0.9,
                               onTap: () {
-                                if (_formKey.currentState?.validate() ?? false) {
-                                  authBloc.add(SignInEvent(email: emailController.text, password: passController.text));
+                                if (_formKey.currentState?.validate() ??
+                                    false) {
+                                  authBloc.add(SignInEvent(
+                                      email: emailController.text,
+                                      password: passController.text));
                                 } else {
-                                  AppDialogs.customDialog(context, AppStrings.opps, AppStrings.fillOutFields);
+                                  AppDialogs.customDialog(
+                                      context,
+                                      AppStrings.opps,
+                                      AppStrings.fillOutFields);
                                 }
                               },
                               icon: Icons.adaptive.arrow_forward),
@@ -146,8 +157,10 @@ class _SignInScreenState extends State<SignInScreen> {
                             style: Styles.miniBold,
                           ),
                           TextButton(
-                            style: TextButton.styleFrom(padding: EdgeInsets.zero),
-                            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                            style:
+                                TextButton.styleFrom(padding: EdgeInsets.zero),
+                            onPressed: () =>
+                                Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => const SignUpScreen(),
                             )),
                             child: Text(

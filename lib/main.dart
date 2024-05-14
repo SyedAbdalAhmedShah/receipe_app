@@ -5,6 +5,7 @@ import 'package:receipe_app/blocs/nav_bar_bloc/cubit/navigation_bar_cubit.dart';
 import 'package:receipe_app/blocs/profile_bloc/bloc/profile_bloc.dart';
 import 'package:receipe_app/config/theme_config.dart';
 import 'package:receipe_app/constants/app_strings.dart';
+import 'package:receipe_app/pages/home/bottom_nav_screen.dart';
 import 'package:receipe_app/pages/splash/splash_screen.dart';
 import 'package:receipe_app/utils/dependency.dart';
 
@@ -35,8 +36,40 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: AppStrings.APP_NAME,
         theme: ThemeConfig.themeData,
-        home: const Splashscreen(),
+        home: const LandingPage(),
       ),
+    );
+  }
+}
+
+class LandingPage extends StatefulWidget {
+  const LandingPage({super.key});
+
+  @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+  late AuthBloc authBloc;
+
+  @override
+  void initState() {
+    authBloc = BlocProvider.of<AuthBloc>(context);
+    authBloc.add(IsUserLogedIn());
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder(
+      bloc: authBloc,
+      builder: (context, state) {
+        if (state is NewUserLogedIn) {
+          return const Splashscreen();
+        } else {
+          return const BottomNavScreen();
+        }
+      },
     );
   }
 }

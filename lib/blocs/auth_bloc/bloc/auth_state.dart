@@ -11,6 +11,10 @@ final class SignedState extends AuthState {}
 
 final class SignedUpState extends AuthState {}
 
+final class UserAlreadyLoggedIn extends AuthState {}
+
+final class NewUserLogedIn extends AuthState {}
+
 final class AuthFailureState extends AuthState {
   final String errorMessage;
 

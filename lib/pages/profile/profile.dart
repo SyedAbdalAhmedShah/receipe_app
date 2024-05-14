@@ -17,6 +17,26 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
     return Scaffold(
+      endDrawer: Drawer(
+        child: SafeArea(
+          child: Column(
+            children: [
+              ListTile(
+                onTap: () {},
+                splashColor:
+                    Theme.of(context).colorScheme.primary.withOpacity(0.2),
+                iconColor: Theme.of(context).colorScheme.primary,
+                textColor: Theme.of(context).colorScheme.primary,
+                title: const Text(
+                  "Logout",
+                  style: TextStyle(fontWeight: FontWeight.w800),
+                ),
+                trailing: const Icon(Icons.logout),
+              )
+            ],
+          ),
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: size.width * 0.03),
         child: CustomScrollView(
