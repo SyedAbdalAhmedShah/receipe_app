@@ -4,7 +4,7 @@ import 'package:receipe_app/dependency_injection/shared_pref.dart';
 
 final serviceLocator = GetIt.instance;
 
-void setUp() async {
+Future<void> setUp() async {
   serviceLocator.registerSingleton<ServerClient>(ServerClient());
   serviceLocator.registerSingleton<SharedPref>(SharedPref());
   ServerClient serverClient = serviceLocator.get<ServerClient>();

@@ -5,8 +5,10 @@ import 'package:appwrite/appwrite.dart';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:receipe_app/constants/server_strings.dart';
+import 'package:receipe_app/dependency_injection/shared_pref.dart';
 import 'package:receipe_app/model/user/app_user.dart';
 import 'package:receipe_app/repositories/auth_repo.dart';
+import 'package:receipe_app/utils/dependency.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'auth_event.dart';
@@ -14,7 +16,7 @@ part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthRepository authRepository = AuthRepository();
-
+  SharedPreferences sharedPref = serviceLocator.get<SharedPref>().preferences;
   AuthBloc() : super(AuthInitial()) {
     on<SignInEvent>((event, emit) async {
       try {
@@ -48,8 +50,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       (event, emit) async {
         try {
           emit(AuthLoadingState());
-          SharedPreferences preferences = await SharedPreferences.getInstance();
-          String? userData = preferences.getString(ServerStrings.userDataKey);
+
+          String? userData = sharedPref.getString(ServerStrings.userDataKey);
           if (userData != null) {
             AppUser appUser = AppUser.fromJson(json.decode(userData));
 

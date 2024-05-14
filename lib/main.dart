@@ -9,9 +9,9 @@ import 'package:receipe_app/pages/home/bottom_nav_screen.dart';
 import 'package:receipe_app/pages/splash/splash_screen.dart';
 import 'package:receipe_app/utils/dependency.dart';
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  setUp();
+ await setUp();
   runApp(const MyApp());
 }
 
