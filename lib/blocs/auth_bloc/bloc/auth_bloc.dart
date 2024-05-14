@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:appwrite/appwrite.dart';
-import 'package:appwrite/models.dart';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:receipe_app/constants/server_strings.dart';
+import 'package:receipe_app/model/user/app_user.dart';
 import 'package:receipe_app/repositories/auth_repo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -23,10 +23,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             email: event.email, password: event.password);
         emit(SignedState());
       } on AppwriteException catch (appW) {
-    
         emit(AuthFailureState(errorMessage: appW.message.toString()));
       } catch (e) {
-    
         emit(AuthFailureState(errorMessage: e.toString()));
       }
     });
@@ -40,7 +38,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             userName: event.userName);
         emit(SignedUpState());
       } on AppwriteException catch (appW) {
-
         emit(AuthFailureState(errorMessage: appW.message.toString()));
       } catch (e) {
         emit(AuthFailureState(errorMessage: e.toString()));
@@ -52,9 +49,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         try {
           SharedPreferences preferences = await SharedPreferences.getInstance();
           String? userData = preferences.getString(ServerStrings.userDataKey);
-          log("USer data ====== $userData");
-          log("USer data ====== ${json.decode(userData!)}");
-        
+          AppUser appUser = AppUser.fromJson(json.decode(userData!));
+          log("APP USER ${appUser.userId} == ${appUser.userName} == ${appUser.profileUrl} == ${appUser.databaseId} === ${appUser.collectionId}");
 
           // await authRepository.logOut();
         } catch (error) {
