@@ -9,9 +9,9 @@ import 'package:receipe_app/pages/home/bottom_nav_screen.dart';
 import 'package:receipe_app/pages/splash/splash_screen.dart';
 import 'package:receipe_app/utils/dependency.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
- await setUp();
+  await setUp();
   runApp(const MyApp());
 }
 
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         home: const LandingPage(),
       ),
     );
-  }
+  } 
 }
 
 class LandingPage extends StatefulWidget {
