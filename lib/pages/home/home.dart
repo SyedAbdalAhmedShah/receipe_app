@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/app_strings.dart';
+import 'package:receipe_app/model/cache_user.dart';
 import 'package:receipe_app/pages/home/widgets/new_reciepe_card.dart';
 import 'package:receipe_app/pages/home/widgets/reciep_category_section.dart';
 import 'package:receipe_app/pages/home/widgets/recipe_card.dart';
@@ -29,18 +30,18 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Gap(20),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        AppStrings.dumyName,
-                        style: TextStyle(
+                        " ${AppStrings.hellow} ${CacheUser.user?.userName ?? AppStrings.dumyName}",
+                        style: const TextStyle(
                             fontSize: 28, fontWeight: FontWeight.w800),
                       ),
-                      Text(
+                      const Text(
                         AppStrings.whatCooking,
                         textAlign: TextAlign.left,
                         style: TextStyle(
@@ -48,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  ProfilePictureSection(),
+                  const ProfilePictureSection(),
                 ],
               ),
               const Gap(20),

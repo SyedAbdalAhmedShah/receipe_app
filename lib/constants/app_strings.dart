@@ -9,7 +9,7 @@ class AppStrings {
   static const String followers = "Followers";
   static const String fieldNotValid = 'Field not valid';
   static const String startCooking = "Start Cooking";
-  static const String hello = "Hello";
+  static const String hello = "Hello,";
   static const String welcome = "Welcome back!";
   static const String fieldNotEmpty = 'field Cant be Empty';
   static const String fillOutFields = 'Please Fill Out All Fields';
@@ -38,6 +38,8 @@ class AppStrings {
   static const String confirmPass = "Confirm Password";
   static const String retypePass = "Retype Password ";
   static const String dumyName = "Hello, Jega!";
+  static const String hellow = "Hello,";
+
   static const String newRecipes = "New Recipes";
 
   static const String whatCooking = "What are you cooking today?";
