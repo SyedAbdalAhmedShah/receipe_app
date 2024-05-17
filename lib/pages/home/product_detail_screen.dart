@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PrdocutDetailScreen extends StatelessWidget {
-  const PrdocutDetailScreen({super.key});
+class ProdcutDetailScreen extends StatelessWidget {
+  const ProdcutDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
