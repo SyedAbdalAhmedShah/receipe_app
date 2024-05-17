@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
@@ -15,11 +16,12 @@ class ReciepCard extends StatelessWidget {
     final size = MediaQuery.sizeOf(context);
     return InkWell(
       onTap: () => context.push(
-          child: const ProdcutDetailScreen(
-        productModel: ProductModel(
-            productImage: AppAssets.dummyDish,
-            prodcutName: "Classic Greek Salad"),
-      )),
+        child: const ProdcutDetailScreen(
+          productModel: ProductModel(
+              productImage: AppAssets.dummyDish,
+              prodcutName: "Classic Greek Salad"),
+        ),
+      ),
       child: Container(
         width: size.width * 0.5,
         height: size.height * 0.23,
@@ -31,14 +33,18 @@ class ReciepCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const Gap(10),
-            Container(
-              width: double.maxFinite,
-              height: size.height * 0.15,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  image: const DecorationImage(
-                      image: AssetImage(AppAssets.dummyDish),
-                      fit: BoxFit.fill)),
+            Hero(
+              tag: "Product-Image",
+              transitionOnUserGestures: true,
+              child: Container(
+                width: double.maxFinite,
+                height: size.height * 0.15,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    image: const DecorationImage(
+                        image: AssetImage(AppAssets.dummyDish),
+                        fit: BoxFit.fill)),
+              ),
             ),
             const Gap(20),
             Text(
