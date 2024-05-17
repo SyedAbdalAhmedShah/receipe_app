@@ -11,7 +11,7 @@ class AppUser with _$AppUser {
     String? userId,
     String? userName,
     String? createdAt,
-    String? profileUrl,
+    String? profileUrl, 
     @JsonKey(name: "\$databaseId") String? databaseId,
     @JsonKey(name: "\$collectionId") String? collectionId,
   }) = _AppUser;

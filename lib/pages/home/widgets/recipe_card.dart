@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/styles.dart';
+import 'package:receipe_app/model/prodcut/product_model.dart';
 import 'package:receipe_app/pages/home/product_detail_screen.dart';
 import 'package:receipe_app/utils/extensions.dart';
 
@@ -13,7 +14,12 @@ class ReciepCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return InkWell(
-      onTap: () => context.push(child: const ProdcutDetailScreen()),
+      onTap: () => context.push(
+          child: const ProdcutDetailScreen(
+        productModel: ProductModel(
+            productImage: AppAssets.dummyDish,
+            prodcutName: "Classic Greek Salad"),
+      )),
       child: Container(
         width: size.width * 0.5,
         height: size.height * 0.23,
