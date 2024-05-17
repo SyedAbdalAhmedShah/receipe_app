@@ -52,6 +52,10 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   late AuthBloc authBloc;
 
+
+
+  
+
   @override
   void initState() {
     authBloc = BlocProvider.of<AuthBloc>(context);
