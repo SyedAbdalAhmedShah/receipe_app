@@ -87,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   separatorBuilder: (context, index) => Padding(
                       padding: EdgeInsets.only(right: size.width * 0.05)),
-                  itemBuilder: (context, index) => const ReciepCard(),
+                  itemBuilder: (context, index) =>  ReciepCard(index: index,),
                 ),
               ),
               const Gap(20),

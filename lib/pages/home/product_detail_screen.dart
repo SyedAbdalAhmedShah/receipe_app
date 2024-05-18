@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:receipe_app/constants/app_colors.dart';
+import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/model/prodcut/product_model.dart';
 
 class ProdcutDetailScreen extends StatelessWidget {
   final ProductModel productModel;
-  const ProdcutDetailScreen({required this.productModel, super.key});
+  final String heroTag;
+  const ProdcutDetailScreen(
+      {required this.productModel, required this.heroTag, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +17,10 @@ class ProdcutDetailScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Hero(
-              tag: "Product-Image",
+              tag: heroTag,
               transitionOnUserGestures: true,
               child: Container(
                 height: 200,
@@ -33,7 +39,19 @@ class ProdcutDetailScreen extends StatelessWidget {
                         fit: BoxFit.cover,
                         image: AssetImage(productModel.productImage!))),
               ),
-            )
+            ),
+            const Gap(20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Classic Greek Salad",
+                  textAlign: TextAlign.center,
+                  style: Styles.miniBold.copyWith(color: AppColor.borderColor),
+                ),
+                const Text('(13k Reviews)')
+              ],
+            ),
           ],
         ),
       ),

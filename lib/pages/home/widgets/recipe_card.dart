@@ -9,15 +9,17 @@ import 'package:receipe_app/pages/home/product_detail_screen.dart';
 import 'package:receipe_app/utils/extensions.dart';
 
 class ReciepCard extends StatelessWidget {
-  const ReciepCard({super.key});
+  final int index;
+  const ReciepCard({required this.index, super.key});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return InkWell(
       onTap: () => context.push(
-        child: const ProdcutDetailScreen(
-          productModel: ProductModel(
+        child: ProdcutDetailScreen(
+          heroTag: "Product-Image $index",
+          productModel: const ProductModel(
               productImage: AppAssets.dummyDish,
               prodcutName: "Classic Greek Salad"),
         ),
@@ -34,7 +36,7 @@ class ReciepCard extends StatelessWidget {
           children: [
             const Gap(10),
             Hero(
-              tag: "Product-Image",
+              tag: "Product-Image $index",
               transitionOnUserGestures: true,
               child: Container(
                 width: double.maxFinite,
