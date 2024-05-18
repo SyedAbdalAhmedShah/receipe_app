@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         home: const LandingPage(),
       ),
     );
-  } 
+  }
 }
 
 class LandingPage extends StatefulWidget {
@@ -51,10 +51,6 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   late AuthBloc authBloc;
-
-
-
-  
 
   @override
   void initState() {
