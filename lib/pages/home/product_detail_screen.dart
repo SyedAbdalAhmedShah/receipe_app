@@ -16,13 +16,12 @@ class ProdcutDetailScreen extends StatelessWidget {
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Hero(
-              tag: heroTag,
-              transitionOnUserGestures: true,
-              child: Container(
+        child: Hero(
+          tag: heroTag,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
                 height: 200,
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -39,20 +38,24 @@ class ProdcutDetailScreen extends StatelessWidget {
                         fit: BoxFit.cover,
                         image: AssetImage(productModel.productImage!))),
               ),
-            ),
-            const Gap(20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Classic Greek Salad",
-                  textAlign: TextAlign.center,
-                  style: Styles.miniBold.copyWith(color: AppColor.borderColor),
-                ),
-                const Text('(13k Reviews)')
-              ],
-            ),
-          ],
+              const Gap(20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Classic Greek Salad",
+                    textAlign: TextAlign.center,
+                    style:
+                        Styles.miniBold.copyWith(color: AppColor.borderColor),
+                  ),
+                  const Text(
+                    '(13k Reviews)',
+                    style: TextStyle(fontSize: 16),
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
