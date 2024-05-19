@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
@@ -5,6 +6,7 @@ import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/model/prodcut/product_model.dart';
+import 'package:receipe_app/widgets/cache_image.dart';
 
 class ReciepCard extends StatelessWidget {
   final ProductModel productModel;
@@ -36,14 +38,10 @@ class ReciepCard extends StatelessWidget {
             Hero(
               tag: "Product-Image ${productModel.id}",
               transitionOnUserGestures: true,
-              child: Container(
-                width: double.maxFinite,
+              child: AppCacheImage(
                 height: size.height * 0.15,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    image: const DecorationImage(
-                        image: AssetImage(AppAssets.dummyDish),
-                        fit: BoxFit.fill)),
+                width: double.maxFinite,
+                image: productModel.image!,
               ),
             ),
             const Gap(20),
