@@ -18,12 +18,9 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
-    with AutomaticKeepAliveClientMixin<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   TextEditingController searchController = TextEditingController();
 
-  @override
-  bool get wantKeepAlive => true;
   @override
   void initState() {
     HomeRepository().getAllDishes();
