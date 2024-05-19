@@ -20,8 +20,10 @@ ProductModel _$ProductModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProductModel {
-  String? get prodcutName => throw _privateConstructorUsedError;
-  String? get productImage => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  String? get difficulty => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +37,7 @@ abstract class $ProductModelCopyWith<$Res> {
           ProductModel value, $Res Function(ProductModel) then) =
       _$ProductModelCopyWithImpl<$Res, ProductModel>;
   @useResult
-  $Res call({String? prodcutName, String? productImage});
+  $Res call({String? id, String? title, String? difficulty, String? image});
 }
 
 /// @nodoc
@@ -51,17 +53,27 @@ class _$ProductModelCopyWithImpl<$Res, $Val extends ProductModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? prodcutName = freezed,
-    Object? productImage = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? difficulty = freezed,
+    Object? image = freezed,
   }) {
     return _then(_value.copyWith(
-      prodcutName: freezed == prodcutName
-          ? _value.prodcutName
-          : prodcutName // ignore: cast_nullable_to_non_nullable
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      productImage: freezed == productImage
-          ? _value.productImage
-          : productImage // ignore: cast_nullable_to_non_nullable
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      difficulty: freezed == difficulty
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as String?,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -75,7 +87,7 @@ abstract class _$$ProductModelImplCopyWith<$Res>
       __$$ProductModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? prodcutName, String? productImage});
+  $Res call({String? id, String? title, String? difficulty, String? image});
 }
 
 /// @nodoc
@@ -89,17 +101,27 @@ class __$$ProductModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? prodcutName = freezed,
-    Object? productImage = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? difficulty = freezed,
+    Object? image = freezed,
   }) {
     return _then(_$ProductModelImpl(
-      prodcutName: freezed == prodcutName
-          ? _value.prodcutName
-          : prodcutName // ignore: cast_nullable_to_non_nullable
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      productImage: freezed == productImage
-          ? _value.productImage
-          : productImage // ignore: cast_nullable_to_non_nullable
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      difficulty: freezed == difficulty
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as String?,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -108,19 +130,23 @@ class __$$ProductModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ProductModelImpl implements _ProductModel {
-  const _$ProductModelImpl({this.prodcutName, this.productImage});
+  const _$ProductModelImpl({this.id, this.title, this.difficulty, this.image});
 
   factory _$ProductModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductModelImplFromJson(json);
 
   @override
-  final String? prodcutName;
+  final String? id;
   @override
-  final String? productImage;
+  final String? title;
+  @override
+  final String? difficulty;
+  @override
+  final String? image;
 
   @override
   String toString() {
-    return 'ProductModel(prodcutName: $prodcutName, productImage: $productImage)';
+    return 'ProductModel(id: $id, title: $title, difficulty: $difficulty, image: $image)';
   }
 
   @override
@@ -128,15 +154,16 @@ class _$ProductModelImpl implements _ProductModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ProductModelImpl &&
-            (identical(other.prodcutName, prodcutName) ||
-                other.prodcutName == prodcutName) &&
-            (identical(other.productImage, productImage) ||
-                other.productImage == productImage));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.difficulty, difficulty) ||
+                other.difficulty == difficulty) &&
+            (identical(other.image, image) || other.image == image));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, prodcutName, productImage);
+  int get hashCode => Object.hash(runtimeType, id, title, difficulty, image);
 
   @JsonKey(ignore: true)
   @override
@@ -154,16 +181,22 @@ class _$ProductModelImpl implements _ProductModel {
 
 abstract class _ProductModel implements ProductModel {
   const factory _ProductModel(
-      {final String? prodcutName,
-      final String? productImage}) = _$ProductModelImpl;
+      {final String? id,
+      final String? title,
+      final String? difficulty,
+      final String? image}) = _$ProductModelImpl;
 
   factory _ProductModel.fromJson(Map<String, dynamic> json) =
       _$ProductModelImpl.fromJson;
 
   @override
-  String? get prodcutName;
+  String? get id;
   @override
-  String? get productImage;
+  String? get title;
+  @override
+  String? get difficulty;
+  @override
+  String? get image;
   @override
   @JsonKey(ignore: true)
   _$$ProductModelImplCopyWith<_$ProductModelImpl> get copyWith =>

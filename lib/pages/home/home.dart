@@ -7,6 +7,7 @@ import 'package:receipe_app/model/cache_user.dart';
 import 'package:receipe_app/pages/home/widgets/new_reciepe_card.dart';
 import 'package:receipe_app/pages/home/widgets/reciep_category_section.dart';
 import 'package:receipe_app/pages/home/widgets/recipe_card.dart';
+import 'package:receipe_app/repositories/home_repo.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
 import 'package:receipe_app/widgets/profile_picture.dart';
 
@@ -19,6 +20,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   TextEditingController searchController = TextEditingController();
+
+  @override
+  void initState() {
+    HomeRepository().getAllDishes();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -87,7 +95,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   separatorBuilder: (context, index) => Padding(
                       padding: EdgeInsets.only(right: size.width * 0.05)),
-                  itemBuilder: (context, index) =>  ReciepCard(index: index,),
+                  itemBuilder: (context, index) => ReciepCard(
+                    index: index,
+                  ),
                 ),
               ),
               const Gap(20),
