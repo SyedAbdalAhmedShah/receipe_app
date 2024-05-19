@@ -5,8 +5,6 @@ import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/model/prodcut/product_model.dart';
-import 'package:receipe_app/pages/home/product_detail_screen.dart';
-import 'package:receipe_app/utils/extensions.dart';
 
 class ReciepCard extends StatelessWidget {
   final ProductModel productModel;
@@ -51,8 +49,11 @@ class ReciepCard extends StatelessWidget {
             const Gap(20),
             Text(
               "${productModel.title}",
-              textAlign: TextAlign.center,
-              style: Styles.miniBold.copyWith(color: AppColor.borderColor),
+              textAlign: TextAlign.left,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: Styles.miniBold.copyWith(
+                  color: AppColor.borderColor, fontWeight: FontWeight.w700),
             ),
             const Gap(20),
             Row(
