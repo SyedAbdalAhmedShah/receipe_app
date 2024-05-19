@@ -16,19 +16,22 @@ class BottomNavScreen extends StatefulWidget {
 }
 
 class _BottomNavScreenState extends State<BottomNavScreen> {
-  List<Widget> navBarScreen = const [
-    HomeScreen(),
-    FavouriteScreen(),
-    NotificationScreen(),
-    ProfileScreen()
-  ];
   @override
   Widget build(BuildContext context) {
     final navCubit = context.read<NavigationBarCubit>();
     return Scaffold(
       body: BlocBuilder<NavigationBarCubit, NavigationBarState>(
         builder: (context, state) {
-          return navBarScreen.elementAt(navCubit.navPageIndex);
+          return IndexedStack(
+            index: navCubit.navPageIndex,
+            
+            children: const [
+              HomeScreen(),
+              FavouriteScreen(),
+              NotificationScreen(),
+              ProfileScreen()
+            ],
+          );
         },
       ),
       floatingActionButton: const HomeFloatingButton(),

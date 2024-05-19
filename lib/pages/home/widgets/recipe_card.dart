@@ -16,14 +16,14 @@ class ReciepCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return InkWell(
-      onTap: () => context.push(
-        child: ProdcutDetailScreen(
-          heroTag: "Product-Image $index",
-          productModel: const ProductModel(
-              productImage: AppAssets.dummyDish,
-              prodcutName: "Classic Greek Salad"),
-        ),
-      ),
+      // onTap: () => context.push(
+      //   child: ProdcutDetailScreen(
+      //     heroTag: "Product-Image $index",
+      //     productModel: const ProductModel(
+      //         productImage: AppAssets.dummyDish,
+      //         prodcutName: "Classic Greek Salad"),
+      //   ),
+      // ),
       child: Container(
         width: size.width * 0.5,
         height: size.height * 0.23,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/model/prodcut/product_model.dart';
@@ -35,9 +36,9 @@ class ProdcutDetailScreen extends StatelessWidget {
                       )
                     ],
                     borderRadius: BorderRadius.circular(20.0),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage(productModel.productImage!))),
+                        image: AssetImage(AppAssets.dummyDish))),
               ),
             ),
             const Gap(20),
