@@ -19,32 +19,38 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() fetchDishes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? fetchDishes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? fetchDishes,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_FetchDishes value) fetchDishes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_FetchDishes value)? fetchDishes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_FetchDishes value)? fetchDishes,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -85,12 +91,18 @@ class __$$StartedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
+class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   const _$StartedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HomeEvent.started()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'HomeEvent.started'));
   }
 
   @override
@@ -106,6 +118,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() fetchDishes,
   }) {
     return started();
   }
@@ -114,6 +127,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? fetchDishes,
   }) {
     return started?.call();
   }
@@ -122,6 +136,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? fetchDishes,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -134,6 +149,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_FetchDishes value) fetchDishes,
   }) {
     return started(this);
   }
@@ -142,6 +158,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_FetchDishes value)? fetchDishes,
   }) {
     return started?.call(this);
   }
@@ -150,6 +167,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_FetchDishes value)? fetchDishes,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -164,36 +182,166 @@ abstract class _Started implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$FetchDishesImplCopyWith<$Res> {
+  factory _$$FetchDishesImplCopyWith(
+          _$FetchDishesImpl value, $Res Function(_$FetchDishesImpl) then) =
+      __$$FetchDishesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FetchDishesImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$FetchDishesImpl>
+    implements _$$FetchDishesImplCopyWith<$Res> {
+  __$$FetchDishesImplCopyWithImpl(
+      _$FetchDishesImpl _value, $Res Function(_$FetchDishesImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
+  const _$FetchDishesImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeEvent.fetchDishes()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'HomeEvent.fetchDishes'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FetchDishesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() fetchDishes,
+  }) {
+    return fetchDishes();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? fetchDishes,
+  }) {
+    return fetchDishes?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? fetchDishes,
+    required TResult orElse(),
+  }) {
+    if (fetchDishes != null) {
+      return fetchDishes();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_FetchDishes value) fetchDishes,
+  }) {
+    return fetchDishes(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_FetchDishes value)? fetchDishes,
+  }) {
+    return fetchDishes?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_FetchDishes value)? fetchDishes,
+    required TResult orElse(),
+  }) {
+    if (fetchDishes != null) {
+      return fetchDishes(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FetchDishes implements HomeEvent {
+  const factory _FetchDishes() = _$FetchDishesImpl;
+}
+
+/// @nodoc
 mixin _$HomeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loadingState,
+    required TResult Function(List<ProductModel> products)
+        dishesFetchedSuccessState,
+    required TResult Function(String errorMessage) errorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loadingState,
+    TResult? Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult? Function(String errorMessage)? errorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loadingState,
+    TResult Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult Function(String errorMessage)? errorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_DishesFetchedSuccessState value)
+        dishesFetchedSuccessState,
+    required TResult Function(_ErrorState value) errorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult? Function(_ErrorState value)? errorState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult Function(_ErrorState value)? errorState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -234,12 +382,18 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
+class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   const _$InitialImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HomeState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'HomeState.initial'));
   }
 
   @override
@@ -255,6 +409,10 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loadingState,
+    required TResult Function(List<ProductModel> products)
+        dishesFetchedSuccessState,
+    required TResult Function(String errorMessage) errorState,
   }) {
     return initial();
   }
@@ -263,6 +421,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loadingState,
+    TResult? Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult? Function(String errorMessage)? errorState,
   }) {
     return initial?.call();
   }
@@ -271,6 +432,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loadingState,
+    TResult Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult Function(String errorMessage)? errorState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -283,6 +447,10 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_DishesFetchedSuccessState value)
+        dishesFetchedSuccessState,
+    required TResult Function(_ErrorState value) errorState,
   }) {
     return initial(this);
   }
@@ -291,6 +459,10 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult? Function(_ErrorState value)? errorState,
   }) {
     return initial?.call(this);
   }
@@ -299,6 +471,10 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult Function(_ErrorState value)? errorState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -310,4 +486,459 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements HomeState {
   const factory _Initial() = _$InitialImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingStateImplCopyWith<$Res> {
+  factory _$$LoadingStateImplCopyWith(
+          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
+      __$$LoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$LoadingStateImpl>
+    implements _$$LoadingStateImplCopyWith<$Res> {
+  __$$LoadingStateImplCopyWithImpl(
+      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingStateImpl with DiagnosticableTreeMixin implements _LoadingState {
+  const _$LoadingStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeState.loadingState()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'HomeState.loadingState'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingState,
+    required TResult Function(List<ProductModel> products)
+        dishesFetchedSuccessState,
+    required TResult Function(String errorMessage) errorState,
+  }) {
+    return loadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingState,
+    TResult? Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult? Function(String errorMessage)? errorState,
+  }) {
+    return loadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingState,
+    TResult Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult Function(String errorMessage)? errorState,
+    required TResult orElse(),
+  }) {
+    if (loadingState != null) {
+      return loadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_DishesFetchedSuccessState value)
+        dishesFetchedSuccessState,
+    required TResult Function(_ErrorState value) errorState,
+  }) {
+    return loadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult? Function(_ErrorState value)? errorState,
+  }) {
+    return loadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult Function(_ErrorState value)? errorState,
+    required TResult orElse(),
+  }) {
+    if (loadingState != null) {
+      return loadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingState implements HomeState {
+  const factory _LoadingState() = _$LoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$DishesFetchedSuccessStateImplCopyWith<$Res> {
+  factory _$$DishesFetchedSuccessStateImplCopyWith(
+          _$DishesFetchedSuccessStateImpl value,
+          $Res Function(_$DishesFetchedSuccessStateImpl) then) =
+      __$$DishesFetchedSuccessStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<ProductModel> products});
+}
+
+/// @nodoc
+class __$$DishesFetchedSuccessStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$DishesFetchedSuccessStateImpl>
+    implements _$$DishesFetchedSuccessStateImplCopyWith<$Res> {
+  __$$DishesFetchedSuccessStateImplCopyWithImpl(
+      _$DishesFetchedSuccessStateImpl _value,
+      $Res Function(_$DishesFetchedSuccessStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? products = null,
+  }) {
+    return _then(_$DishesFetchedSuccessStateImpl(
+      products: null == products
+          ? _value._products
+          : products // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DishesFetchedSuccessStateImpl
+    with DiagnosticableTreeMixin
+    implements _DishesFetchedSuccessState {
+  const _$DishesFetchedSuccessStateImpl(
+      {required final List<ProductModel> products})
+      : _products = products;
+
+  final List<ProductModel> _products;
+  @override
+  List<ProductModel> get products {
+    if (_products is EqualUnmodifiableListView) return _products;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_products);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeState.dishesFetchedSuccessState(products: $products)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HomeState.dishesFetchedSuccessState'))
+      ..add(DiagnosticsProperty('products', products));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DishesFetchedSuccessStateImpl &&
+            const DeepCollectionEquality().equals(other._products, _products));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_products));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DishesFetchedSuccessStateImplCopyWith<_$DishesFetchedSuccessStateImpl>
+      get copyWith => __$$DishesFetchedSuccessStateImplCopyWithImpl<
+          _$DishesFetchedSuccessStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingState,
+    required TResult Function(List<ProductModel> products)
+        dishesFetchedSuccessState,
+    required TResult Function(String errorMessage) errorState,
+  }) {
+    return dishesFetchedSuccessState(products);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingState,
+    TResult? Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult? Function(String errorMessage)? errorState,
+  }) {
+    return dishesFetchedSuccessState?.call(products);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingState,
+    TResult Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult Function(String errorMessage)? errorState,
+    required TResult orElse(),
+  }) {
+    if (dishesFetchedSuccessState != null) {
+      return dishesFetchedSuccessState(products);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_DishesFetchedSuccessState value)
+        dishesFetchedSuccessState,
+    required TResult Function(_ErrorState value) errorState,
+  }) {
+    return dishesFetchedSuccessState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult? Function(_ErrorState value)? errorState,
+  }) {
+    return dishesFetchedSuccessState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult Function(_ErrorState value)? errorState,
+    required TResult orElse(),
+  }) {
+    if (dishesFetchedSuccessState != null) {
+      return dishesFetchedSuccessState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DishesFetchedSuccessState implements HomeState {
+  const factory _DishesFetchedSuccessState(
+          {required final List<ProductModel> products}) =
+      _$DishesFetchedSuccessStateImpl;
+
+  List<ProductModel> get products;
+  @JsonKey(ignore: true)
+  _$$DishesFetchedSuccessStateImplCopyWith<_$DishesFetchedSuccessStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ErrorStateImplCopyWith<$Res> {
+  factory _$$ErrorStateImplCopyWith(
+          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
+      __$$ErrorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$ErrorStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$ErrorStateImpl>
+    implements _$$ErrorStateImplCopyWith<$Res> {
+  __$$ErrorStateImplCopyWithImpl(
+      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$ErrorStateImpl(
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ErrorStateImpl with DiagnosticableTreeMixin implements _ErrorState {
+  const _$ErrorStateImpl({required this.errorMessage});
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeState.errorState(errorMessage: $errorMessage)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HomeState.errorState'))
+      ..add(DiagnosticsProperty('errorMessage', errorMessage));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorStateImpl &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
+      __$$ErrorStateImplCopyWithImpl<_$ErrorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingState,
+    required TResult Function(List<ProductModel> products)
+        dishesFetchedSuccessState,
+    required TResult Function(String errorMessage) errorState,
+  }) {
+    return errorState(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingState,
+    TResult? Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult? Function(String errorMessage)? errorState,
+  }) {
+    return errorState?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingState,
+    TResult Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult Function(String errorMessage)? errorState,
+    required TResult orElse(),
+  }) {
+    if (errorState != null) {
+      return errorState(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_DishesFetchedSuccessState value)
+        dishesFetchedSuccessState,
+    required TResult Function(_ErrorState value) errorState,
+  }) {
+    return errorState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult? Function(_ErrorState value)? errorState,
+  }) {
+    return errorState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult Function(_ErrorState value)? errorState,
+    required TResult orElse(),
+  }) {
+    if (errorState != null) {
+      return errorState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ErrorState implements HomeState {
+  const factory _ErrorState({required final String errorMessage}) =
+      _$ErrorStateImpl;
+
+  String get errorMessage;
+  @JsonKey(ignore: true)
+  _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

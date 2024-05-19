@@ -10,7 +10,7 @@ class HomeRepository {
     ServerStrings.rapidApiKey: ServerConfig.rapidApiKey,
     ServerStrings.rapidApiHost: ServerConfig.rapidApiHost,
   };
-  Future getAllDishes() async {
+  Future<List<ProductModel>> getAllDishes() async {
     final response = await dio.get(
       ServerConfig.baseUrl,
       options: Options(headers: headers),
@@ -20,5 +20,6 @@ class HomeRepository {
     List<ProductModel> products =
         responseList.map((e) => ProductModel.fromJson(e)).toList();
     log(products.length.toString());
+    return products;
   }
 }
