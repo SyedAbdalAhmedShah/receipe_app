@@ -11,14 +11,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthRepository {
   ServerClient serverClient = serviceLocator.get<ServerClient>();
-  Future createEmailPassword(
-      {required String email,
-      required String password,
-      required String userName}) async {
-    User user = await serverClient.account.create(
-        userId: ID.unique(), email: email, password: password, name: userName);
+  Future createEmailPassword({required String email, required String password, required String userName}) async {
+    User user =
+        await serverClient.account.create(userId: ID.unique(), email: email, password: password, name: userName);
 
-    log("TOEKN DATA ${user.toMap()} === ${user} ");
+    log("TOEKN DATA ${user.toMap()} === $user ");
     final userData = {
       ServerStrings.userId: user.$id.toString(),
       ServerStrings.userName: userName,
@@ -31,8 +28,7 @@ class AuthRepository {
         documentId: ID.unique(),
         data: userData);
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setString(
-        ServerStrings.userDataKey, json.encode(document.data));
+    preferences.setString(ServerStrings.userDataKey, json.encode(document.data));
   }
 
   Future signInWithEmailAndPassword({
