@@ -8,8 +8,8 @@ class AppLoading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: LoadingAnimationWidget.twistingDots(
-        leftDotColor: const Color(0xFF1A1A3F),
-        rightDotColor: const Color(0xFFEA3799),
+        leftDotColor: Theme.of(context).colorScheme.secondary,
+        rightDotColor: Theme.of(context).colorScheme.primary,
         size: 50,
       ),
     );
