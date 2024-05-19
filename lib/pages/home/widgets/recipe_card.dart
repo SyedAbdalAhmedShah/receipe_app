@@ -9,8 +9,8 @@ import 'package:receipe_app/pages/home/product_detail_screen.dart';
 import 'package:receipe_app/utils/extensions.dart';
 
 class ReciepCard extends StatelessWidget {
-  final int index;
-  const ReciepCard({required this.index, super.key});
+  final ProductModel productModel;
+  const ReciepCard({required this.productModel, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class ReciepCard extends StatelessWidget {
           children: [
             const Gap(10),
             Hero(
-              tag: "Product-Image $index",
+              tag: "Product-Image ${productModel.id}",
               transitionOnUserGestures: true,
               child: Container(
                 width: double.maxFinite,
@@ -50,7 +50,7 @@ class ReciepCard extends StatelessWidget {
             ),
             const Gap(20),
             Text(
-              "Classic Greek Salad",
+              "${productModel.title}",
               textAlign: TextAlign.center,
               style: Styles.miniBold.copyWith(color: AppColor.borderColor),
             ),
