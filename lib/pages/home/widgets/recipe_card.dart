@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import 'package:gap/gap.dart';
@@ -15,14 +17,16 @@ class ReciepCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return InkWell(
-      // onTap: () => context.push(
-      //   child: ProdcutDetailScreen(
-      //     heroTag: "Product-Image $index",
-      //     productModel: const ProductModel(
-      //         productImage: AppAssets.dummyDish,
-      //         prodcutName: "Classic Greek Salad"),
-      //   ),
-      // ),
+      onTap: () {
+        log("message", level: 2);
+        // context.push(
+        // child: ProdcutDetailScreen(
+        //   heroTag: "Product-Image $index",
+        //   productModel: const ProductModel(
+        //       productImage: AppAssets.dummyDish,
+        //       prodcutName: "Classic Greek Salad"),
+        // ),
+      },
       child: Container(
         width: size.width * 0.5,
         height: size.height * 0.23,
@@ -72,13 +76,20 @@ class ReciepCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                CircleAvatar(
-                  radius: 15,
-                  backgroundColor: AppColor.whiteColor,
-                  child: Image(
-                    image: const AssetImage(AppAssets.favIcon),
-                    height: 20,
-                    color: Theme.of(context).colorScheme.primary,
+                InkWell(
+                  borderRadius: BorderRadius.circular(15.0),
+                  splashColor: Theme.of(context).colorScheme.primary,
+                  onTap: () {
+                    print('HI');
+                  },
+                  child: CircleAvatar(
+                    radius: 15,
+                    backgroundColor: AppColor.whiteColor,
+                    child: Image(
+                      image: const AssetImage(AppAssets.favIcon),
+                      height: 20,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
                 )
               ],
