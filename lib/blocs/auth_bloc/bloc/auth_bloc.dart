@@ -24,6 +24,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthLoadingState());
         await authRepository.signInWithEmailAndPassword(
             email: event.email, password: event.password);
+        String? userData = sharedPref.getString(ServerStrings.userDataKey);
+        AppUser appUser = AppUser.fromJson(json.decode(userData!));
+        CacheUser.user = appUser;
         emit(SignedState());
       } on AppwriteException catch (appW) {
         emit(AuthFailureState(errorMessage: appW.message.toString()));
@@ -57,7 +60,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           if (userData != null) {
             AppUser appUser = AppUser.fromJson(json.decode(userData));
             CacheUser.user = appUser;
-
+    
             emit(UserAlreadyLoggedIn());
           } else {
             emit(NewUserLogedIn());

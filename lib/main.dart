@@ -61,9 +61,11 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   void initState() {
+   
     authBloc = BlocProvider.of<AuthBloc>(context);
+    //  authBloc.add(LogOut());
     authBloc.add(IsUserLogedIn());
-    AuthRepository().logOut();
+  
     super.initState();
   }
 

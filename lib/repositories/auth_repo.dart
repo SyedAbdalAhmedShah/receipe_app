@@ -17,7 +17,10 @@ class AuthRepository {
       required String userName}) async {
     User user = await serverClient.account.create(
         userId: ID.unique(), email: email, password: password, name: userName);
-
+    DocumentList userDoc = await serverClient.databases.listDocuments(
+        databaseId: ServerConfig.recipeDatabaseId,
+        collectionId: ServerConfig.userCollectionId,
+        queries: [Query.equal(ServerStrings.userId, user.$id)]);
     log("TOEKN DATA ${user.toMap()} === $user ");
     final userData = {
       ServerStrings.userId: user.$id.toString(),
@@ -43,8 +46,10 @@ class AuthRepository {
       email: email,
       password: password,
     );
+
     User user = await serverClient.account.get();
     log("USER ${user.toMap()}");
+
     SharedPreferences preferences = await SharedPreferences.getInstance();
     preferences.setString(ServerStrings.userDataKey, json.encode(user.toMap()));
     log("DEVICE INFO ${session.deviceBrand} == ${session.deviceModel} == ${session.deviceName} == ${session.userId}");
@@ -52,5 +57,14 @@ class AuthRepository {
 
   Future logOut() async {
     await serverClient.account.deleteSessions();
+  }
+
+  Future getUser({required String documentId}) async {
+    Document doc = await serverClient.databases.getDocument(
+        databaseId: ServerConfig.recipeDatabaseId,
+        collectionId: ServerConfig.userCollectionId,
+        documentId: documentId);
+    final data = doc.data;
+    log('User doc data $data');
   }
 }

@@ -39,7 +39,7 @@ class AppStrings {
   static const String enterName = "Enter Name";
   static const String confirmPass = "Confirm Password";
   static const String retypePass = "Retype Password ";
-  static const String dumyName = "Hello, Jega!";
+  static const String dumyName = "Jega!";
   static const String hellow = "Hello,";
 
   static const String newRecipes = "New Recipes";
