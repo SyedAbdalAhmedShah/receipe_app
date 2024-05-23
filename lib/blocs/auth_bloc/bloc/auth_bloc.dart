@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:appwrite/appwrite.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -52,12 +53,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(AuthLoadingState());
 
           String? userData = sharedPref.getString(ServerStrings.userDataKey);
+          log("User data $userData");
           if (userData != null) {
             AppUser appUser = AppUser.fromJson(json.decode(userData));
             CacheUser.user = appUser;
 
             emit(UserAlreadyLoggedIn());
           } else {
+            add(LogOut());
             emit(NewUserLogedIn());
           }
 
