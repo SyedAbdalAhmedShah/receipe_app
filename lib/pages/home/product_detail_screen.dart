@@ -5,6 +5,7 @@ import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/model/prodcut/product_model.dart';
 
+
 class ProdcutDetailScreen extends StatelessWidget {
   final ProductModel productModel;
   final String heroTag;

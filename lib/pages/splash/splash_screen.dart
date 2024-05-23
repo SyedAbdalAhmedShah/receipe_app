@@ -13,8 +13,11 @@ class Splashscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-          image:
-              DecorationImage(image: AssetImage(AppAssets.splashBackground))),
+          image: DecorationImage(
+              image: AssetImage(
+                AppAssets.splashBackground,
+              ),
+              fit: BoxFit.fill)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Center(

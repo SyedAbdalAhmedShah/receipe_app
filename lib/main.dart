@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => AuthBloc(),
         ),
-         BlocProvider(
+        BlocProvider(
           create: (context) => HomeBloc(),
         ),
       ],
