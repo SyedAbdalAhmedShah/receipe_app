@@ -17,6 +17,7 @@ class ReciepCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return InkWell(
+      borderRadius: BorderRadius.circular(15.0),
       onTap: () {
         log("message", level: 2);
         // context.push(
@@ -29,7 +30,7 @@ class ReciepCard extends StatelessWidget {
       },
       child: Container(
         width: size.width * 0.5,
-        height: size.height * 0.23,
+        height: size.height * 0.3,
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary.withOpacity(0.4),

@@ -114,7 +114,7 @@ class _HomeSectionState extends State<_HomeSection> {
             const ReciepeCategorySection(),
             const Gap(20),
             SizedBox(
-              height: size.height * 0.3,
+              height: size.height * 0.38,
               child: ListView.separated(
                 itemCount: 10,
                 scrollDirection: Axis.horizontal,
