@@ -20,18 +20,21 @@ mixin _$HomeEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() fetchDishes,
+    required TResult Function() markAsFavourtire,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? fetchDishes,
+    TResult? Function()? markAsFavourtire,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? fetchDishes,
+    TResult Function()? markAsFavourtire,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$HomeEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_FetchDishes value) fetchDishes,
+    required TResult Function(_MarkAsFavourtire value) markAsFavourtire,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_FetchDishes value)? fetchDishes,
+    TResult? Function(_MarkAsFavourtire value)? markAsFavourtire,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_FetchDishes value)? fetchDishes,
+    TResult Function(_MarkAsFavourtire value)? markAsFavourtire,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,6 +125,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() fetchDishes,
+    required TResult Function() markAsFavourtire,
   }) {
     return started();
   }
@@ -128,6 +135,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? fetchDishes,
+    TResult? Function()? markAsFavourtire,
   }) {
     return started?.call();
   }
@@ -137,6 +145,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? fetchDishes,
+    TResult Function()? markAsFavourtire,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -150,6 +159,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_FetchDishes value) fetchDishes,
+    required TResult Function(_MarkAsFavourtire value) markAsFavourtire,
   }) {
     return started(this);
   }
@@ -159,6 +169,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_FetchDishes value)? fetchDishes,
+    TResult? Function(_MarkAsFavourtire value)? markAsFavourtire,
   }) {
     return started?.call(this);
   }
@@ -168,6 +179,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_FetchDishes value)? fetchDishes,
+    TResult Function(_MarkAsFavourtire value)? markAsFavourtire,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -227,6 +239,7 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() fetchDishes,
+    required TResult Function() markAsFavourtire,
   }) {
     return fetchDishes();
   }
@@ -236,6 +249,7 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? fetchDishes,
+    TResult? Function()? markAsFavourtire,
   }) {
     return fetchDishes?.call();
   }
@@ -245,6 +259,7 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? fetchDishes,
+    TResult Function()? markAsFavourtire,
     required TResult orElse(),
   }) {
     if (fetchDishes != null) {
@@ -258,6 +273,7 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_FetchDishes value) fetchDishes,
+    required TResult Function(_MarkAsFavourtire value) markAsFavourtire,
   }) {
     return fetchDishes(this);
   }
@@ -267,6 +283,7 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_FetchDishes value)? fetchDishes,
+    TResult? Function(_MarkAsFavourtire value)? markAsFavourtire,
   }) {
     return fetchDishes?.call(this);
   }
@@ -276,6 +293,7 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_FetchDishes value)? fetchDishes,
+    TResult Function(_MarkAsFavourtire value)? markAsFavourtire,
     required TResult orElse(),
   }) {
     if (fetchDishes != null) {
@@ -287,6 +305,122 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
 
 abstract class _FetchDishes implements HomeEvent {
   const factory _FetchDishes() = _$FetchDishesImpl;
+}
+
+/// @nodoc
+abstract class _$$MarkAsFavourtireImplCopyWith<$Res> {
+  factory _$$MarkAsFavourtireImplCopyWith(_$MarkAsFavourtireImpl value,
+          $Res Function(_$MarkAsFavourtireImpl) then) =
+      __$$MarkAsFavourtireImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MarkAsFavourtireImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$MarkAsFavourtireImpl>
+    implements _$$MarkAsFavourtireImplCopyWith<$Res> {
+  __$$MarkAsFavourtireImplCopyWithImpl(_$MarkAsFavourtireImpl _value,
+      $Res Function(_$MarkAsFavourtireImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MarkAsFavourtireImpl
+    with DiagnosticableTreeMixin
+    implements _MarkAsFavourtire {
+  const _$MarkAsFavourtireImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeEvent.markAsFavourtire()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'HomeEvent.markAsFavourtire'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$MarkAsFavourtireImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() fetchDishes,
+    required TResult Function() markAsFavourtire,
+  }) {
+    return markAsFavourtire();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? fetchDishes,
+    TResult? Function()? markAsFavourtire,
+  }) {
+    return markAsFavourtire?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? fetchDishes,
+    TResult Function()? markAsFavourtire,
+    required TResult orElse(),
+  }) {
+    if (markAsFavourtire != null) {
+      return markAsFavourtire();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_FetchDishes value) fetchDishes,
+    required TResult Function(_MarkAsFavourtire value) markAsFavourtire,
+  }) {
+    return markAsFavourtire(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_FetchDishes value)? fetchDishes,
+    TResult? Function(_MarkAsFavourtire value)? markAsFavourtire,
+  }) {
+    return markAsFavourtire?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_FetchDishes value)? fetchDishes,
+    TResult Function(_MarkAsFavourtire value)? markAsFavourtire,
+    required TResult orElse(),
+  }) {
+    if (markAsFavourtire != null) {
+      return markAsFavourtire(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MarkAsFavourtire implements HomeEvent {
+  const factory _MarkAsFavourtire() = _$MarkAsFavourtireImpl;
 }
 
 /// @nodoc
