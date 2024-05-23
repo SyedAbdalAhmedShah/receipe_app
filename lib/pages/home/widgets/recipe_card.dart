@@ -43,12 +43,12 @@ class ReciepCard extends StatelessWidget {
               tag: "Product-Image ${productModel.id}",
               transitionOnUserGestures: true,
               child: AppCacheImage(
-                height: size.height * 0.15,
+                height: size.height * 0.2,
                 width: double.maxFinite,
                 image: productModel.image!,
               ),
             ),
-            const Gap(20),
+            const Gap(10),
             Text(
               "${productModel.title}",
               textAlign: TextAlign.left,
@@ -57,7 +57,7 @@ class ReciepCard extends StatelessWidget {
               style: Styles.miniBold.copyWith(
                   color: AppColor.borderColor, fontWeight: FontWeight.w700),
             ),
-            const Gap(20),
+            const Gap(5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
