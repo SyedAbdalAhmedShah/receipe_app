@@ -24,5 +24,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(_ErrorState(errorMessage: error.toString()));
       }
     });
+
+    on<_MarkAsFavourtire>(
+      (event, emit) {
+        emit(const _LoadingState());
+        try {
+          
+        } catch (error) {}
+      },
+    );
   }
 }

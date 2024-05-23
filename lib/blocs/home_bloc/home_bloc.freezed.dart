@@ -21,6 +21,7 @@ mixin _$HomeEvent {
     required TResult Function() started,
     required TResult Function() fetchDishes,
     required TResult Function() markAsFavourtire,
+    required TResult Function() markAsUnFavourtire,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$HomeEvent {
     TResult? Function()? started,
     TResult? Function()? fetchDishes,
     TResult? Function()? markAsFavourtire,
+    TResult? Function()? markAsUnFavourtire,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$HomeEvent {
     TResult Function()? started,
     TResult Function()? fetchDishes,
     TResult Function()? markAsFavourtire,
+    TResult Function()? markAsUnFavourtire,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$HomeEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_FetchDishes value) fetchDishes,
     required TResult Function(_MarkAsFavourtire value) markAsFavourtire,
+    required TResult Function(_MarkAsUnFavourtire value) markAsUnFavourtire,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$HomeEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_FetchDishes value)? fetchDishes,
     TResult? Function(_MarkAsFavourtire value)? markAsFavourtire,
+    TResult? Function(_MarkAsUnFavourtire value)? markAsUnFavourtire,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$HomeEvent {
     TResult Function(_Started value)? started,
     TResult Function(_FetchDishes value)? fetchDishes,
     TResult Function(_MarkAsFavourtire value)? markAsFavourtire,
+    TResult Function(_MarkAsUnFavourtire value)? markAsUnFavourtire,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,6 +132,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function() started,
     required TResult Function() fetchDishes,
     required TResult Function() markAsFavourtire,
+    required TResult Function() markAsUnFavourtire,
   }) {
     return started();
   }
@@ -136,6 +143,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function()? started,
     TResult? Function()? fetchDishes,
     TResult? Function()? markAsFavourtire,
+    TResult? Function()? markAsUnFavourtire,
   }) {
     return started?.call();
   }
@@ -146,6 +154,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function()? started,
     TResult Function()? fetchDishes,
     TResult Function()? markAsFavourtire,
+    TResult Function()? markAsUnFavourtire,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -160,6 +169,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_FetchDishes value) fetchDishes,
     required TResult Function(_MarkAsFavourtire value) markAsFavourtire,
+    required TResult Function(_MarkAsUnFavourtire value) markAsUnFavourtire,
   }) {
     return started(this);
   }
@@ -170,6 +180,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_FetchDishes value)? fetchDishes,
     TResult? Function(_MarkAsFavourtire value)? markAsFavourtire,
+    TResult? Function(_MarkAsUnFavourtire value)? markAsUnFavourtire,
   }) {
     return started?.call(this);
   }
@@ -180,6 +191,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_FetchDishes value)? fetchDishes,
     TResult Function(_MarkAsFavourtire value)? markAsFavourtire,
+    TResult Function(_MarkAsUnFavourtire value)? markAsUnFavourtire,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -240,6 +252,7 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
     required TResult Function() started,
     required TResult Function() fetchDishes,
     required TResult Function() markAsFavourtire,
+    required TResult Function() markAsUnFavourtire,
   }) {
     return fetchDishes();
   }
@@ -250,6 +263,7 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
     TResult? Function()? started,
     TResult? Function()? fetchDishes,
     TResult? Function()? markAsFavourtire,
+    TResult? Function()? markAsUnFavourtire,
   }) {
     return fetchDishes?.call();
   }
@@ -260,6 +274,7 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
     TResult Function()? started,
     TResult Function()? fetchDishes,
     TResult Function()? markAsFavourtire,
+    TResult Function()? markAsUnFavourtire,
     required TResult orElse(),
   }) {
     if (fetchDishes != null) {
@@ -274,6 +289,7 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
     required TResult Function(_Started value) started,
     required TResult Function(_FetchDishes value) fetchDishes,
     required TResult Function(_MarkAsFavourtire value) markAsFavourtire,
+    required TResult Function(_MarkAsUnFavourtire value) markAsUnFavourtire,
   }) {
     return fetchDishes(this);
   }
@@ -284,6 +300,7 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
     TResult? Function(_Started value)? started,
     TResult? Function(_FetchDishes value)? fetchDishes,
     TResult? Function(_MarkAsFavourtire value)? markAsFavourtire,
+    TResult? Function(_MarkAsUnFavourtire value)? markAsUnFavourtire,
   }) {
     return fetchDishes?.call(this);
   }
@@ -294,6 +311,7 @@ class _$FetchDishesImpl with DiagnosticableTreeMixin implements _FetchDishes {
     TResult Function(_Started value)? started,
     TResult Function(_FetchDishes value)? fetchDishes,
     TResult Function(_MarkAsFavourtire value)? markAsFavourtire,
+    TResult Function(_MarkAsUnFavourtire value)? markAsUnFavourtire,
     required TResult orElse(),
   }) {
     if (fetchDishes != null) {
@@ -356,6 +374,7 @@ class _$MarkAsFavourtireImpl
     required TResult Function() started,
     required TResult Function() fetchDishes,
     required TResult Function() markAsFavourtire,
+    required TResult Function() markAsUnFavourtire,
   }) {
     return markAsFavourtire();
   }
@@ -366,6 +385,7 @@ class _$MarkAsFavourtireImpl
     TResult? Function()? started,
     TResult? Function()? fetchDishes,
     TResult? Function()? markAsFavourtire,
+    TResult? Function()? markAsUnFavourtire,
   }) {
     return markAsFavourtire?.call();
   }
@@ -376,6 +396,7 @@ class _$MarkAsFavourtireImpl
     TResult Function()? started,
     TResult Function()? fetchDishes,
     TResult Function()? markAsFavourtire,
+    TResult Function()? markAsUnFavourtire,
     required TResult orElse(),
   }) {
     if (markAsFavourtire != null) {
@@ -390,6 +411,7 @@ class _$MarkAsFavourtireImpl
     required TResult Function(_Started value) started,
     required TResult Function(_FetchDishes value) fetchDishes,
     required TResult Function(_MarkAsFavourtire value) markAsFavourtire,
+    required TResult Function(_MarkAsUnFavourtire value) markAsUnFavourtire,
   }) {
     return markAsFavourtire(this);
   }
@@ -400,6 +422,7 @@ class _$MarkAsFavourtireImpl
     TResult? Function(_Started value)? started,
     TResult? Function(_FetchDishes value)? fetchDishes,
     TResult? Function(_MarkAsFavourtire value)? markAsFavourtire,
+    TResult? Function(_MarkAsUnFavourtire value)? markAsUnFavourtire,
   }) {
     return markAsFavourtire?.call(this);
   }
@@ -410,6 +433,7 @@ class _$MarkAsFavourtireImpl
     TResult Function(_Started value)? started,
     TResult Function(_FetchDishes value)? fetchDishes,
     TResult Function(_MarkAsFavourtire value)? markAsFavourtire,
+    TResult Function(_MarkAsUnFavourtire value)? markAsUnFavourtire,
     required TResult orElse(),
   }) {
     if (markAsFavourtire != null) {
@@ -424,11 +448,135 @@ abstract class _MarkAsFavourtire implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$MarkAsUnFavourtireImplCopyWith<$Res> {
+  factory _$$MarkAsUnFavourtireImplCopyWith(_$MarkAsUnFavourtireImpl value,
+          $Res Function(_$MarkAsUnFavourtireImpl) then) =
+      __$$MarkAsUnFavourtireImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MarkAsUnFavourtireImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$MarkAsUnFavourtireImpl>
+    implements _$$MarkAsUnFavourtireImplCopyWith<$Res> {
+  __$$MarkAsUnFavourtireImplCopyWithImpl(_$MarkAsUnFavourtireImpl _value,
+      $Res Function(_$MarkAsUnFavourtireImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MarkAsUnFavourtireImpl
+    with DiagnosticableTreeMixin
+    implements _MarkAsUnFavourtire {
+  const _$MarkAsUnFavourtireImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeEvent.markAsUnFavourtire()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'HomeEvent.markAsUnFavourtire'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$MarkAsUnFavourtireImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() fetchDishes,
+    required TResult Function() markAsFavourtire,
+    required TResult Function() markAsUnFavourtire,
+  }) {
+    return markAsUnFavourtire();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? fetchDishes,
+    TResult? Function()? markAsFavourtire,
+    TResult? Function()? markAsUnFavourtire,
+  }) {
+    return markAsUnFavourtire?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? fetchDishes,
+    TResult Function()? markAsFavourtire,
+    TResult Function()? markAsUnFavourtire,
+    required TResult orElse(),
+  }) {
+    if (markAsUnFavourtire != null) {
+      return markAsUnFavourtire();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_FetchDishes value) fetchDishes,
+    required TResult Function(_MarkAsFavourtire value) markAsFavourtire,
+    required TResult Function(_MarkAsUnFavourtire value) markAsUnFavourtire,
+  }) {
+    return markAsUnFavourtire(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_FetchDishes value)? fetchDishes,
+    TResult? Function(_MarkAsFavourtire value)? markAsFavourtire,
+    TResult? Function(_MarkAsUnFavourtire value)? markAsUnFavourtire,
+  }) {
+    return markAsUnFavourtire?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_FetchDishes value)? fetchDishes,
+    TResult Function(_MarkAsFavourtire value)? markAsFavourtire,
+    TResult Function(_MarkAsUnFavourtire value)? markAsUnFavourtire,
+    required TResult orElse(),
+  }) {
+    if (markAsUnFavourtire != null) {
+      return markAsUnFavourtire(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MarkAsUnFavourtire implements HomeEvent {
+  const factory _MarkAsUnFavourtire() = _$MarkAsUnFavourtireImpl;
+}
+
+/// @nodoc
 mixin _$HomeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadingState,
+    required TResult Function() markAsUnfavourtireState,
+    required TResult Function() markAsFavourtireState,
     required TResult Function(List<ProductModel> products)
         dishesFetchedSuccessState,
     required TResult Function(String errorMessage) errorState,
@@ -438,6 +586,8 @@ mixin _$HomeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadingState,
+    TResult? Function()? markAsUnfavourtireState,
+    TResult? Function()? markAsFavourtireState,
     TResult? Function(List<ProductModel> products)? dishesFetchedSuccessState,
     TResult? Function(String errorMessage)? errorState,
   }) =>
@@ -446,6 +596,8 @@ mixin _$HomeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadingState,
+    TResult Function()? markAsUnfavourtireState,
+    TResult Function()? markAsFavourtireState,
     TResult Function(List<ProductModel> products)? dishesFetchedSuccessState,
     TResult Function(String errorMessage)? errorState,
     required TResult orElse(),
@@ -455,6 +607,10 @@ mixin _$HomeState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_MarkAsUnfavourtireState value)
+        markAsUnfavourtireState,
+    required TResult Function(_MarkAsFavourtireState value)
+        markAsFavourtireState,
     required TResult Function(_DishesFetchedSuccessState value)
         dishesFetchedSuccessState,
     required TResult Function(_ErrorState value) errorState,
@@ -464,6 +620,8 @@ mixin _$HomeState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     TResult? Function(_DishesFetchedSuccessState value)?
         dishesFetchedSuccessState,
     TResult? Function(_ErrorState value)? errorState,
@@ -473,6 +631,8 @@ mixin _$HomeState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     TResult Function(_DishesFetchedSuccessState value)?
         dishesFetchedSuccessState,
     TResult Function(_ErrorState value)? errorState,
@@ -544,6 +704,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadingState,
+    required TResult Function() markAsUnfavourtireState,
+    required TResult Function() markAsFavourtireState,
     required TResult Function(List<ProductModel> products)
         dishesFetchedSuccessState,
     required TResult Function(String errorMessage) errorState,
@@ -556,6 +718,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadingState,
+    TResult? Function()? markAsUnfavourtireState,
+    TResult? Function()? markAsFavourtireState,
     TResult? Function(List<ProductModel> products)? dishesFetchedSuccessState,
     TResult? Function(String errorMessage)? errorState,
   }) {
@@ -567,6 +731,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadingState,
+    TResult Function()? markAsUnfavourtireState,
+    TResult Function()? markAsFavourtireState,
     TResult Function(List<ProductModel> products)? dishesFetchedSuccessState,
     TResult Function(String errorMessage)? errorState,
     required TResult orElse(),
@@ -582,6 +748,10 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_MarkAsUnfavourtireState value)
+        markAsUnfavourtireState,
+    required TResult Function(_MarkAsFavourtireState value)
+        markAsFavourtireState,
     required TResult Function(_DishesFetchedSuccessState value)
         dishesFetchedSuccessState,
     required TResult Function(_ErrorState value) errorState,
@@ -594,6 +764,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     TResult? Function(_DishesFetchedSuccessState value)?
         dishesFetchedSuccessState,
     TResult? Function(_ErrorState value)? errorState,
@@ -606,6 +778,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     TResult Function(_DishesFetchedSuccessState value)?
         dishesFetchedSuccessState,
     TResult Function(_ErrorState value)? errorState,
@@ -668,6 +842,8 @@ class _$LoadingStateImpl with DiagnosticableTreeMixin implements _LoadingState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadingState,
+    required TResult Function() markAsUnfavourtireState,
+    required TResult Function() markAsFavourtireState,
     required TResult Function(List<ProductModel> products)
         dishesFetchedSuccessState,
     required TResult Function(String errorMessage) errorState,
@@ -680,6 +856,8 @@ class _$LoadingStateImpl with DiagnosticableTreeMixin implements _LoadingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadingState,
+    TResult? Function()? markAsUnfavourtireState,
+    TResult? Function()? markAsFavourtireState,
     TResult? Function(List<ProductModel> products)? dishesFetchedSuccessState,
     TResult? Function(String errorMessage)? errorState,
   }) {
@@ -691,6 +869,8 @@ class _$LoadingStateImpl with DiagnosticableTreeMixin implements _LoadingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadingState,
+    TResult Function()? markAsUnfavourtireState,
+    TResult Function()? markAsFavourtireState,
     TResult Function(List<ProductModel> products)? dishesFetchedSuccessState,
     TResult Function(String errorMessage)? errorState,
     required TResult orElse(),
@@ -706,6 +886,10 @@ class _$LoadingStateImpl with DiagnosticableTreeMixin implements _LoadingState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_MarkAsUnfavourtireState value)
+        markAsUnfavourtireState,
+    required TResult Function(_MarkAsFavourtireState value)
+        markAsFavourtireState,
     required TResult Function(_DishesFetchedSuccessState value)
         dishesFetchedSuccessState,
     required TResult Function(_ErrorState value) errorState,
@@ -718,6 +902,8 @@ class _$LoadingStateImpl with DiagnosticableTreeMixin implements _LoadingState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     TResult? Function(_DishesFetchedSuccessState value)?
         dishesFetchedSuccessState,
     TResult? Function(_ErrorState value)? errorState,
@@ -730,6 +916,8 @@ class _$LoadingStateImpl with DiagnosticableTreeMixin implements _LoadingState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     TResult Function(_DishesFetchedSuccessState value)?
         dishesFetchedSuccessState,
     TResult Function(_ErrorState value)? errorState,
@@ -744,6 +932,293 @@ class _$LoadingStateImpl with DiagnosticableTreeMixin implements _LoadingState {
 
 abstract class _LoadingState implements HomeState {
   const factory _LoadingState() = _$LoadingStateImpl;
+}
+
+/// @nodoc
+abstract class _$$MarkAsUnfavourtireStateImplCopyWith<$Res> {
+  factory _$$MarkAsUnfavourtireStateImplCopyWith(
+          _$MarkAsUnfavourtireStateImpl value,
+          $Res Function(_$MarkAsUnfavourtireStateImpl) then) =
+      __$$MarkAsUnfavourtireStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MarkAsUnfavourtireStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$MarkAsUnfavourtireStateImpl>
+    implements _$$MarkAsUnfavourtireStateImplCopyWith<$Res> {
+  __$$MarkAsUnfavourtireStateImplCopyWithImpl(
+      _$MarkAsUnfavourtireStateImpl _value,
+      $Res Function(_$MarkAsUnfavourtireStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MarkAsUnfavourtireStateImpl
+    with DiagnosticableTreeMixin
+    implements _MarkAsUnfavourtireState {
+  const _$MarkAsUnfavourtireStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeState.markAsUnfavourtireState()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'HomeState.markAsUnfavourtireState'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MarkAsUnfavourtireStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingState,
+    required TResult Function() markAsUnfavourtireState,
+    required TResult Function() markAsFavourtireState,
+    required TResult Function(List<ProductModel> products)
+        dishesFetchedSuccessState,
+    required TResult Function(String errorMessage) errorState,
+  }) {
+    return markAsUnfavourtireState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingState,
+    TResult? Function()? markAsUnfavourtireState,
+    TResult? Function()? markAsFavourtireState,
+    TResult? Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult? Function(String errorMessage)? errorState,
+  }) {
+    return markAsUnfavourtireState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingState,
+    TResult Function()? markAsUnfavourtireState,
+    TResult Function()? markAsFavourtireState,
+    TResult Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult Function(String errorMessage)? errorState,
+    required TResult orElse(),
+  }) {
+    if (markAsUnfavourtireState != null) {
+      return markAsUnfavourtireState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_MarkAsUnfavourtireState value)
+        markAsUnfavourtireState,
+    required TResult Function(_MarkAsFavourtireState value)
+        markAsFavourtireState,
+    required TResult Function(_DishesFetchedSuccessState value)
+        dishesFetchedSuccessState,
+    required TResult Function(_ErrorState value) errorState,
+  }) {
+    return markAsUnfavourtireState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
+    TResult? Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult? Function(_ErrorState value)? errorState,
+  }) {
+    return markAsUnfavourtireState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
+    TResult Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult Function(_ErrorState value)? errorState,
+    required TResult orElse(),
+  }) {
+    if (markAsUnfavourtireState != null) {
+      return markAsUnfavourtireState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MarkAsUnfavourtireState implements HomeState {
+  const factory _MarkAsUnfavourtireState() = _$MarkAsUnfavourtireStateImpl;
+}
+
+/// @nodoc
+abstract class _$$MarkAsFavourtireStateImplCopyWith<$Res> {
+  factory _$$MarkAsFavourtireStateImplCopyWith(
+          _$MarkAsFavourtireStateImpl value,
+          $Res Function(_$MarkAsFavourtireStateImpl) then) =
+      __$$MarkAsFavourtireStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MarkAsFavourtireStateImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$MarkAsFavourtireStateImpl>
+    implements _$$MarkAsFavourtireStateImplCopyWith<$Res> {
+  __$$MarkAsFavourtireStateImplCopyWithImpl(_$MarkAsFavourtireStateImpl _value,
+      $Res Function(_$MarkAsFavourtireStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MarkAsFavourtireStateImpl
+    with DiagnosticableTreeMixin
+    implements _MarkAsFavourtireState {
+  const _$MarkAsFavourtireStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeState.markAsFavourtireState()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'HomeState.markAsFavourtireState'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MarkAsFavourtireStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingState,
+    required TResult Function() markAsUnfavourtireState,
+    required TResult Function() markAsFavourtireState,
+    required TResult Function(List<ProductModel> products)
+        dishesFetchedSuccessState,
+    required TResult Function(String errorMessage) errorState,
+  }) {
+    return markAsFavourtireState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingState,
+    TResult? Function()? markAsUnfavourtireState,
+    TResult? Function()? markAsFavourtireState,
+    TResult? Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult? Function(String errorMessage)? errorState,
+  }) {
+    return markAsFavourtireState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingState,
+    TResult Function()? markAsUnfavourtireState,
+    TResult Function()? markAsFavourtireState,
+    TResult Function(List<ProductModel> products)? dishesFetchedSuccessState,
+    TResult Function(String errorMessage)? errorState,
+    required TResult orElse(),
+  }) {
+    if (markAsFavourtireState != null) {
+      return markAsFavourtireState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_MarkAsUnfavourtireState value)
+        markAsUnfavourtireState,
+    required TResult Function(_MarkAsFavourtireState value)
+        markAsFavourtireState,
+    required TResult Function(_DishesFetchedSuccessState value)
+        dishesFetchedSuccessState,
+    required TResult Function(_ErrorState value) errorState,
+  }) {
+    return markAsFavourtireState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
+    TResult? Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult? Function(_ErrorState value)? errorState,
+  }) {
+    return markAsFavourtireState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
+    TResult Function(_DishesFetchedSuccessState value)?
+        dishesFetchedSuccessState,
+    TResult Function(_ErrorState value)? errorState,
+    required TResult orElse(),
+  }) {
+    if (markAsFavourtireState != null) {
+      return markAsFavourtireState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MarkAsFavourtireState implements HomeState {
+  const factory _MarkAsFavourtireState() = _$MarkAsFavourtireStateImpl;
 }
 
 /// @nodoc
@@ -833,6 +1308,8 @@ class _$DishesFetchedSuccessStateImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadingState,
+    required TResult Function() markAsUnfavourtireState,
+    required TResult Function() markAsFavourtireState,
     required TResult Function(List<ProductModel> products)
         dishesFetchedSuccessState,
     required TResult Function(String errorMessage) errorState,
@@ -845,6 +1322,8 @@ class _$DishesFetchedSuccessStateImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadingState,
+    TResult? Function()? markAsUnfavourtireState,
+    TResult? Function()? markAsFavourtireState,
     TResult? Function(List<ProductModel> products)? dishesFetchedSuccessState,
     TResult? Function(String errorMessage)? errorState,
   }) {
@@ -856,6 +1335,8 @@ class _$DishesFetchedSuccessStateImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadingState,
+    TResult Function()? markAsUnfavourtireState,
+    TResult Function()? markAsFavourtireState,
     TResult Function(List<ProductModel> products)? dishesFetchedSuccessState,
     TResult Function(String errorMessage)? errorState,
     required TResult orElse(),
@@ -871,6 +1352,10 @@ class _$DishesFetchedSuccessStateImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_MarkAsUnfavourtireState value)
+        markAsUnfavourtireState,
+    required TResult Function(_MarkAsFavourtireState value)
+        markAsFavourtireState,
     required TResult Function(_DishesFetchedSuccessState value)
         dishesFetchedSuccessState,
     required TResult Function(_ErrorState value) errorState,
@@ -883,6 +1368,8 @@ class _$DishesFetchedSuccessStateImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     TResult? Function(_DishesFetchedSuccessState value)?
         dishesFetchedSuccessState,
     TResult? Function(_ErrorState value)? errorState,
@@ -895,6 +1382,8 @@ class _$DishesFetchedSuccessStateImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     TResult Function(_DishesFetchedSuccessState value)?
         dishesFetchedSuccessState,
     TResult Function(_ErrorState value)? errorState,
@@ -993,6 +1482,8 @@ class _$ErrorStateImpl with DiagnosticableTreeMixin implements _ErrorState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadingState,
+    required TResult Function() markAsUnfavourtireState,
+    required TResult Function() markAsFavourtireState,
     required TResult Function(List<ProductModel> products)
         dishesFetchedSuccessState,
     required TResult Function(String errorMessage) errorState,
@@ -1005,6 +1496,8 @@ class _$ErrorStateImpl with DiagnosticableTreeMixin implements _ErrorState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadingState,
+    TResult? Function()? markAsUnfavourtireState,
+    TResult? Function()? markAsFavourtireState,
     TResult? Function(List<ProductModel> products)? dishesFetchedSuccessState,
     TResult? Function(String errorMessage)? errorState,
   }) {
@@ -1016,6 +1509,8 @@ class _$ErrorStateImpl with DiagnosticableTreeMixin implements _ErrorState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadingState,
+    TResult Function()? markAsUnfavourtireState,
+    TResult Function()? markAsFavourtireState,
     TResult Function(List<ProductModel> products)? dishesFetchedSuccessState,
     TResult Function(String errorMessage)? errorState,
     required TResult orElse(),
@@ -1031,6 +1526,10 @@ class _$ErrorStateImpl with DiagnosticableTreeMixin implements _ErrorState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_MarkAsUnfavourtireState value)
+        markAsUnfavourtireState,
+    required TResult Function(_MarkAsFavourtireState value)
+        markAsFavourtireState,
     required TResult Function(_DishesFetchedSuccessState value)
         dishesFetchedSuccessState,
     required TResult Function(_ErrorState value) errorState,
@@ -1043,6 +1542,8 @@ class _$ErrorStateImpl with DiagnosticableTreeMixin implements _ErrorState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     TResult? Function(_DishesFetchedSuccessState value)?
         dishesFetchedSuccessState,
     TResult? Function(_ErrorState value)? errorState,
@@ -1055,6 +1556,8 @@ class _$ErrorStateImpl with DiagnosticableTreeMixin implements _ErrorState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     TResult Function(_DishesFetchedSuccessState value)?
         dishesFetchedSuccessState,
     TResult Function(_ErrorState value)? errorState,

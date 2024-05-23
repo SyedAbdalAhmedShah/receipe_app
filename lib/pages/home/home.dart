@@ -23,6 +23,7 @@ class HomeScreen extends StatelessWidget {
       body: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
           return state.when(
+            
             initial: () {
               context.read<HomeBloc>().add(const HomeEvent.fetchDishes());
               return const SizedBox.shrink();
