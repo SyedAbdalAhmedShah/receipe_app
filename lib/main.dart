@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:receipe_app/blocs/auth_bloc/bloc/auth_bloc.dart';
@@ -8,6 +10,7 @@ import 'package:receipe_app/config/theme_config.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/pages/home/bottom_nav_screen.dart';
 import 'package:receipe_app/pages/splash/splash_screen.dart';
+import 'package:receipe_app/repositories/auth_repo.dart';
 import 'package:receipe_app/utils/dependency.dart';
 
 void main() async {
@@ -60,6 +63,7 @@ class _LandingPageState extends State<LandingPage> {
   void initState() {
     authBloc = BlocProvider.of<AuthBloc>(context);
     authBloc.add(IsUserLogedIn());
+    AuthRepository().logOut();
     super.initState();
   }
 
@@ -68,6 +72,7 @@ class _LandingPageState extends State<LandingPage> {
     return BlocBuilder(
       bloc: authBloc,
       builder: (context, state) {
+        log("State is $state");
         if (state is NewUserLogedIn) {
           return const Splashscreen();
         } else {

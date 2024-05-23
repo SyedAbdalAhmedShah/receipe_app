@@ -7,7 +7,7 @@ class ThemeConfig {
           brightness: Brightness.dark,
           primary: AppColor.primaryColor,
           secondary: AppColor.secondaryColor,
-        ),
+        ),                     
         useMaterial3: true,
       );
 }

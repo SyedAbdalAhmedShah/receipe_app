@@ -60,7 +60,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
             emit(UserAlreadyLoggedIn());
           } else {
-            add(LogOut());
             emit(NewUserLogedIn());
           }
 
