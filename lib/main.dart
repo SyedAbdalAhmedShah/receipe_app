@@ -10,7 +10,6 @@ import 'package:receipe_app/config/theme_config.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/pages/home/bottom_nav_screen.dart';
 import 'package:receipe_app/pages/splash/splash_screen.dart';
-import 'package:receipe_app/repositories/auth_repo.dart';
 import 'package:receipe_app/utils/dependency.dart';
 
 void main() async {
