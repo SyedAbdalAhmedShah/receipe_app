@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:receipe_app/model/prodcut/product_model.dart';
@@ -14,7 +16,11 @@ class FavourtireDishBloc extends Bloc<FavourtireDishEvent, FavourtireDishState>
       emit(const _LoadingState());
       try {
         await markAsFavourtire(event.favDish);
-      } catch (error) {}
+        emit(const _MarkAsFavourtireState());
+      } catch (error) {
+        log("error happened $error");
+        emit(const _MarkAsFavourtireState());
+      }
     });
   }
 }

@@ -11,6 +11,8 @@ mixin FavouriteDishRepository {
         databaseId: ServerConfig.recipeDatabaseId,
         collectionId: ServerConfig.userCollectionId,
         documentId: "664fa9e696be83a16537",
-        data: {ServerStrings.favourite: favDish.toJson()});
+        data: {
+          ServerStrings.favourite: [favDish.toJson()]
+        });
   }
 }

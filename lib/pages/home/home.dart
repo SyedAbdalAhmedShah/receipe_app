@@ -24,11 +24,12 @@ class HomeScreen extends StatelessWidget {
       body: BlocListener<FavourtireDishBloc, FavourtireDishState>(
         listener: (context, state) {
           state.when(
-              initial: () => print('initState'),
+              initial: () => debugPrint('initState'),
               loadingState: () => debugPrint("Loading state"),
               markAsUnfavourtireState: () =>
                   debugPrint("markAsUnfavourtireState"),
-              markAsFavourtireState: () => debugPrint("markAsFavourtireState"));
+              markAsFavourtireState: () => debugPrint("markAsFavourtireState"),
+              failureState: () {});
         },
         child: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
