@@ -12,6 +12,7 @@ mixin FavouriteDishRepository {
         databaseId: ServerConfig.recipeDatabaseId,
         collectionId: ServerConfig.userCollectionId,
         documentId: CacheUser.user?.documentId ?? "",
+        
         data: {
           ServerStrings.favourite: [
             {
