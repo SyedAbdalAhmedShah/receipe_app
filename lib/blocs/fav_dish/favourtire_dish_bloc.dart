@@ -11,7 +11,6 @@ part 'favourtire_dish_bloc.freezed.dart';
 
 class FavourtireDishBloc extends Bloc<FavourtireDishEvent, FavourtireDishState>
     with FavouriteDishRepository {
-      
   FavourtireDishBloc() : super(const _Initial()) {
     on<_MarkAsFavourtire>((event, emit) async {
       emit(const _LoadingState());
@@ -23,5 +22,15 @@ class FavourtireDishBloc extends Bloc<FavourtireDishEvent, FavourtireDishState>
         emit(const _MarkAsFavourtireState());
       }
     });
+    on<_MyFavouriteDishes>(
+      (event, emit) async {
+        emit(const _LoadingState());
+        try {
+          await getMyFavDishes();
+        } catch (error) {
+          log("Error $error");
+        }
+      },
+    );
   }
 }

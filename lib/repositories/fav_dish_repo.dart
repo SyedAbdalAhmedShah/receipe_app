@@ -1,3 +1,7 @@
+import 'dart:developer';
+
+import 'package:appwrite/appwrite.dart';
+import 'package:appwrite/models.dart';
 import 'package:receipe_app/config/server_config.dart';
 import 'package:receipe_app/constants/server_strings.dart';
 import 'package:receipe_app/dependency_injection/server_client.dart';
@@ -12,7 +16,6 @@ mixin FavouriteDishRepository {
         databaseId: ServerConfig.recipeDatabaseId,
         collectionId: ServerConfig.userCollectionId,
         documentId: CacheUser.user?.documentId ?? "",
-        
         data: {
           ServerStrings.favourite: [
             {
@@ -22,5 +25,14 @@ mixin FavouriteDishRepository {
             }
           ]
         });
+  }
+
+  Future getMyFavDishes() async {
+    DocumentList docList = await serverClient.databases.listDocuments(
+        databaseId: ServerConfig.recipeDatabaseId,
+        collectionId: ServerConfig.favCollectionId,
+        queries: [Query.equal("users  ", CacheUser.user?.documentId ?? "")]);
+
+    log("Fav doc list ${docList.documents.length}");
   }
 }
