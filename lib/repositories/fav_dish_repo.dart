@@ -12,7 +12,13 @@ mixin FavouriteDishRepository {
         collectionId: ServerConfig.userCollectionId,
         documentId: "664fa9e696be83a16537",
         data: {
-          ServerStrings.favourite: [favDish.toJson()]
+          ServerStrings.favourite: [
+            {
+              ServerStrings.recipeId: favDish.id,
+              ServerStrings.receipeName: favDish.title,
+              ServerStrings.recipeImage: favDish.image,
+            }
+          ]
         });
   }
 }
