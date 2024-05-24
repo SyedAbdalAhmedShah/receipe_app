@@ -1,6 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:receipe_app/constants/server_strings.dart';
 
 part 'app_user.freezed.dart';
 part 'app_user.g.dart';
@@ -11,7 +12,8 @@ class AppUser with _$AppUser {
     String? userId,
     String? userName,
     String? createdAt,
-    String? profileUrl, 
+    @JsonKey(name: ServerStrings.docId) String? documentId,
+    String? profileUrl,
     @JsonKey(name: "\$databaseId") String? databaseId,
     @JsonKey(name: "\$collectionId") String? collectionId,
   }) = _AppUser;

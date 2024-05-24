@@ -10,6 +10,7 @@ class ServerStrings {
   static const String recipeId = "recipeId";
   static const String receipeName = "receipeName";
   static const String recipeImage = "recipeImage";
+  static const String docId = "documentId";
 
   // SharedPrefrences Key //
   static const String userDataKey = "userData";

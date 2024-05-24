@@ -23,6 +23,8 @@ mixin _$AppUser {
   String? get userId => throw _privateConstructorUsedError;
   String? get userName => throw _privateConstructorUsedError;
   String? get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(name: ServerStrings.docId)
+  String? get documentId => throw _privateConstructorUsedError;
   String? get profileUrl => throw _privateConstructorUsedError;
   @JsonKey(name: "\$databaseId")
   String? get databaseId => throw _privateConstructorUsedError;
@@ -43,6 +45,7 @@ abstract class $AppUserCopyWith<$Res> {
       {String? userId,
       String? userName,
       String? createdAt,
+      @JsonKey(name: ServerStrings.docId) String? documentId,
       String? profileUrl,
       @JsonKey(name: "\$databaseId") String? databaseId,
       @JsonKey(name: "\$collectionId") String? collectionId});
@@ -64,6 +67,7 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
     Object? userId = freezed,
     Object? userName = freezed,
     Object? createdAt = freezed,
+    Object? documentId = freezed,
     Object? profileUrl = freezed,
     Object? databaseId = freezed,
     Object? collectionId = freezed,
@@ -80,6 +84,10 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      documentId: freezed == documentId
+          ? _value.documentId
+          : documentId // ignore: cast_nullable_to_non_nullable
               as String?,
       profileUrl: freezed == profileUrl
           ? _value.profileUrl
@@ -108,6 +116,7 @@ abstract class _$$AppUserImplCopyWith<$Res> implements $AppUserCopyWith<$Res> {
       {String? userId,
       String? userName,
       String? createdAt,
+      @JsonKey(name: ServerStrings.docId) String? documentId,
       String? profileUrl,
       @JsonKey(name: "\$databaseId") String? databaseId,
       @JsonKey(name: "\$collectionId") String? collectionId});
@@ -127,6 +136,7 @@ class __$$AppUserImplCopyWithImpl<$Res>
     Object? userId = freezed,
     Object? userName = freezed,
     Object? createdAt = freezed,
+    Object? documentId = freezed,
     Object? profileUrl = freezed,
     Object? databaseId = freezed,
     Object? collectionId = freezed,
@@ -143,6 +153,10 @@ class __$$AppUserImplCopyWithImpl<$Res>
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      documentId: freezed == documentId
+          ? _value.documentId
+          : documentId // ignore: cast_nullable_to_non_nullable
               as String?,
       profileUrl: freezed == profileUrl
           ? _value.profileUrl
@@ -167,6 +181,7 @@ class _$AppUserImpl implements _AppUser {
       {this.userId,
       this.userName,
       this.createdAt,
+      @JsonKey(name: ServerStrings.docId) this.documentId,
       this.profileUrl,
       @JsonKey(name: "\$databaseId") this.databaseId,
       @JsonKey(name: "\$collectionId") this.collectionId});
@@ -181,6 +196,9 @@ class _$AppUserImpl implements _AppUser {
   @override
   final String? createdAt;
   @override
+  @JsonKey(name: ServerStrings.docId)
+  final String? documentId;
+  @override
   final String? profileUrl;
   @override
   @JsonKey(name: "\$databaseId")
@@ -191,7 +209,7 @@ class _$AppUserImpl implements _AppUser {
 
   @override
   String toString() {
-    return 'AppUser(userId: $userId, userName: $userName, createdAt: $createdAt, profileUrl: $profileUrl, databaseId: $databaseId, collectionId: $collectionId)';
+    return 'AppUser(userId: $userId, userName: $userName, createdAt: $createdAt, documentId: $documentId, profileUrl: $profileUrl, databaseId: $databaseId, collectionId: $collectionId)';
   }
 
   @override
@@ -204,6 +222,8 @@ class _$AppUserImpl implements _AppUser {
                 other.userName == userName) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
+            (identical(other.documentId, documentId) ||
+                other.documentId == documentId) &&
             (identical(other.profileUrl, profileUrl) ||
                 other.profileUrl == profileUrl) &&
             (identical(other.databaseId, databaseId) ||
@@ -215,7 +235,7 @@ class _$AppUserImpl implements _AppUser {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, userId, userName, createdAt,
-      profileUrl, databaseId, collectionId);
+      documentId, profileUrl, databaseId, collectionId);
 
   @JsonKey(ignore: true)
   @override
@@ -236,6 +256,7 @@ abstract class _AppUser implements AppUser {
           {final String? userId,
           final String? userName,
           final String? createdAt,
+          @JsonKey(name: ServerStrings.docId) final String? documentId,
           final String? profileUrl,
           @JsonKey(name: "\$databaseId") final String? databaseId,
           @JsonKey(name: "\$collectionId") final String? collectionId}) =
@@ -249,6 +270,9 @@ abstract class _AppUser implements AppUser {
   String? get userName;
   @override
   String? get createdAt;
+  @override
+  @JsonKey(name: ServerStrings.docId)
+  String? get documentId;
   @override
   String? get profileUrl;
   @override
