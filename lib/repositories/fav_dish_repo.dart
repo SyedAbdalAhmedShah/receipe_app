@@ -1,6 +1,7 @@
 import 'package:receipe_app/config/server_config.dart';
 import 'package:receipe_app/constants/server_strings.dart';
 import 'package:receipe_app/dependency_injection/server_client.dart';
+import 'package:receipe_app/model/cache_user.dart';
 import 'package:receipe_app/model/prodcut/product_model.dart';
 import 'package:receipe_app/utils/dependency.dart';
 
@@ -10,7 +11,7 @@ mixin FavouriteDishRepository {
     serverClient.databases.updateDocument(
         databaseId: ServerConfig.recipeDatabaseId,
         collectionId: ServerConfig.userCollectionId,
-        documentId: "664fa9e696be83a16537",
+        documentId: CacheUser.user?.documentId ?? "",
         data: {
           ServerStrings.favourite: [
             {
