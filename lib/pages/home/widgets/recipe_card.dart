@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-
 import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
@@ -81,7 +80,9 @@ class ReciepCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15.0),
                   splashColor: Theme.of(context).colorScheme.primary,
                   onTap: () {
-                    print('HI');
+                    // context
+                    //     .read<FavourtireDishBloc>()
+                    //     .add(const FavourtireDishEvent.markAsFavourtire(favDish:productModel ));
                   },
                   child: CircleAvatar(
                     radius: 15,

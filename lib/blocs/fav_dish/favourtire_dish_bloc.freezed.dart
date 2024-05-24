@@ -19,21 +19,21 @@ mixin _$FavourtireDishEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() markAsFavourtire,
+    required TResult Function(ProductModel favDish) markAsFavourtire,
     required TResult Function() markAsUnFavourtire,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? markAsFavourtire,
+    TResult? Function(ProductModel favDish)? markAsFavourtire,
     TResult? Function()? markAsUnFavourtire,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? markAsFavourtire,
+    TResult Function(ProductModel favDish)? markAsFavourtire,
     TResult Function()? markAsUnFavourtire,
     required TResult orElse(),
   }) =>
@@ -119,7 +119,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() markAsFavourtire,
+    required TResult Function(ProductModel favDish) markAsFavourtire,
     required TResult Function() markAsUnFavourtire,
   }) {
     return started();
@@ -129,7 +129,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? markAsFavourtire,
+    TResult? Function(ProductModel favDish)? markAsFavourtire,
     TResult? Function()? markAsUnFavourtire,
   }) {
     return started?.call();
@@ -139,7 +139,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? markAsFavourtire,
+    TResult Function(ProductModel favDish)? markAsFavourtire,
     TResult Function()? markAsUnFavourtire,
     required TResult orElse(),
   }) {
@@ -193,6 +193,10 @@ abstract class _$$MarkAsFavourtireImplCopyWith<$Res> {
   factory _$$MarkAsFavourtireImplCopyWith(_$MarkAsFavourtireImpl value,
           $Res Function(_$MarkAsFavourtireImpl) then) =
       __$$MarkAsFavourtireImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ProductModel favDish});
+
+  $ProductModelCopyWith<$Res> get favDish;
 }
 
 /// @nodoc
@@ -202,57 +206,90 @@ class __$$MarkAsFavourtireImplCopyWithImpl<$Res>
   __$$MarkAsFavourtireImplCopyWithImpl(_$MarkAsFavourtireImpl _value,
       $Res Function(_$MarkAsFavourtireImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? favDish = null,
+  }) {
+    return _then(_$MarkAsFavourtireImpl(
+      favDish: null == favDish
+          ? _value.favDish
+          : favDish // ignore: cast_nullable_to_non_nullable
+              as ProductModel,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ProductModelCopyWith<$Res> get favDish {
+    return $ProductModelCopyWith<$Res>(_value.favDish, (value) {
+      return _then(_value.copyWith(favDish: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$MarkAsFavourtireImpl implements _MarkAsFavourtire {
-  const _$MarkAsFavourtireImpl();
+  const _$MarkAsFavourtireImpl({required this.favDish});
+
+  @override
+  final ProductModel favDish;
 
   @override
   String toString() {
-    return 'FavourtireDishEvent.markAsFavourtire()';
+    return 'FavourtireDishEvent.markAsFavourtire(favDish: $favDish)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$MarkAsFavourtireImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$MarkAsFavourtireImpl &&
+            (identical(other.favDish, favDish) || other.favDish == favDish));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, favDish);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MarkAsFavourtireImplCopyWith<_$MarkAsFavourtireImpl> get copyWith =>
+      __$$MarkAsFavourtireImplCopyWithImpl<_$MarkAsFavourtireImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() markAsFavourtire,
+    required TResult Function(ProductModel favDish) markAsFavourtire,
     required TResult Function() markAsUnFavourtire,
   }) {
-    return markAsFavourtire();
+    return markAsFavourtire(favDish);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? markAsFavourtire,
+    TResult? Function(ProductModel favDish)? markAsFavourtire,
     TResult? Function()? markAsUnFavourtire,
   }) {
-    return markAsFavourtire?.call();
+    return markAsFavourtire?.call(favDish);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? markAsFavourtire,
+    TResult Function(ProductModel favDish)? markAsFavourtire,
     TResult Function()? markAsUnFavourtire,
     required TResult orElse(),
   }) {
     if (markAsFavourtire != null) {
-      return markAsFavourtire();
+      return markAsFavourtire(favDish);
     }
     return orElse();
   }
@@ -293,7 +330,13 @@ class _$MarkAsFavourtireImpl implements _MarkAsFavourtire {
 }
 
 abstract class _MarkAsFavourtire implements FavourtireDishEvent {
-  const factory _MarkAsFavourtire() = _$MarkAsFavourtireImpl;
+  const factory _MarkAsFavourtire({required final ProductModel favDish}) =
+      _$MarkAsFavourtireImpl;
+
+  ProductModel get favDish;
+  @JsonKey(ignore: true)
+  _$$MarkAsFavourtireImplCopyWith<_$MarkAsFavourtireImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -335,7 +378,7 @@ class _$MarkAsUnFavourtireImpl implements _MarkAsUnFavourtire {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() markAsFavourtire,
+    required TResult Function(ProductModel favDish) markAsFavourtire,
     required TResult Function() markAsUnFavourtire,
   }) {
     return markAsUnFavourtire();
@@ -345,7 +388,7 @@ class _$MarkAsUnFavourtireImpl implements _MarkAsUnFavourtire {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? markAsFavourtire,
+    TResult? Function(ProductModel favDish)? markAsFavourtire,
     TResult? Function()? markAsUnFavourtire,
   }) {
     return markAsUnFavourtire?.call();
@@ -355,7 +398,7 @@ class _$MarkAsUnFavourtireImpl implements _MarkAsUnFavourtire {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? markAsFavourtire,
+    TResult Function(ProductModel favDish)? markAsFavourtire,
     TResult Function()? markAsUnFavourtire,
     required TResult orElse(),
   }) {
@@ -409,6 +452,7 @@ mixin _$FavourtireDishState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loadingState,
     required TResult Function() markAsUnfavourtireState,
     required TResult Function() markAsFavourtireState,
   }) =>
@@ -416,6 +460,7 @@ mixin _$FavourtireDishState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loadingState,
     TResult? Function()? markAsUnfavourtireState,
     TResult? Function()? markAsFavourtireState,
   }) =>
@@ -423,6 +468,7 @@ mixin _$FavourtireDishState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loadingState,
     TResult Function()? markAsUnfavourtireState,
     TResult Function()? markAsFavourtireState,
     required TResult orElse(),
@@ -431,6 +477,7 @@ mixin _$FavourtireDishState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
     required TResult Function(_MarkAsUnfavourtireState value)
         markAsUnfavourtireState,
     required TResult Function(_MarkAsFavourtireState value)
@@ -440,6 +487,7 @@ mixin _$FavourtireDishState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
     TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
   }) =>
@@ -447,6 +495,7 @@ mixin _$FavourtireDishState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
     TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     required TResult orElse(),
@@ -511,6 +560,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loadingState,
     required TResult Function() markAsUnfavourtireState,
     required TResult Function() markAsFavourtireState,
   }) {
@@ -521,6 +571,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loadingState,
     TResult? Function()? markAsUnfavourtireState,
     TResult? Function()? markAsFavourtireState,
   }) {
@@ -531,6 +582,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loadingState,
     TResult Function()? markAsUnfavourtireState,
     TResult Function()? markAsFavourtireState,
     required TResult orElse(),
@@ -545,6 +597,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
     required TResult Function(_MarkAsUnfavourtireState value)
         markAsUnfavourtireState,
     required TResult Function(_MarkAsFavourtireState value)
@@ -557,6 +610,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
     TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
   }) {
@@ -567,6 +621,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
     TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     required TResult orElse(),
@@ -580,6 +635,122 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements FavourtireDishState {
   const factory _Initial() = _$InitialImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingStateImplCopyWith<$Res> {
+  factory _$$LoadingStateImplCopyWith(
+          _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
+      __$$LoadingStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingStateImplCopyWithImpl<$Res>
+    extends _$FavourtireDishStateCopyWithImpl<$Res, _$LoadingStateImpl>
+    implements _$$LoadingStateImplCopyWith<$Res> {
+  __$$LoadingStateImplCopyWithImpl(
+      _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingStateImpl implements _LoadingState {
+  const _$LoadingStateImpl();
+
+  @override
+  String toString() {
+    return 'FavourtireDishState.loadingState()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingState,
+    required TResult Function() markAsUnfavourtireState,
+    required TResult Function() markAsFavourtireState,
+  }) {
+    return loadingState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingState,
+    TResult? Function()? markAsUnfavourtireState,
+    TResult? Function()? markAsFavourtireState,
+  }) {
+    return loadingState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingState,
+    TResult Function()? markAsUnfavourtireState,
+    TResult Function()? markAsFavourtireState,
+    required TResult orElse(),
+  }) {
+    if (loadingState != null) {
+      return loadingState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_MarkAsUnfavourtireState value)
+        markAsUnfavourtireState,
+    required TResult Function(_MarkAsFavourtireState value)
+        markAsFavourtireState,
+  }) {
+    return loadingState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
+  }) {
+    return loadingState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
+    required TResult orElse(),
+  }) {
+    if (loadingState != null) {
+      return loadingState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingState implements FavourtireDishState {
+  const factory _LoadingState() = _$LoadingStateImpl;
 }
 
 /// @nodoc
@@ -625,6 +796,7 @@ class _$MarkAsUnfavourtireStateImpl implements _MarkAsUnfavourtireState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loadingState,
     required TResult Function() markAsUnfavourtireState,
     required TResult Function() markAsFavourtireState,
   }) {
@@ -635,6 +807,7 @@ class _$MarkAsUnfavourtireStateImpl implements _MarkAsUnfavourtireState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loadingState,
     TResult? Function()? markAsUnfavourtireState,
     TResult? Function()? markAsFavourtireState,
   }) {
@@ -645,6 +818,7 @@ class _$MarkAsUnfavourtireStateImpl implements _MarkAsUnfavourtireState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loadingState,
     TResult Function()? markAsUnfavourtireState,
     TResult Function()? markAsFavourtireState,
     required TResult orElse(),
@@ -659,6 +833,7 @@ class _$MarkAsUnfavourtireStateImpl implements _MarkAsUnfavourtireState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
     required TResult Function(_MarkAsUnfavourtireState value)
         markAsUnfavourtireState,
     required TResult Function(_MarkAsFavourtireState value)
@@ -671,6 +846,7 @@ class _$MarkAsUnfavourtireStateImpl implements _MarkAsUnfavourtireState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
     TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
   }) {
@@ -681,6 +857,7 @@ class _$MarkAsUnfavourtireStateImpl implements _MarkAsUnfavourtireState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
     TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     required TResult orElse(),
@@ -737,6 +914,7 @@ class _$MarkAsFavourtireStateImpl implements _MarkAsFavourtireState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loadingState,
     required TResult Function() markAsUnfavourtireState,
     required TResult Function() markAsFavourtireState,
   }) {
@@ -747,6 +925,7 @@ class _$MarkAsFavourtireStateImpl implements _MarkAsFavourtireState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loadingState,
     TResult? Function()? markAsUnfavourtireState,
     TResult? Function()? markAsFavourtireState,
   }) {
@@ -757,6 +936,7 @@ class _$MarkAsFavourtireStateImpl implements _MarkAsFavourtireState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loadingState,
     TResult Function()? markAsUnfavourtireState,
     TResult Function()? markAsFavourtireState,
     required TResult orElse(),
@@ -771,6 +951,7 @@ class _$MarkAsFavourtireStateImpl implements _MarkAsFavourtireState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
     required TResult Function(_MarkAsUnfavourtireState value)
         markAsUnfavourtireState,
     required TResult Function(_MarkAsFavourtireState value)
@@ -783,6 +964,7 @@ class _$MarkAsFavourtireStateImpl implements _MarkAsFavourtireState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
     TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
   }) {
@@ -793,6 +975,7 @@ class _$MarkAsFavourtireStateImpl implements _MarkAsFavourtireState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
     TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     required TResult orElse(),

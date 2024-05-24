@@ -6,7 +6,7 @@ class ServerStrings {
   static const String userName = "userName";
   static const String rapidApiKey = "X-RapidAPI-Key";
   static const String rapidApiHost = "X-RapidAPI-Host";
-
+  static const String favourite = "favourite";
   // SharedPrefrences Key //
   static const String userDataKey = "userData";
 }

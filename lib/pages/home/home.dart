@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:receipe_app/blocs/fav_dish/favourtire_dish_bloc.dart';
 import 'package:receipe_app/blocs/home_bloc/home_bloc.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
@@ -20,25 +21,34 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<HomeBloc, HomeState>(
-        builder: (context, state) {
-          return state.when(
-            
-            initial: () {
-              context.read<HomeBloc>().add(const HomeEvent.fetchDishes());
-              return const SizedBox.shrink();
-            },
-            loadingState: () => const Center(
-              child: AppLoading(),
-            ),
-            dishesFetchedSuccessState: (products) => _HomeSection(
-              products: products,
-            ),
-            errorState: (errorMessage) => Center(
-              child: Text(errorMessage),
-            ),
-          );
+      body: BlocListener<FavourtireDishBloc, FavourtireDishState>(
+        listener: (context, state) {
+          state.when(
+              initial: () => print('initState'),
+              loadingState: () => debugPrint("Loading state"),
+              markAsUnfavourtireState: () =>
+                  debugPrint("markAsUnfavourtireState"),
+              markAsFavourtireState: () => debugPrint("markAsFavourtireState"));
         },
+        child: BlocBuilder<HomeBloc, HomeState>(
+          builder: (context, state) {
+            return state.when(
+              initial: () {
+                context.read<HomeBloc>().add(const HomeEvent.fetchDishes());
+                return const SizedBox.shrink();
+              },
+              loadingState: () => const Center(
+                child: AppLoading(),
+              ),
+              dishesFetchedSuccessState: (products) => _HomeSection(
+                products: products,
+              ),
+              errorState: (errorMessage) => Center(
+                child: Text(errorMessage),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
