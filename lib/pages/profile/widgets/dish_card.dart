@@ -1,13 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/styles.dart';
 
 class DishCard extends StatelessWidget {
-  const DishCard({super.key});
+  final String? title;
+  final String? minutes;
+  final String? cheifName;
+
+  const DishCard({this.cheifName, this.minutes, this.title, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,6 @@ class DishCard extends StatelessWidget {
         ),
       ),
       decoration: BoxDecoration(
-        boxShadow: kElevationToShadow[0],
         borderRadius: BorderRadius.circular(15.0),
         image: DecorationImage(
           image: const AssetImage(
@@ -55,10 +56,13 @@ class DishCard extends StatelessWidget {
                   maxLines: 2,
                   style: Styles.miniBold.copyWith(fontSize: 20),
                 ),
-                Text(
-                  'By Chef John',
-                  maxLines: 2,
-                  style: Styles.hintTextStyle.copyWith(color: Colors.white),
+                Visibility(
+                  visible: cheifName != null,
+                  child: Text(
+                    'By Chef John',
+                    maxLines: 2,
+                    style: Styles.hintTextStyle.copyWith(color: Colors.white),
+                  ),
                 ),
               ],
             ),
@@ -66,14 +70,22 @@ class DishCard extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                const Icon(Icons.av_timer_outlined, color: AppColor.whiteColor),
-                const Gap(5),
-                const Text(
-                  '20 min',
-                  maxLines: 2,
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.w500),
+                Visibility(
+                  visible: minutes != null,
+                  child: const Row(
+                    children: [
+                      Icon(Icons.av_timer_outlined, color: AppColor.whiteColor),
+                      Gap(5),
+                      Text(
+                        '20 min',
+                        maxLines: 2,
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
                 ),
                 const Gap(10),
                 InkWell(

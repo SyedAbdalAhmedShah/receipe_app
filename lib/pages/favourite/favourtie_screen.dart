@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:receipe_app/blocs/fav_dish/favourtire_dish_bloc.dart';
 import 'package:receipe_app/constants/app_strings.dart';
+import 'package:receipe_app/pages/profile/widgets/dish_card.dart';
 import 'package:receipe_app/repositories/fav_dish_repo.dart';
 
 class FavouriteScreen extends StatefulWidget {
@@ -31,7 +32,13 @@ class _FavouriteScreenState extends State<FavouriteScreen>
         ),
       ),
       body: Center(
-        child: ListView(),
+        child: ListView.separated(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          itemCount: 10,
+          separatorBuilder: (context, index) =>
+              const Padding(padding: EdgeInsets.only(bottom: 10)),
+          itemBuilder: (context, index) => DishCard(),
+        ),
       ),
     );
   }
