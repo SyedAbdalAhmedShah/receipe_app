@@ -22,11 +22,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> with HomeRepository {
         emit(_ErrorState(errorMessage: error.toString()));
       }
     });
-    on<_UploadProducts>(
-      (event, emit) {
-        emit(const _LoadingState());
-        try {} catch (error) {}
-      },
-    );
+  
   }
 }

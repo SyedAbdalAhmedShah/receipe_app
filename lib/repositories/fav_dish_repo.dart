@@ -12,6 +12,7 @@ import 'package:receipe_app/utils/dependency.dart';
 mixin FavouriteDishRepository {
   ServerClient serverClient = serviceLocator.get<ServerClient>();
   Future markAsFavourtire(ProductModel favDish) async {
+
     serverClient.databases.updateDocument(
         databaseId: ServerConfig.recipeDatabaseId,
         collectionId: ServerConfig.userCollectionId,
@@ -25,6 +26,11 @@ mixin FavouriteDishRepository {
             }
           ]
         });
+    serverClient.databases.updateDocument(
+        databaseId: ServerConfig.recipeDatabaseId,
+        collectionId: ServerConfig.userCollectionId,
+        documentId: CacheUser.user?.documentId ?? "",
+        data: {});
   }
 
   Future getMyFavDishes() async {
