@@ -12,25 +12,25 @@ import 'package:receipe_app/utils/dependency.dart';
 mixin FavouriteDishRepository {
   ServerClient serverClient = serviceLocator.get<ServerClient>();
   Future markAsFavourtire(ProductModel favDish) async {
+    log("user doc id ${CacheUser.user?.documentId}");
+    Document userDoc = await serverClient.databases.getDocument(
+      databaseId: ServerConfig.recipeDatabaseId,
+      collectionId: ServerConfig.userCollectionId,
+      documentId: CacheUser.user?.documentId ?? "",
+    );
+    List<dynamic> currentDoc = userDoc.data[ServerStrings.favourite];
 
+    log('favvvv====== $currentDoc');
+    currentDoc.add({
+      ServerStrings.recipeId: favDish.id,
+      ServerStrings.receipeName: favDish.title,
+      ServerStrings.recipeImage: favDish.image,
+    });
     serverClient.databases.updateDocument(
         databaseId: ServerConfig.recipeDatabaseId,
         collectionId: ServerConfig.userCollectionId,
         documentId: CacheUser.user?.documentId ?? "",
-        data: {
-          ServerStrings.favourite: [
-            {
-              ServerStrings.recipeId: favDish.id,
-              ServerStrings.receipeName: favDish.title,
-              ServerStrings.recipeImage: favDish.image,
-            }
-          ]
-        });
-    serverClient.databases.updateDocument(
-        databaseId: ServerConfig.recipeDatabaseId,
-        collectionId: ServerConfig.userCollectionId,
-        documentId: CacheUser.user?.documentId ?? "",
-        data: {});
+        data: {ServerStrings.favourite: currentDoc});
   }
 
   Future getMyFavDishes() async {
