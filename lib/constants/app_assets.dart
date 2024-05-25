@@ -18,4 +18,5 @@ class AppAssets {
   static const String notificationIcon = "$iconBasePath/notification-bing.png";
   static const String profileIcon = "$iconBasePath/profile.png";
   static const String favIcon = "$iconBasePath/fav_icon.png";
+  static const String selectedFav = "$iconBasePath/selected_fav.png";
 }

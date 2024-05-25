@@ -89,7 +89,9 @@ class ReciepCard extends StatelessWidget {
                     radius: 15,
                     backgroundColor: AppColor.whiteColor,
                     child: Image(
-                      image: const AssetImage(AppAssets.favIcon),
+                      image: AssetImage(productModel.id == "1"
+                          ? AppAssets.selectedFav
+                          : AppAssets.favIcon),
                       height: 20,
                       color: Theme.of(context).colorScheme.primary,
                     ),

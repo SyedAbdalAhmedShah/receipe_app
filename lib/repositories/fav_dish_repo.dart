@@ -20,7 +20,10 @@ mixin FavouriteDishRepository {
     );
     List<dynamic> currentDoc = userDoc.data[ServerStrings.favourite];
 
-    log('favvvv====== $currentDoc');
+    var recipeAlreadyExist = currentDoc.any(
+      (element) => element[ServerStrings.recipeId] == favDish.id,
+    );
+    log('recipeAlreadyExist $recipeAlreadyExist');
     currentDoc.add({
       ServerStrings.recipeId: favDish.id,
       ServerStrings.receipeName: favDish.title,
