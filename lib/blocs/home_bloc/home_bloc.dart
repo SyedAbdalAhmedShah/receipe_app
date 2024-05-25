@@ -10,19 +10,23 @@ part 'home_event.dart';
 part 'home_state.dart';
 part 'home_bloc.freezed.dart';
 
-class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeRepository homeRepository = HomeRepository();
-
+class HomeBloc extends Bloc<HomeEvent, HomeState> with HomeRepository {
   HomeBloc() : super(const _Initial()) {
     on<_FetchDishes>((event, emit) async {
       try {
         emit(const _LoadingState());
-        List<ProductModel> products = await homeRepository.getAllDishes();
+        List<ProductModel> products = await getAllDishes();
         emit(_DishesFetchedSuccessState(products: products));
       } catch (error) {
-        log("Error $error");
+        log("Error22 $error");
         emit(_ErrorState(errorMessage: error.toString()));
       }
     });
+    on<_UploadProducts>(
+      (event, emit) {
+        emit(const _LoadingState());
+        try {} catch (error) {}
+      },
+    );
   }
 }
