@@ -1,5 +1,6 @@
-import 'dart:developer';
+
 import 'package:appwrite/appwrite.dart';
+import 'package:appwrite/models.dart';
 import 'package:dio/dio.dart';
 import 'package:receipe_app/config/server_config.dart';
 import 'package:receipe_app/constants/server_strings.dart';
@@ -15,27 +16,24 @@ mixin HomeRepository {
     ServerStrings.rapidApiHost: ServerConfig.rapidApiHost,
   };
   Future<List<ProductModel>> getAllDishes() async {
-    final response = await dio.get(
-      ServerConfig.baseUrl,
-      options: Options(headers: headers),
-    );
-    final responseList = response.data as List;
-    for (var i = 0; i < responseList.length; i++) {
-      final Map<String, dynamic> mapData = responseList[i];
-      await uploadProducts(mapData);
-    }
-    log(responseList.toString());
-    List<ProductModel> products =
-        responseList.map((e) => ProductModel.fromJson(e)).toList();
-    log(products.length.toString());
+    List<ProductModel> products = await getDishesFromDatabase();
+
     return products;
   }
 
-  Future uploadProducts(Map<String, dynamic> data) async {
-    await serverClient.databases.createDocument(
+  Future<List<ProductModel>> getDishesFromDatabase() async {
+    DocumentList docs = await serverClient.databases.listDocuments(
         databaseId: ServerConfig.recipeDatabaseId,
         collectionId: ServerConfig.recipesCollection,
-        documentId: ID.unique(),
-        data: data);
+        queries: [Query.limit(200)]);
+    final docList = docs.documents;
+
+    List<ProductModel> prodcuts = docList
+        .map(
+          (e) => ProductModel.fromJson(e.data),
+        )
+        .toList();
+
+    return prodcuts;
   }
 }

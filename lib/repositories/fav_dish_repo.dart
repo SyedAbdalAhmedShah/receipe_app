@@ -31,7 +31,7 @@ mixin FavouriteDishRepository {
     DocumentList docList = await serverClient.databases.listDocuments(
         databaseId: ServerConfig.recipeDatabaseId,
         collectionId: ServerConfig.favCollectionId,
-        queries: [Query.equal("users  ", CacheUser.user?.documentId ?? "")]);
+        queries: [Query.equal("users", CacheUser.user?.documentId ?? "")]);
 
     log("Fav doc list ${docList.documents.length}");
   }
