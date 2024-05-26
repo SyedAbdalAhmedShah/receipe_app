@@ -11,7 +11,7 @@ final class SignInEvent extends AuthEvent {
 }
 
 final class SignUpEvent extends AuthEvent {
-  final String email;
+  final TextEditingController email;
   final String password;
   final String userName;
 

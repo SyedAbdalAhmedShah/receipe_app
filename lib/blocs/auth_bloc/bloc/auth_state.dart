@@ -9,7 +9,13 @@ final class AuthLoadingState extends AuthState {}
 
 final class SignedState extends AuthState {}
 
-final class SignedUpState extends AuthState {}
+final class LogInState extends AuthState {}
+
+final class SignedUpState extends AuthState {
+  final TextEditingController emailController;
+
+  SignedUpState({required this.emailController});
+}
 
 final class LogOutState extends AuthState {}
 

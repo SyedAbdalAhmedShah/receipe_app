@@ -129,7 +129,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 onTap: () async {
                                   if (formKey.currentState?.validate() ?? false) {
                                     authBloc.add(SignUpEvent(
-                                        email: emailController.text.trim(),
+                                        email: emailController,
                                         password: passController.text,
                                         userName: nameController.text));
                                   }

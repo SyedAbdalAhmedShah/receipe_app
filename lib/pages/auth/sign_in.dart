@@ -44,7 +44,9 @@ class _SignInScreenState extends State<SignInScreen> {
       listener: (context, state) {
         if (state is AuthFailureState) {
           AppDialogs.customDialog(context, AppStrings.opps, state.errorMessage);
-        } else if (state is SignedState) {
+        } else if (state is SignedUpState) {
+          emailController = state.emailController;
+        } else if (state is LogInState) {
           context.pushReplacement(child: const BottomNavScreen());
         }
       },
