@@ -13,6 +13,7 @@ import 'package:receipe_app/utils/app_validations.dart';
 import 'package:receipe_app/utils/extensions.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
 import 'package:receipe_app/widgets/auth_method_image-box.dart';
+import 'package:receipe_app/widgets/loading_widget.dart';
 import 'package:receipe_app/widgets/or_divider.dart';
 import 'package:receipe_app/widgets/primary_button.dart';
 
@@ -56,7 +57,7 @@ class _SignInScreenState extends State<SignInScreen> {
           return ModalProgressHUD(
             inAsyncCall: state is AuthLoadingState,
             blur: 2,
-            progressIndicator: const CircularProgressIndicator.adaptive(),
+            progressIndicator:const AppLoading(),
             child: Scaffold(
               body: SingleChildScrollView(
                 child: SafeArea(

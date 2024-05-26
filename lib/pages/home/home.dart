@@ -11,6 +11,7 @@ import 'package:receipe_app/model/prodcut/product_model.dart';
 import 'package:receipe_app/pages/home/widgets/new_reciepe_card.dart';
 import 'package:receipe_app/pages/home/widgets/reciep_category_section.dart';
 import 'package:receipe_app/pages/home/widgets/recipe_card.dart';
+import 'package:receipe_app/utils/app_dialog.dart';
 import 'package:receipe_app/widgets/app_text_field.dart';
 import 'package:receipe_app/widgets/loading_widget.dart';
 import 'package:receipe_app/widgets/profile_picture.dart';
@@ -26,9 +27,10 @@ class HomeScreen extends StatelessWidget {
           state.when(
               initial: () => debugPrint('initState'),
               loadingState: () => debugPrint("Loading state"),
-              markAsUnfavourtireState: () =>
-                  debugPrint("markAsUnfavourtireState"),
-              markAsFavourtireState: () => debugPrint("markAsFavourtireState"),
+              markAsUnfavourtireState: () => AppDialogs.showToast(
+                  ctx: context, message: AppStrings.addedAsFav),
+              markAsFavourtireState: () => AppDialogs.showToast(
+                  ctx: context, message: AppStrings.addedAsFav),
               failureState: () {});
         },
         child: BlocBuilder<HomeBloc, HomeState>(
