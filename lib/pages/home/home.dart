@@ -24,14 +24,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: BlocListener<FavourtireDishBloc, FavourtireDishState>(
         listener: (context, state) {
-          state.when(
-              initial: () => debugPrint('initState'),
-              loadingState: () => debugPrint("Loading state"),
+          state.maybeWhen(
               markAsUnfavourtireState: () => AppDialogs.showToast(
                   ctx: context, message: AppStrings.addedAsFav),
               markAsFavourtireState: () => AppDialogs.showToast(
                   ctx: context, message: AppStrings.addedAsFav),
-              failureState: () {});
+              failureState: () {},
+              orElse: () {});
         },
         child: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {

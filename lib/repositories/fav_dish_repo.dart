@@ -48,21 +48,23 @@ mixin FavouriteDishRepository {
   }
 
   Stream<AppUser> getMyFavRealTime() {
+    log('cache user id ${CacheUser.user?.documentId}');
     RealtimeSubscription subscription = serverClient.realtime.subscribe([
       'databases.${ServerConfig.recipeDatabaseId}.collections.${ServerConfig.userCollectionId}.documents.${CacheUser.user?.documentId}'
     ]);
+    subscription.stream.listen(
+      (event) {
+        log('events paylod ${event.payload}');
+        AppUser userData = AppUser.fromJson(event.payload);
+        log('favourite length ${userData.favouriteDishes?.length}');
+      },
+      onDone: () {
+        debugPrint("on done called");
+      },
+    );
+    log('Channels ${subscription.channels}');
     return subscription.stream.map(
       (event) => AppUser.fromJson(event.payload),
     );
-    // subscription.stream.listen(
-    //   (event) {
-    //     log('events paylod ${event.payload}');
-    //     AppUser userData = AppUser.fromJson(event.payload);
-    //     log('favourite length ${userData.favouriteDishes?.length}');
-    //   },
-    //   onDone: () {
-    //     debugPrint("on done called");
-    //   },
-    // );
   }
 }

@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:receipe_app/model/prodcut/product_model.dart';
+import 'package:receipe_app/model/user/app_user.dart';
 import 'package:receipe_app/repositories/fav_dish_repo.dart';
 
 part 'favourtire_dish_event.dart';
@@ -26,12 +28,12 @@ class FavourtireDishBloc extends Bloc<FavourtireDishEvent, FavourtireDishState>
       (event, emit) async {
         emit(const _LoadingState());
         try {
-         getMyFavRealTime();
+          Stream<AppUser> appUserStream = getMyFavRealTime();
+          emit(_RealTimeSubscribedState(userData: appUserStream));
         } catch (error) {
           log("Error $error");
         }
       },
     );
-  
   }
 }

@@ -1,5 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
+import 'dart:developer';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:receipe_app/constants/server_strings.dart';
 import 'package:receipe_app/model/prodcut/product_model.dart';
@@ -15,13 +17,15 @@ class AppUser with _$AppUser {
     String? createdAt,
     @JsonKey(name: ServerStrings.docId) String? documentId,
     String? profileUrl,
-    @JsonKey(
-      name: "\$favourite",
-    )
+    @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
     List<ProductModel>? favouriteDishes,
-    @JsonKey(name: "\$databaseId") String? databaseId,
-    @JsonKey(name: "\$collectionId") String? collectionId,
+    @JsonKey(name: ServerStrings.databaseId) String? databaseId,
+    @JsonKey(name: ServerStrings.collectionId) String? collectionId,
   }) = _AppUser;
   factory AppUser.fromJson(Map<String, dynamic> json) =>
       _$AppUserFromJson(json);
+}
+
+favourtireFromJson(dynamic map) {
+  log("favourtireFromJson =========> ${map.runtimeType} , $map");
 }

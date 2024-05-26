@@ -8,6 +8,8 @@ class ServerStrings {
   static const String rapidApiHost = "X-RapidAPI-Host";
   static const String favourite = "favourite";
   static const String recipeId = "recipeId";
+  static const String databaseId = "\$databaseId";
+  static const String collectionId = "\$collectionId";
   static const String receipeName = "receipeName";
   static const String recipeImage = "recipeImage";
   static const String docId = "documentId";

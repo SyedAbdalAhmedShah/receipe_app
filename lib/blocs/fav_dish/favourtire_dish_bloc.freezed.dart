@@ -592,6 +592,7 @@ mixin _$FavourtireDishState {
     required TResult Function() initial,
     required TResult Function() loadingState,
     required TResult Function() failureState,
+    required TResult Function(Stream<AppUser> userData) realTimeSubscribedState,
     required TResult Function() markAsUnfavourtireState,
     required TResult Function() markAsFavourtireState,
   }) =>
@@ -601,6 +602,7 @@ mixin _$FavourtireDishState {
     TResult? Function()? initial,
     TResult? Function()? loadingState,
     TResult? Function()? failureState,
+    TResult? Function(Stream<AppUser> userData)? realTimeSubscribedState,
     TResult? Function()? markAsUnfavourtireState,
     TResult? Function()? markAsFavourtireState,
   }) =>
@@ -610,6 +612,7 @@ mixin _$FavourtireDishState {
     TResult Function()? initial,
     TResult Function()? loadingState,
     TResult Function()? failureState,
+    TResult Function(Stream<AppUser> userData)? realTimeSubscribedState,
     TResult Function()? markAsUnfavourtireState,
     TResult Function()? markAsFavourtireState,
     required TResult orElse(),
@@ -620,6 +623,8 @@ mixin _$FavourtireDishState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadingState value) loadingState,
     required TResult Function(_FailureState value) failureState,
+    required TResult Function(_RealTimeSubscribedState value)
+        realTimeSubscribedState,
     required TResult Function(_MarkAsUnfavourtireState value)
         markAsUnfavourtireState,
     required TResult Function(_MarkAsFavourtireState value)
@@ -631,6 +636,7 @@ mixin _$FavourtireDishState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadingState value)? loadingState,
     TResult? Function(_FailureState value)? failureState,
+    TResult? Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
     TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
   }) =>
@@ -640,6 +646,7 @@ mixin _$FavourtireDishState {
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadingState value)? loadingState,
     TResult Function(_FailureState value)? failureState,
+    TResult Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
     TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     required TResult orElse(),
@@ -706,6 +713,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loadingState,
     required TResult Function() failureState,
+    required TResult Function(Stream<AppUser> userData) realTimeSubscribedState,
     required TResult Function() markAsUnfavourtireState,
     required TResult Function() markAsFavourtireState,
   }) {
@@ -718,6 +726,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loadingState,
     TResult? Function()? failureState,
+    TResult? Function(Stream<AppUser> userData)? realTimeSubscribedState,
     TResult? Function()? markAsUnfavourtireState,
     TResult? Function()? markAsFavourtireState,
   }) {
@@ -730,6 +739,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loadingState,
     TResult Function()? failureState,
+    TResult Function(Stream<AppUser> userData)? realTimeSubscribedState,
     TResult Function()? markAsUnfavourtireState,
     TResult Function()? markAsFavourtireState,
     required TResult orElse(),
@@ -746,6 +756,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadingState value) loadingState,
     required TResult Function(_FailureState value) failureState,
+    required TResult Function(_RealTimeSubscribedState value)
+        realTimeSubscribedState,
     required TResult Function(_MarkAsUnfavourtireState value)
         markAsUnfavourtireState,
     required TResult Function(_MarkAsFavourtireState value)
@@ -760,6 +772,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadingState value)? loadingState,
     TResult? Function(_FailureState value)? failureState,
+    TResult? Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
     TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
   }) {
@@ -772,6 +785,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadingState value)? loadingState,
     TResult Function(_FailureState value)? failureState,
+    TResult Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
     TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     required TResult orElse(),
@@ -828,6 +842,7 @@ class _$LoadingStateImpl implements _LoadingState {
     required TResult Function() initial,
     required TResult Function() loadingState,
     required TResult Function() failureState,
+    required TResult Function(Stream<AppUser> userData) realTimeSubscribedState,
     required TResult Function() markAsUnfavourtireState,
     required TResult Function() markAsFavourtireState,
   }) {
@@ -840,6 +855,7 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult? Function()? initial,
     TResult? Function()? loadingState,
     TResult? Function()? failureState,
+    TResult? Function(Stream<AppUser> userData)? realTimeSubscribedState,
     TResult? Function()? markAsUnfavourtireState,
     TResult? Function()? markAsFavourtireState,
   }) {
@@ -852,6 +868,7 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult Function()? initial,
     TResult Function()? loadingState,
     TResult Function()? failureState,
+    TResult Function(Stream<AppUser> userData)? realTimeSubscribedState,
     TResult Function()? markAsUnfavourtireState,
     TResult Function()? markAsFavourtireState,
     required TResult orElse(),
@@ -868,6 +885,8 @@ class _$LoadingStateImpl implements _LoadingState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadingState value) loadingState,
     required TResult Function(_FailureState value) failureState,
+    required TResult Function(_RealTimeSubscribedState value)
+        realTimeSubscribedState,
     required TResult Function(_MarkAsUnfavourtireState value)
         markAsUnfavourtireState,
     required TResult Function(_MarkAsFavourtireState value)
@@ -882,6 +901,7 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadingState value)? loadingState,
     TResult? Function(_FailureState value)? failureState,
+    TResult? Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
     TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
   }) {
@@ -894,6 +914,7 @@ class _$LoadingStateImpl implements _LoadingState {
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadingState value)? loadingState,
     TResult Function(_FailureState value)? failureState,
+    TResult Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
     TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     required TResult orElse(),
@@ -950,6 +971,7 @@ class _$FailureStateImpl implements _FailureState {
     required TResult Function() initial,
     required TResult Function() loadingState,
     required TResult Function() failureState,
+    required TResult Function(Stream<AppUser> userData) realTimeSubscribedState,
     required TResult Function() markAsUnfavourtireState,
     required TResult Function() markAsFavourtireState,
   }) {
@@ -962,6 +984,7 @@ class _$FailureStateImpl implements _FailureState {
     TResult? Function()? initial,
     TResult? Function()? loadingState,
     TResult? Function()? failureState,
+    TResult? Function(Stream<AppUser> userData)? realTimeSubscribedState,
     TResult? Function()? markAsUnfavourtireState,
     TResult? Function()? markAsFavourtireState,
   }) {
@@ -974,6 +997,7 @@ class _$FailureStateImpl implements _FailureState {
     TResult Function()? initial,
     TResult Function()? loadingState,
     TResult Function()? failureState,
+    TResult Function(Stream<AppUser> userData)? realTimeSubscribedState,
     TResult Function()? markAsUnfavourtireState,
     TResult Function()? markAsFavourtireState,
     required TResult orElse(),
@@ -990,6 +1014,8 @@ class _$FailureStateImpl implements _FailureState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadingState value) loadingState,
     required TResult Function(_FailureState value) failureState,
+    required TResult Function(_RealTimeSubscribedState value)
+        realTimeSubscribedState,
     required TResult Function(_MarkAsUnfavourtireState value)
         markAsUnfavourtireState,
     required TResult Function(_MarkAsFavourtireState value)
@@ -1004,6 +1030,7 @@ class _$FailureStateImpl implements _FailureState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadingState value)? loadingState,
     TResult? Function(_FailureState value)? failureState,
+    TResult? Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
     TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
   }) {
@@ -1016,6 +1043,7 @@ class _$FailureStateImpl implements _FailureState {
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadingState value)? loadingState,
     TResult Function(_FailureState value)? failureState,
+    TResult Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
     TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     required TResult orElse(),
@@ -1029,6 +1057,173 @@ class _$FailureStateImpl implements _FailureState {
 
 abstract class _FailureState implements FavourtireDishState {
   const factory _FailureState() = _$FailureStateImpl;
+}
+
+/// @nodoc
+abstract class _$$RealTimeSubscribedStateImplCopyWith<$Res> {
+  factory _$$RealTimeSubscribedStateImplCopyWith(
+          _$RealTimeSubscribedStateImpl value,
+          $Res Function(_$RealTimeSubscribedStateImpl) then) =
+      __$$RealTimeSubscribedStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Stream<AppUser> userData});
+}
+
+/// @nodoc
+class __$$RealTimeSubscribedStateImplCopyWithImpl<$Res>
+    extends _$FavourtireDishStateCopyWithImpl<$Res,
+        _$RealTimeSubscribedStateImpl>
+    implements _$$RealTimeSubscribedStateImplCopyWith<$Res> {
+  __$$RealTimeSubscribedStateImplCopyWithImpl(
+      _$RealTimeSubscribedStateImpl _value,
+      $Res Function(_$RealTimeSubscribedStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userData = null,
+  }) {
+    return _then(_$RealTimeSubscribedStateImpl(
+      userData: null == userData
+          ? _value.userData
+          : userData // ignore: cast_nullable_to_non_nullable
+              as Stream<AppUser>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RealTimeSubscribedStateImpl implements _RealTimeSubscribedState {
+  const _$RealTimeSubscribedStateImpl({required this.userData});
+
+  @override
+  final Stream<AppUser> userData;
+
+  @override
+  String toString() {
+    return 'FavourtireDishState.realTimeSubscribedState(userData: $userData)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RealTimeSubscribedStateImpl &&
+            (identical(other.userData, userData) ||
+                other.userData == userData));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userData);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RealTimeSubscribedStateImplCopyWith<_$RealTimeSubscribedStateImpl>
+      get copyWith => __$$RealTimeSubscribedStateImplCopyWithImpl<
+          _$RealTimeSubscribedStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadingState,
+    required TResult Function() failureState,
+    required TResult Function(Stream<AppUser> userData) realTimeSubscribedState,
+    required TResult Function() markAsUnfavourtireState,
+    required TResult Function() markAsFavourtireState,
+  }) {
+    return realTimeSubscribedState(userData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadingState,
+    TResult? Function()? failureState,
+    TResult? Function(Stream<AppUser> userData)? realTimeSubscribedState,
+    TResult? Function()? markAsUnfavourtireState,
+    TResult? Function()? markAsFavourtireState,
+  }) {
+    return realTimeSubscribedState?.call(userData);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadingState,
+    TResult Function()? failureState,
+    TResult Function(Stream<AppUser> userData)? realTimeSubscribedState,
+    TResult Function()? markAsUnfavourtireState,
+    TResult Function()? markAsFavourtireState,
+    required TResult orElse(),
+  }) {
+    if (realTimeSubscribedState != null) {
+      return realTimeSubscribedState(userData);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadingState value) loadingState,
+    required TResult Function(_FailureState value) failureState,
+    required TResult Function(_RealTimeSubscribedState value)
+        realTimeSubscribedState,
+    required TResult Function(_MarkAsUnfavourtireState value)
+        markAsUnfavourtireState,
+    required TResult Function(_MarkAsFavourtireState value)
+        markAsFavourtireState,
+  }) {
+    return realTimeSubscribedState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadingState value)? loadingState,
+    TResult? Function(_FailureState value)? failureState,
+    TResult? Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
+    TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
+  }) {
+    return realTimeSubscribedState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadingState value)? loadingState,
+    TResult Function(_FailureState value)? failureState,
+    TResult Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
+    TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
+    TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
+    required TResult orElse(),
+  }) {
+    if (realTimeSubscribedState != null) {
+      return realTimeSubscribedState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RealTimeSubscribedState implements FavourtireDishState {
+  const factory _RealTimeSubscribedState(
+          {required final Stream<AppUser> userData}) =
+      _$RealTimeSubscribedStateImpl;
+
+  Stream<AppUser> get userData;
+  @JsonKey(ignore: true)
+  _$$RealTimeSubscribedStateImplCopyWith<_$RealTimeSubscribedStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1076,6 +1271,7 @@ class _$MarkAsUnfavourtireStateImpl implements _MarkAsUnfavourtireState {
     required TResult Function() initial,
     required TResult Function() loadingState,
     required TResult Function() failureState,
+    required TResult Function(Stream<AppUser> userData) realTimeSubscribedState,
     required TResult Function() markAsUnfavourtireState,
     required TResult Function() markAsFavourtireState,
   }) {
@@ -1088,6 +1284,7 @@ class _$MarkAsUnfavourtireStateImpl implements _MarkAsUnfavourtireState {
     TResult? Function()? initial,
     TResult? Function()? loadingState,
     TResult? Function()? failureState,
+    TResult? Function(Stream<AppUser> userData)? realTimeSubscribedState,
     TResult? Function()? markAsUnfavourtireState,
     TResult? Function()? markAsFavourtireState,
   }) {
@@ -1100,6 +1297,7 @@ class _$MarkAsUnfavourtireStateImpl implements _MarkAsUnfavourtireState {
     TResult Function()? initial,
     TResult Function()? loadingState,
     TResult Function()? failureState,
+    TResult Function(Stream<AppUser> userData)? realTimeSubscribedState,
     TResult Function()? markAsUnfavourtireState,
     TResult Function()? markAsFavourtireState,
     required TResult orElse(),
@@ -1116,6 +1314,8 @@ class _$MarkAsUnfavourtireStateImpl implements _MarkAsUnfavourtireState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadingState value) loadingState,
     required TResult Function(_FailureState value) failureState,
+    required TResult Function(_RealTimeSubscribedState value)
+        realTimeSubscribedState,
     required TResult Function(_MarkAsUnfavourtireState value)
         markAsUnfavourtireState,
     required TResult Function(_MarkAsFavourtireState value)
@@ -1130,6 +1330,7 @@ class _$MarkAsUnfavourtireStateImpl implements _MarkAsUnfavourtireState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadingState value)? loadingState,
     TResult? Function(_FailureState value)? failureState,
+    TResult? Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
     TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
   }) {
@@ -1142,6 +1343,7 @@ class _$MarkAsUnfavourtireStateImpl implements _MarkAsUnfavourtireState {
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadingState value)? loadingState,
     TResult Function(_FailureState value)? failureState,
+    TResult Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
     TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     required TResult orElse(),
@@ -1200,6 +1402,7 @@ class _$MarkAsFavourtireStateImpl implements _MarkAsFavourtireState {
     required TResult Function() initial,
     required TResult Function() loadingState,
     required TResult Function() failureState,
+    required TResult Function(Stream<AppUser> userData) realTimeSubscribedState,
     required TResult Function() markAsUnfavourtireState,
     required TResult Function() markAsFavourtireState,
   }) {
@@ -1212,6 +1415,7 @@ class _$MarkAsFavourtireStateImpl implements _MarkAsFavourtireState {
     TResult? Function()? initial,
     TResult? Function()? loadingState,
     TResult? Function()? failureState,
+    TResult? Function(Stream<AppUser> userData)? realTimeSubscribedState,
     TResult? Function()? markAsUnfavourtireState,
     TResult? Function()? markAsFavourtireState,
   }) {
@@ -1224,6 +1428,7 @@ class _$MarkAsFavourtireStateImpl implements _MarkAsFavourtireState {
     TResult Function()? initial,
     TResult Function()? loadingState,
     TResult Function()? failureState,
+    TResult Function(Stream<AppUser> userData)? realTimeSubscribedState,
     TResult Function()? markAsUnfavourtireState,
     TResult Function()? markAsFavourtireState,
     required TResult orElse(),
@@ -1240,6 +1445,8 @@ class _$MarkAsFavourtireStateImpl implements _MarkAsFavourtireState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadingState value) loadingState,
     required TResult Function(_FailureState value) failureState,
+    required TResult Function(_RealTimeSubscribedState value)
+        realTimeSubscribedState,
     required TResult Function(_MarkAsUnfavourtireState value)
         markAsUnfavourtireState,
     required TResult Function(_MarkAsFavourtireState value)
@@ -1254,6 +1461,7 @@ class _$MarkAsFavourtireStateImpl implements _MarkAsFavourtireState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadingState value)? loadingState,
     TResult? Function(_FailureState value)? failureState,
+    TResult? Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
     TResult? Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult? Function(_MarkAsFavourtireState value)? markAsFavourtireState,
   }) {
@@ -1266,6 +1474,7 @@ class _$MarkAsFavourtireStateImpl implements _MarkAsFavourtireState {
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadingState value)? loadingState,
     TResult Function(_FailureState value)? failureState,
+    TResult Function(_RealTimeSubscribedState value)? realTimeSubscribedState,
     TResult Function(_MarkAsUnfavourtireState value)? markAsUnfavourtireState,
     TResult Function(_MarkAsFavourtireState value)? markAsFavourtireState,
     required TResult orElse(),

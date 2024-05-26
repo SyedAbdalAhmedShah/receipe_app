@@ -26,11 +26,11 @@ mixin _$AppUser {
   @JsonKey(name: ServerStrings.docId)
   String? get documentId => throw _privateConstructorUsedError;
   String? get profileUrl => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$favourite")
+  @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
   List<ProductModel>? get favouriteDishes => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$databaseId")
+  @JsonKey(name: ServerStrings.databaseId)
   String? get databaseId => throw _privateConstructorUsedError;
-  @JsonKey(name: "\$collectionId")
+  @JsonKey(name: ServerStrings.collectionId)
   String? get collectionId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,9 +49,10 @@ abstract class $AppUserCopyWith<$Res> {
       String? createdAt,
       @JsonKey(name: ServerStrings.docId) String? documentId,
       String? profileUrl,
-      @JsonKey(name: "\$favourite") List<ProductModel>? favouriteDishes,
-      @JsonKey(name: "\$databaseId") String? databaseId,
-      @JsonKey(name: "\$collectionId") String? collectionId});
+      @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
+      List<ProductModel>? favouriteDishes,
+      @JsonKey(name: ServerStrings.databaseId) String? databaseId,
+      @JsonKey(name: ServerStrings.collectionId) String? collectionId});
 }
 
 /// @nodoc
@@ -126,9 +127,10 @@ abstract class _$$AppUserImplCopyWith<$Res> implements $AppUserCopyWith<$Res> {
       String? createdAt,
       @JsonKey(name: ServerStrings.docId) String? documentId,
       String? profileUrl,
-      @JsonKey(name: "\$favourite") List<ProductModel>? favouriteDishes,
-      @JsonKey(name: "\$databaseId") String? databaseId,
-      @JsonKey(name: "\$collectionId") String? collectionId});
+      @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
+      List<ProductModel>? favouriteDishes,
+      @JsonKey(name: ServerStrings.databaseId) String? databaseId,
+      @JsonKey(name: ServerStrings.collectionId) String? collectionId});
 }
 
 /// @nodoc
@@ -197,9 +199,10 @@ class _$AppUserImpl implements _AppUser {
       this.createdAt,
       @JsonKey(name: ServerStrings.docId) this.documentId,
       this.profileUrl,
-      @JsonKey(name: "\$favourite") final List<ProductModel>? favouriteDishes,
-      @JsonKey(name: "\$databaseId") this.databaseId,
-      @JsonKey(name: "\$collectionId") this.collectionId})
+      @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
+      final List<ProductModel>? favouriteDishes,
+      @JsonKey(name: ServerStrings.databaseId) this.databaseId,
+      @JsonKey(name: ServerStrings.collectionId) this.collectionId})
       : _favouriteDishes = favouriteDishes;
 
   factory _$AppUserImpl.fromJson(Map<String, dynamic> json) =>
@@ -218,7 +221,7 @@ class _$AppUserImpl implements _AppUser {
   final String? profileUrl;
   final List<ProductModel>? _favouriteDishes;
   @override
-  @JsonKey(name: "\$favourite")
+  @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
   List<ProductModel>? get favouriteDishes {
     final value = _favouriteDishes;
     if (value == null) return null;
@@ -228,10 +231,10 @@ class _$AppUserImpl implements _AppUser {
   }
 
   @override
-  @JsonKey(name: "\$databaseId")
+  @JsonKey(name: ServerStrings.databaseId)
   final String? databaseId;
   @override
-  @JsonKey(name: "\$collectionId")
+  @JsonKey(name: ServerStrings.collectionId)
   final String? collectionId;
 
   @override
@@ -295,9 +298,10 @@ abstract class _AppUser implements AppUser {
       final String? createdAt,
       @JsonKey(name: ServerStrings.docId) final String? documentId,
       final String? profileUrl,
-      @JsonKey(name: "\$favourite") final List<ProductModel>? favouriteDishes,
-      @JsonKey(name: "\$databaseId") final String? databaseId,
-      @JsonKey(name: "\$collectionId")
+      @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
+      final List<ProductModel>? favouriteDishes,
+      @JsonKey(name: ServerStrings.databaseId) final String? databaseId,
+      @JsonKey(name: ServerStrings.collectionId)
       final String? collectionId}) = _$AppUserImpl;
 
   factory _AppUser.fromJson(Map<String, dynamic> json) = _$AppUserImpl.fromJson;
@@ -314,13 +318,13 @@ abstract class _AppUser implements AppUser {
   @override
   String? get profileUrl;
   @override
-  @JsonKey(name: "\$favourite")
+  @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
   List<ProductModel>? get favouriteDishes;
   @override
-  @JsonKey(name: "\$databaseId")
+  @JsonKey(name: ServerStrings.databaseId)
   String? get databaseId;
   @override
-  @JsonKey(name: "\$collectionId")
+  @JsonKey(name: ServerStrings.collectionId)
   String? get collectionId;
   @override
   @JsonKey(ignore: true)
