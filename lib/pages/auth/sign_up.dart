@@ -7,7 +7,6 @@ import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/pages/auth/sign_in.dart';
-import 'package:receipe_app/pages/home/bottom_nav_screen.dart';
 import 'package:receipe_app/utils/app_dialog.dart';
 import 'package:receipe_app/utils/app_validations.dart';
 import 'package:receipe_app/utils/extensions.dart';
@@ -46,7 +45,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         if (state is AuthFailureState) {
           AppDialogs.customDialog(context, AppStrings.opps, state.errorMessage);
         } else if (state is SignedUpState) {
-          context.pushReplacement(child: const BottomNavScreen());
+          context.poping();
         }
       },
       child: BlocBuilder(

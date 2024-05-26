@@ -78,7 +78,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthLoadingState());
         await sharedPref.remove(ServerStrings.userDataKey);
         await authRepository.logOut();
+        emit(LogOutState());
       } catch (error) {
+        log('error $error');
         emit(AuthFailureState(
           errorMessage: error.toString(),
         ));

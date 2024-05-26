@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:receipe_app/blocs/auth_bloc/bloc/auth_bloc.dart';
 import 'package:receipe_app/blocs/profile_bloc/bloc/profile_bloc.dart';
 import 'package:receipe_app/constants/app_strings.dart';
 import 'package:receipe_app/constants/styles.dart';
@@ -9,6 +10,8 @@ import 'package:receipe_app/pages/profile/widgets/dish_card.dart';
 import 'package:receipe_app/pages/profile/widgets/profile_info.dart';
 import 'package:receipe_app/pages/profile/widgets/profile_info_button.dart';
 import 'package:receipe_app/pages/profile/widgets/user_name_n_bio.dart';
+import 'package:receipe_app/pages/splash/splash_screen.dart';
+import 'package:receipe_app/utils/extensions.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -21,17 +24,26 @@ class ProfileScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              ListTile(
-                onTap: () {},
-                splashColor:
-                    Theme.of(context).colorScheme.primary.withOpacity(0.2),
-                iconColor: Theme.of(context).colorScheme.primary,
-                textColor: Theme.of(context).colorScheme.primary,
-                title: const Text(
-                  "Logout",
-                  style: TextStyle(fontWeight: FontWeight.w800),
+              BlocListener<AuthBloc, AuthState>(
+                listener: (context, state) {
+                  if (state is LogOutState) {
+                    context.pushRemoveUntil(child: const Splashscreen());
+                  }
+                },
+                child: ListTile(
+                  onTap: () {
+                    context.read<AuthBloc>().add(LogOut());
+                  },
+                  splashColor:
+                      Theme.of(context).colorScheme.primary.withOpacity(0.2),
+                  iconColor: Theme.of(context).colorScheme.primary,
+                  textColor: Theme.of(context).colorScheme.primary,
+                  title: const Text(
+                    "Logout",
+                    style: TextStyle(fontWeight: FontWeight.w800),
+                  ),
+                  trailing: const Icon(Icons.logout),
                 ),
-                trailing: const Icon(Icons.logout),
               )
             ],
           ),

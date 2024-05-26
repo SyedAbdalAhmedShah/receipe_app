@@ -11,6 +11,8 @@ final class SignedState extends AuthState {}
 
 final class SignedUpState extends AuthState {}
 
+final class LogOutState extends AuthState {}
+
 final class UserAlreadyLoggedIn extends AuthState {}
 
 final class NewUserLogedIn extends AuthState {}

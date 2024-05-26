@@ -32,13 +32,12 @@ class AuthRepository {
         collectionId: ServerConfig.userCollectionId,
         documentId: ID.unique(),
         data: userData);
-    log(" doc id========> ${document.$id} ");
+
     final userMap = document.data;
     userMap.addAll({ServerStrings.docId: document.$id});
     SharedPreferences preferences = await SharedPreferences.getInstance();
     preferences.setString(ServerStrings.userDataKey, json.encode(userMap));
     CacheUser.user = AppUser.fromJson(document.data);
-    log("cache user doc id========> ${CacheUser.user?.documentId} ");
   }
 
   Future signInWithEmailAndPassword({
@@ -52,7 +51,6 @@ class AuthRepository {
     User user = await serverClient.account.get();
     AppUser appUser = await getUser(userId: user.$id);
     CacheUser.user = appUser;
-    log("cache user doc id========> ${CacheUser.user?.documentId} ");
     SharedPreferences preferences = await SharedPreferences.getInstance();
     preferences.setString(
         ServerStrings.userDataKey, json.encode(appUser.toJson()));
