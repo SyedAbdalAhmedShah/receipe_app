@@ -79,7 +79,10 @@ class ProfileScreen extends StatelessWidget {
                     itemCount: 20,
                     itemBuilder: (context, index) => const Padding(
                           padding: EdgeInsets.only(bottom: 8.0),
-                          child: DishCard(),
+                          child: DishCard(
+                            cheifName: "By Chef John",
+                            minutes: "20 min",
+                          ),
                         ));
               },
             ),

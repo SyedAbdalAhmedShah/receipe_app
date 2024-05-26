@@ -59,7 +59,7 @@ class DishCard extends StatelessWidget {
                 Visibility(
                   visible: cheifName != null,
                   child: Text(
-                    'By Chef John',
+                    cheifName ?? '',
                     maxLines: 2,
                     style: Styles.hintTextStyle.copyWith(color: Colors.white),
                   ),
@@ -74,14 +74,15 @@ class DishCard extends StatelessWidget {
               children: [
                 Visibility(
                   visible: minutes != null,
-                  child: const Row(
+                  child: Row(
                     children: [
-                      Icon(Icons.av_timer_outlined, color: AppColor.whiteColor),
-                      Gap(5),
+                      const Icon(Icons.av_timer_outlined,
+                          color: AppColor.whiteColor),
+                      const Gap(5),
                       Text(
-                        '20 min',
+                        minutes ?? "",
                         maxLines: 2,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.white, fontWeight: FontWeight.w500),
                       ),
                     ],
