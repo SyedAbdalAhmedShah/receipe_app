@@ -13,6 +13,9 @@ _$AppUserImpl _$$AppUserImplFromJson(Map<String, dynamic> json) =>
       createdAt: json['createdAt'] as String?,
       documentId: json['documentId'] as String?,
       profileUrl: json['profileUrl'] as String?,
+      favouriteDishes: (json[r'$favourite'] as List<dynamic>?)
+          ?.map((e) => ProductModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
       databaseId: json[r'$databaseId'] as String?,
       collectionId: json[r'$collectionId'] as String?,
     );
@@ -24,6 +27,7 @@ Map<String, dynamic> _$$AppUserImplToJson(_$AppUserImpl instance) =>
       'createdAt': instance.createdAt,
       'documentId': instance.documentId,
       'profileUrl': instance.profileUrl,
+      r'$favourite': instance.favouriteDishes,
       r'$databaseId': instance.databaseId,
       r'$collectionId': instance.collectionId,
     };

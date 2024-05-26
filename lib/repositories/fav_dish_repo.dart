@@ -2,11 +2,13 @@ import 'dart:developer';
 
 import 'package:appwrite/appwrite.dart';
 import 'package:appwrite/models.dart';
+import 'package:flutter/material.dart';
 import 'package:receipe_app/config/server_config.dart';
 import 'package:receipe_app/constants/server_strings.dart';
 import 'package:receipe_app/dependency_injection/server_client.dart';
 import 'package:receipe_app/model/cache_user.dart';
 import 'package:receipe_app/model/prodcut/product_model.dart';
+import 'package:receipe_app/model/user/app_user.dart';
 import 'package:receipe_app/utils/dependency.dart';
 
 mixin FavouriteDishRepository {
@@ -43,5 +45,24 @@ mixin FavouriteDishRepository {
         queries: [Query.equal("users", CacheUser.user?.documentId ?? "")]);
 
     log("Fav doc list ${docList.documents.length}");
+  }
+
+  Stream<AppUser> getMyFavRealTime() {
+    RealtimeSubscription subscription = serverClient.realtime.subscribe([
+      'databases.${ServerConfig.recipeDatabaseId}.collections.${ServerConfig.userCollectionId}.documents.${CacheUser.user?.documentId}'
+    ]);
+    return subscription.stream.map(
+      (event) => AppUser.fromJson(event.payload),
+    );
+    // subscription.stream.listen(
+    //   (event) {
+    //     log('events paylod ${event.payload}');
+    //     AppUser userData = AppUser.fromJson(event.payload);
+    //     log('favourite length ${userData.favouriteDishes?.length}');
+    //   },
+    //   onDone: () {
+    //     debugPrint("on done called");
+    //   },
+    // );
   }
 }

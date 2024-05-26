@@ -26,11 +26,12 @@ class FavourtireDishBloc extends Bloc<FavourtireDishEvent, FavourtireDishState>
       (event, emit) async {
         emit(const _LoadingState());
         try {
-          await getMyFavDishes();
+         getMyFavRealTime();
         } catch (error) {
           log("Error $error");
         }
       },
     );
+  
   }
 }

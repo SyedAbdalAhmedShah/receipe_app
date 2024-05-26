@@ -4,6 +4,7 @@ import 'package:receipe_app/config/server_config.dart';
 class ServerClient {
   late Account account;
   late Databases databases;
+  late Realtime realtime;
   Client client = Client()
       .setEndpoint("https://cloud.appwrite.io/v1")
       .setProject(ServerConfig.projectId);
@@ -11,5 +12,6 @@ class ServerClient {
   setupAppWriteAccount() {
     account = Account(client);
     databases = Databases(client);
+    realtime = Realtime(client);
   }
 }

@@ -26,6 +26,8 @@ mixin _$AppUser {
   @JsonKey(name: ServerStrings.docId)
   String? get documentId => throw _privateConstructorUsedError;
   String? get profileUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: "\$favourite")
+  List<ProductModel>? get favouriteDishes => throw _privateConstructorUsedError;
   @JsonKey(name: "\$databaseId")
   String? get databaseId => throw _privateConstructorUsedError;
   @JsonKey(name: "\$collectionId")
@@ -47,6 +49,7 @@ abstract class $AppUserCopyWith<$Res> {
       String? createdAt,
       @JsonKey(name: ServerStrings.docId) String? documentId,
       String? profileUrl,
+      @JsonKey(name: "\$favourite") List<ProductModel>? favouriteDishes,
       @JsonKey(name: "\$databaseId") String? databaseId,
       @JsonKey(name: "\$collectionId") String? collectionId});
 }
@@ -69,6 +72,7 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
     Object? createdAt = freezed,
     Object? documentId = freezed,
     Object? profileUrl = freezed,
+    Object? favouriteDishes = freezed,
     Object? databaseId = freezed,
     Object? collectionId = freezed,
   }) {
@@ -93,6 +97,10 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
           ? _value.profileUrl
           : profileUrl // ignore: cast_nullable_to_non_nullable
               as String?,
+      favouriteDishes: freezed == favouriteDishes
+          ? _value.favouriteDishes
+          : favouriteDishes // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel>?,
       databaseId: freezed == databaseId
           ? _value.databaseId
           : databaseId // ignore: cast_nullable_to_non_nullable
@@ -118,6 +126,7 @@ abstract class _$$AppUserImplCopyWith<$Res> implements $AppUserCopyWith<$Res> {
       String? createdAt,
       @JsonKey(name: ServerStrings.docId) String? documentId,
       String? profileUrl,
+      @JsonKey(name: "\$favourite") List<ProductModel>? favouriteDishes,
       @JsonKey(name: "\$databaseId") String? databaseId,
       @JsonKey(name: "\$collectionId") String? collectionId});
 }
@@ -138,6 +147,7 @@ class __$$AppUserImplCopyWithImpl<$Res>
     Object? createdAt = freezed,
     Object? documentId = freezed,
     Object? profileUrl = freezed,
+    Object? favouriteDishes = freezed,
     Object? databaseId = freezed,
     Object? collectionId = freezed,
   }) {
@@ -162,6 +172,10 @@ class __$$AppUserImplCopyWithImpl<$Res>
           ? _value.profileUrl
           : profileUrl // ignore: cast_nullable_to_non_nullable
               as String?,
+      favouriteDishes: freezed == favouriteDishes
+          ? _value._favouriteDishes
+          : favouriteDishes // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel>?,
       databaseId: freezed == databaseId
           ? _value.databaseId
           : databaseId // ignore: cast_nullable_to_non_nullable
@@ -183,8 +197,10 @@ class _$AppUserImpl implements _AppUser {
       this.createdAt,
       @JsonKey(name: ServerStrings.docId) this.documentId,
       this.profileUrl,
+      @JsonKey(name: "\$favourite") final List<ProductModel>? favouriteDishes,
       @JsonKey(name: "\$databaseId") this.databaseId,
-      @JsonKey(name: "\$collectionId") this.collectionId});
+      @JsonKey(name: "\$collectionId") this.collectionId})
+      : _favouriteDishes = favouriteDishes;
 
   factory _$AppUserImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppUserImplFromJson(json);
@@ -200,6 +216,17 @@ class _$AppUserImpl implements _AppUser {
   final String? documentId;
   @override
   final String? profileUrl;
+  final List<ProductModel>? _favouriteDishes;
+  @override
+  @JsonKey(name: "\$favourite")
+  List<ProductModel>? get favouriteDishes {
+    final value = _favouriteDishes;
+    if (value == null) return null;
+    if (_favouriteDishes is EqualUnmodifiableListView) return _favouriteDishes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: "\$databaseId")
   final String? databaseId;
@@ -209,7 +236,7 @@ class _$AppUserImpl implements _AppUser {
 
   @override
   String toString() {
-    return 'AppUser(userId: $userId, userName: $userName, createdAt: $createdAt, documentId: $documentId, profileUrl: $profileUrl, databaseId: $databaseId, collectionId: $collectionId)';
+    return 'AppUser(userId: $userId, userName: $userName, createdAt: $createdAt, documentId: $documentId, profileUrl: $profileUrl, favouriteDishes: $favouriteDishes, databaseId: $databaseId, collectionId: $collectionId)';
   }
 
   @override
@@ -226,6 +253,8 @@ class _$AppUserImpl implements _AppUser {
                 other.documentId == documentId) &&
             (identical(other.profileUrl, profileUrl) ||
                 other.profileUrl == profileUrl) &&
+            const DeepCollectionEquality()
+                .equals(other._favouriteDishes, _favouriteDishes) &&
             (identical(other.databaseId, databaseId) ||
                 other.databaseId == databaseId) &&
             (identical(other.collectionId, collectionId) ||
@@ -234,8 +263,16 @@ class _$AppUserImpl implements _AppUser {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, userId, userName, createdAt,
-      documentId, profileUrl, databaseId, collectionId);
+  int get hashCode => Object.hash(
+      runtimeType,
+      userId,
+      userName,
+      createdAt,
+      documentId,
+      profileUrl,
+      const DeepCollectionEquality().hash(_favouriteDishes),
+      databaseId,
+      collectionId);
 
   @JsonKey(ignore: true)
   @override
@@ -253,14 +290,15 @@ class _$AppUserImpl implements _AppUser {
 
 abstract class _AppUser implements AppUser {
   const factory _AppUser(
-          {final String? userId,
-          final String? userName,
-          final String? createdAt,
-          @JsonKey(name: ServerStrings.docId) final String? documentId,
-          final String? profileUrl,
-          @JsonKey(name: "\$databaseId") final String? databaseId,
-          @JsonKey(name: "\$collectionId") final String? collectionId}) =
-      _$AppUserImpl;
+      {final String? userId,
+      final String? userName,
+      final String? createdAt,
+      @JsonKey(name: ServerStrings.docId) final String? documentId,
+      final String? profileUrl,
+      @JsonKey(name: "\$favourite") final List<ProductModel>? favouriteDishes,
+      @JsonKey(name: "\$databaseId") final String? databaseId,
+      @JsonKey(name: "\$collectionId")
+      final String? collectionId}) = _$AppUserImpl;
 
   factory _AppUser.fromJson(Map<String, dynamic> json) = _$AppUserImpl.fromJson;
 
@@ -275,6 +313,9 @@ abstract class _AppUser implements AppUser {
   String? get documentId;
   @override
   String? get profileUrl;
+  @override
+  @JsonKey(name: "\$favourite")
+  List<ProductModel>? get favouriteDishes;
   @override
   @JsonKey(name: "\$databaseId")
   String? get databaseId;
