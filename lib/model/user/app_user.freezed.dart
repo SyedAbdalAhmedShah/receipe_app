@@ -26,7 +26,7 @@ mixin _$AppUser {
   @JsonKey(name: ServerStrings.docId)
   String? get documentId => throw _privateConstructorUsedError;
   String? get profileUrl => throw _privateConstructorUsedError;
-  @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
+  @JsonKey(name: ServerStrings.favourite)
   List<ProductModel>? get favouriteDishes => throw _privateConstructorUsedError;
   @JsonKey(name: ServerStrings.databaseId)
   String? get databaseId => throw _privateConstructorUsedError;
@@ -49,7 +49,7 @@ abstract class $AppUserCopyWith<$Res> {
       String? createdAt,
       @JsonKey(name: ServerStrings.docId) String? documentId,
       String? profileUrl,
-      @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
+      @JsonKey(name: ServerStrings.favourite)
       List<ProductModel>? favouriteDishes,
       @JsonKey(name: ServerStrings.databaseId) String? databaseId,
       @JsonKey(name: ServerStrings.collectionId) String? collectionId});
@@ -127,7 +127,7 @@ abstract class _$$AppUserImplCopyWith<$Res> implements $AppUserCopyWith<$Res> {
       String? createdAt,
       @JsonKey(name: ServerStrings.docId) String? documentId,
       String? profileUrl,
-      @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
+      @JsonKey(name: ServerStrings.favourite)
       List<ProductModel>? favouriteDishes,
       @JsonKey(name: ServerStrings.databaseId) String? databaseId,
       @JsonKey(name: ServerStrings.collectionId) String? collectionId});
@@ -199,7 +199,7 @@ class _$AppUserImpl implements _AppUser {
       this.createdAt,
       @JsonKey(name: ServerStrings.docId) this.documentId,
       this.profileUrl,
-      @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
+      @JsonKey(name: ServerStrings.favourite)
       final List<ProductModel>? favouriteDishes,
       @JsonKey(name: ServerStrings.databaseId) this.databaseId,
       @JsonKey(name: ServerStrings.collectionId) this.collectionId})
@@ -221,7 +221,7 @@ class _$AppUserImpl implements _AppUser {
   final String? profileUrl;
   final List<ProductModel>? _favouriteDishes;
   @override
-  @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
+  @JsonKey(name: ServerStrings.favourite)
   List<ProductModel>? get favouriteDishes {
     final value = _favouriteDishes;
     if (value == null) return null;
@@ -298,7 +298,7 @@ abstract class _AppUser implements AppUser {
       final String? createdAt,
       @JsonKey(name: ServerStrings.docId) final String? documentId,
       final String? profileUrl,
-      @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
+      @JsonKey(name: ServerStrings.favourite)
       final List<ProductModel>? favouriteDishes,
       @JsonKey(name: ServerStrings.databaseId) final String? databaseId,
       @JsonKey(name: ServerStrings.collectionId)
@@ -318,7 +318,7 @@ abstract class _AppUser implements AppUser {
   @override
   String? get profileUrl;
   @override
-  @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
+  @JsonKey(name: ServerStrings.favourite)
   List<ProductModel>? get favouriteDishes;
   @override
   @JsonKey(name: ServerStrings.databaseId)

@@ -30,6 +30,7 @@ mixin FavouriteDishRepository {
       ServerStrings.recipeId: favDish.id,
       ServerStrings.receipeName: favDish.title,
       ServerStrings.recipeImage: favDish.image,
+      ServerStrings.recipedifficulty: favDish.difficulty,
     });
     serverClient.databases.updateDocument(
         databaseId: ServerConfig.recipeDatabaseId,
@@ -50,10 +51,12 @@ mixin FavouriteDishRepository {
   Stream<AppUser> getMyFavRealTime() {
     log('cache user id ${CacheUser.user?.documentId}');
     RealtimeSubscription subscription = serverClient.realtime.subscribe([
-      'databases.${ServerConfig.recipeDatabaseId}.collections.${ServerConfig.userCollectionId}.documents.${CacheUser.user?.documentId}'
+      'databases.${ServerConfig.recipeDatabaseId}.collections.${ServerConfig.userCollectionId}.documents'
     ]);
+
     subscription.stream.listen(
       (event) {
+        log('events paylod ${event.events}');
         log('events paylod ${event.payload}');
         AppUser userData = AppUser.fromJson(event.payload);
         log('favourite length ${userData.favouriteDishes?.length}');

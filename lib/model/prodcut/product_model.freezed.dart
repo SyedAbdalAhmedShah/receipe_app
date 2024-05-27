@@ -20,12 +20,9 @@ ProductModel _$ProductModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProductModel {
-  @JsonKey(name: ServerStrings.recipeId)
   String? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: ServerStrings.receipeName)
   String? get title => throw _privateConstructorUsedError;
   String? get difficulty => throw _privateConstructorUsedError;
-  @JsonKey(name: ServerStrings.recipeImage)
   String? get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,11 +37,7 @@ abstract class $ProductModelCopyWith<$Res> {
           ProductModel value, $Res Function(ProductModel) then) =
       _$ProductModelCopyWithImpl<$Res, ProductModel>;
   @useResult
-  $Res call(
-      {@JsonKey(name: ServerStrings.recipeId) String? id,
-      @JsonKey(name: ServerStrings.receipeName) String? title,
-      String? difficulty,
-      @JsonKey(name: ServerStrings.recipeImage) String? image});
+  $Res call({String? id, String? title, String? difficulty, String? image});
 }
 
 /// @nodoc
@@ -94,11 +87,7 @@ abstract class _$$ProductModelImplCopyWith<$Res>
       __$$ProductModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: ServerStrings.recipeId) String? id,
-      @JsonKey(name: ServerStrings.receipeName) String? title,
-      String? difficulty,
-      @JsonKey(name: ServerStrings.recipeImage) String? image});
+  $Res call({String? id, String? title, String? difficulty, String? image});
 }
 
 /// @nodoc
@@ -141,25 +130,18 @@ class __$$ProductModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ProductModelImpl implements _ProductModel {
-  const _$ProductModelImpl(
-      {@JsonKey(name: ServerStrings.recipeId) this.id,
-      @JsonKey(name: ServerStrings.receipeName) this.title,
-      this.difficulty,
-      @JsonKey(name: ServerStrings.recipeImage) this.image});
+  const _$ProductModelImpl({this.id, this.title, this.difficulty, this.image});
 
   factory _$ProductModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductModelImplFromJson(json);
 
   @override
-  @JsonKey(name: ServerStrings.recipeId)
   final String? id;
   @override
-  @JsonKey(name: ServerStrings.receipeName)
   final String? title;
   @override
   final String? difficulty;
   @override
-  @JsonKey(name: ServerStrings.recipeImage)
   final String? image;
 
   @override
@@ -199,25 +181,21 @@ class _$ProductModelImpl implements _ProductModel {
 
 abstract class _ProductModel implements ProductModel {
   const factory _ProductModel(
-          {@JsonKey(name: ServerStrings.recipeId) final String? id,
-          @JsonKey(name: ServerStrings.receipeName) final String? title,
-          final String? difficulty,
-          @JsonKey(name: ServerStrings.recipeImage) final String? image}) =
-      _$ProductModelImpl;
+      {final String? id,
+      final String? title,
+      final String? difficulty,
+      final String? image}) = _$ProductModelImpl;
 
   factory _ProductModel.fromJson(Map<String, dynamic> json) =
       _$ProductModelImpl.fromJson;
 
   @override
-  @JsonKey(name: ServerStrings.recipeId)
   String? get id;
   @override
-  @JsonKey(name: ServerStrings.receipeName)
   String? get title;
   @override
   String? get difficulty;
   @override
-  @JsonKey(name: ServerStrings.recipeImage)
   String? get image;
   @override
   @JsonKey(ignore: true)

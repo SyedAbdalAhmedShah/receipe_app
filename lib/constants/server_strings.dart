@@ -7,11 +7,13 @@ class ServerStrings {
   static const String rapidApiKey = "X-RapidAPI-Key";
   static const String rapidApiHost = "X-RapidAPI-Host";
   static const String favourite = "favourite";
-  static const String recipeId = "recipeId";
+  static const String recipeId = "id";
   static const String databaseId = "\$databaseId";
   static const String collectionId = "\$collectionId";
-  static const String receipeName = "receipeName";
-  static const String recipeImage = "recipeImage";
+  static const String receipeName = "title";
+  static const String recipeImage = "image";
+  static const String recipedifficulty = "difficulty";
+
   static const String docId = "documentId";
 
   // SharedPrefrences Key //

@@ -17,8 +17,7 @@ class AppUser with _$AppUser {
     String? createdAt,
     @JsonKey(name: ServerStrings.docId) String? documentId,
     String? profileUrl,
-    @JsonKey(fromJson: favourtireFromJson, name: ServerStrings.favourite)
-    List<ProductModel>? favouriteDishes,
+    @JsonKey(name: ServerStrings.favourite) List<ProductModel>? favouriteDishes,
     @JsonKey(name: ServerStrings.databaseId) String? databaseId,
     @JsonKey(name: ServerStrings.collectionId) String? collectionId,
   }) = _AppUser;

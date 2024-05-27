@@ -13,7 +13,9 @@ _$AppUserImpl _$$AppUserImplFromJson(Map<String, dynamic> json) =>
       createdAt: json['createdAt'] as String?,
       documentId: json['documentId'] as String?,
       profileUrl: json['profileUrl'] as String?,
-      favouriteDishes: favourtireFromJson(json['favourite']),
+      favouriteDishes: (json['favourite'] as List<dynamic>?)
+          ?.map((e) => ProductModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
       databaseId: json[r'$databaseId'] as String?,
       collectionId: json[r'$collectionId'] as String?,
     );
