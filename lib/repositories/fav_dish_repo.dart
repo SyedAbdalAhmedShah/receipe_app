@@ -61,9 +61,7 @@ mixin FavouriteDishRepository {
         AppUser userData = AppUser.fromJson(event.payload);
         log('favourite length ${userData.favouriteDishes?.length}');
       },
-      onDone: () {
-        debugPrint("on done called");
-      },
+     
     );
     log('Channels ${subscription.channels}');
     return subscription.stream.map(
