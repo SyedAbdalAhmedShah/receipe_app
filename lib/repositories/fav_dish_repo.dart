@@ -57,7 +57,7 @@ mixin FavouriteDishRepository {
     subscription.stream.listen(
       (event) {
         log('events paylod ${event.events}');
-        log('events paylod ${event.payload}');
+        log('events paylod ${event.payload}');  
         AppUser userData = AppUser.fromJson(event.payload);
         log('favourite length ${userData.favouriteDishes?.length}');
       },

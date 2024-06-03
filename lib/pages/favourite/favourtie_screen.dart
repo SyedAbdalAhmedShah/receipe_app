@@ -19,6 +19,9 @@ class _FavouriteScreenState extends State<FavouriteScreen>
   late Stream<AppUser> appUserStream;
   @override
   void initState() {
+    context
+        .read<FavourtireDishBloc>()
+        .add(const FavourtireDishEvent.myFavouriteDishes());
     super.initState();
   }
 
