@@ -7,9 +7,7 @@ final class AuthInitial extends AuthState {}
 
 final class AuthLoadingState extends AuthState {}
 
-final class SignedState extends AuthState {}
-
-final class LogInState extends AuthState {}
+final class LogedInState extends AuthState {}
 
 final class SignedUpState extends AuthState {
   final TextEditingController emailController;

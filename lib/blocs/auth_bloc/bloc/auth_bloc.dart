@@ -25,7 +25,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         await authRepository.signInWithEmailAndPassword(
             email: event.email, password: event.password);
 
-        emit(SignedState());
+        emit(LogedInState());
       } on AppwriteException catch (appW) {
         emit(AuthFailureState(errorMessage: appW.message.toString()));
       } catch (e) {

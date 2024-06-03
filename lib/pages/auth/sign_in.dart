@@ -47,7 +47,7 @@ class _SignInScreenState extends State<SignInScreen> {
           AppDialogs.customDialog(context, AppStrings.opps, state.errorMessage);
         } else if (state is SignedUpState) {
           emailController = state.emailController;
-        } else if (state is LogInState) {
+        } else if (state is LogedInState) {
           context.pushReplacement(child: const BottomNavScreen());
         }
       },
@@ -57,7 +57,7 @@ class _SignInScreenState extends State<SignInScreen> {
           return ModalProgressHUD(
             inAsyncCall: state is AuthLoadingState,
             blur: 2,
-            progressIndicator:const AppLoading(),
+            progressIndicator: const AppLoading(),
             child: Scaffold(
               body: SingleChildScrollView(
                 child: SafeArea(
