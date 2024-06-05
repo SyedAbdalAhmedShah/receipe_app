@@ -54,7 +54,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(AuthLoadingState());
 
           String? userData = sharedPref.getString(ServerStrings.userDataKey);
-          log("User data $userData");
+
           if (userData != null) {
             CacheUser.user = AppUser.fromJson(json.decode(userData));
             log("CACHEEEEEEE ${CacheUser.user?.documentId}");

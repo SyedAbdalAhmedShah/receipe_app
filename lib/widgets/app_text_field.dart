@@ -39,6 +39,7 @@ class _AppTextFieldState extends State<AppTextField> {
       controller: widget.controller,
       validator: widget.validator,
       obscureText: obscureText,
+      readOnly: false,
       decoration: InputDecoration(
           suffixIcon: Visibility(
             visible: widget.obscureText,
