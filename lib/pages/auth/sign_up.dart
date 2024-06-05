@@ -39,7 +39,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
     return BlocListener(
       bloc: authBloc,
       listener: (context, state) {
@@ -129,20 +128,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            PrimaryButton(
-                                gapBTWidget: 20,
-                                buttonName: AppStrings.signUp,
-                                width: size.width * 0.9,
-                                onTap: () async {
-                                  if (formKey.currentState?.validate() ??
-                                      false) {
-                                    authBloc.add(SignUpEvent(
-                                        email: emailController,
-                                        password: passController.text,
-                                        userName: nameController.text));
-                                  }
-                                },
-                                icon: Icons.adaptive.arrow_forward),
+                            Expanded(
+                              child: PrimaryButton(
+                                  gapBTWidget: 20,
+                                  buttonName: AppStrings.signUp,
+                                  onTap: () async {
+                                    if (formKey.currentState?.validate() ??
+                                        false) {
+                                      authBloc.add(SignUpEvent(
+                                          email: emailController,
+                                          password: passController.text,
+                                          userName: nameController.text));
+                                    }
+                                  },
+                                  icon: Icons.adaptive.arrow_forward),
+                            ),
                           ],
                         ),
                         const Gap(15),

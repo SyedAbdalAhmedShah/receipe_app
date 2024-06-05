@@ -39,7 +39,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
+  
     return BlocListener(
       bloc: authBloc,
       listener: (context, state) {
@@ -121,7 +121,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               child: PrimaryButton(
                                   gapBTWidget: 10,
                                   buttonName: AppStrings.signIn,
-                                  width: size.width * 0.9,
+                                
                                   onTap: () {
                                     if (_formKey.currentState?.validate() ??
                                         false) {
