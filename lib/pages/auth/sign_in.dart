@@ -117,24 +117,26 @@ class _SignInScreenState extends State<SignInScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            PrimaryButton(
-                                gapBTWidget: 20,
-                                buttonName: AppStrings.signIn,
-                                width: size.width * 0.9,
-                                onTap: () {
-                                  if (_formKey.currentState?.validate() ??
-                                      false) {
-                                    authBloc.add(SignInEvent(
-                                        email: emailController.text,
-                                        password: passController.text));
-                                  } else {
-                                    AppDialogs.customDialog(
-                                        context,
-                                        AppStrings.opps,
-                                        AppStrings.fillOutFields);
-                                  }
-                                },
-                                icon: Icons.adaptive.arrow_forward),
+                            Expanded(
+                              child: PrimaryButton(
+                                  gapBTWidget: 10,
+                                  buttonName: AppStrings.signIn,
+                                  width: size.width * 0.9,
+                                  onTap: () {
+                                    if (_formKey.currentState?.validate() ??
+                                        false) {
+                                      authBloc.add(SignInEvent(
+                                          email: emailController.text,
+                                          password: passController.text));
+                                    } else {
+                                      AppDialogs.customDialog(
+                                          context,
+                                          AppStrings.opps,
+                                          AppStrings.fillOutFields);
+                                    }
+                                  },
+                                  icon: Icons.adaptive.arrow_forward),
+                            ),
                           ],
                         ),
                         const Gap(20),

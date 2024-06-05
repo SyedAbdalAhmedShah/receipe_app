@@ -7,13 +7,11 @@ class PrimaryButton extends StatelessWidget {
   final IconData icon;
   final Function() onTap;
   final double? gapBTWidget;
-  final double? width;
 
   const PrimaryButton(
       {required this.buttonName,
       required this.onTap,
       this.gapBTWidget,
-      this.width,
       required this.icon,
       super.key});
 
@@ -24,7 +22,6 @@ class PrimaryButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: size.height * 0.08,
-        width: width ?? size.width * 0.7,
         alignment: Alignment.center,
         decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary,

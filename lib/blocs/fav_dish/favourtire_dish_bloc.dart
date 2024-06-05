@@ -24,7 +24,7 @@ class FavourtireDishBloc extends Bloc<FavourtireDishEvent, FavourtireDishState>
         emit(const _MarkAsFavourtireState());
       }
     });
-    on<_MyFavouriteDishes>(
+    on<_MyFavouriteDishes>( 
       (event, emit) async {
         emit(const _LoadingState());
         try {

@@ -1,3 +1,6 @@
+import 'dart:developer';
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:receipe_app/blocs/fav_dish/favourtire_dish_bloc.dart';
@@ -16,14 +19,7 @@ class FavouriteScreen extends StatefulWidget {
 
 class _FavouriteScreenState extends State<FavouriteScreen>
     with FavouriteDishRepository {
-  late Stream<AppUser> appUserStream;
-  @override
-  void initState() {
-    context
-        .read<FavourtireDishBloc>()
-        .add(const FavourtireDishEvent.myFavouriteDishes());
-    super.initState();
-  }
+  late Stream<AppUser> userDataa;
 
   @override
   Widget build(BuildContext context) {
@@ -34,67 +30,44 @@ class _FavouriteScreenState extends State<FavouriteScreen>
           AppStrings.favDishes,
         ),
       ),
-      body: BlocListener<FavourtireDishBloc, FavourtireDishState>(
-        listener: (context, state) {
-          state.mapOrNull(
-            realTimeSubscribedState: (value) => appUserStream = value.userData,
+      body: BlocBuilder<FavourtireDishBloc, FavourtireDishState>(
+        builder: (context, state) {
+          log("State called $state");
+          return state.maybeWhen(
+            orElse: () => MyFavDishStream(userData: userDataa),
+            initial: () {
+              context
+                  .read<FavourtireDishBloc>()
+                  .add(const FavourtireDishEvent.myFavouriteDishes());
+              return const SizedBox();
+            },
+            loadingState: () => const AppLoading(),
+            failureState: () => const SizedBox(),
+            realTimeSubscribedState: (value) {
+              userDataa = value;
+              return MyFavDishStream(userData: value);
+            },
           );
         },
-        child: BlocBuilder<FavourtireDishBloc, FavourtireDishState>(
-          builder: (context, state) {
-            return state.when(
-              initial: () {
-                context
-                    .read<FavourtireDishBloc>()
-                    .add(const FavourtireDishEvent.myFavouriteDishes());
-                return const SizedBox();
-              },
-              loadingState: () => const AppLoading(),
-              failureState: () {
-                return const SizedBox();
-              },
-              markAsFavourtireState: () {
-                return StreamBuilder(
-                  stream: appUserStream,
-                  builder: (context, snapshot) => ListView.separated(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 10),
-                    itemCount: snapshot.data?.favouriteDishes?.length ?? 0,
-                    separatorBuilder: (context, index) =>
-                        const Padding(padding: EdgeInsets.only(bottom: 10)),
-                    itemBuilder: (context, index) => const DishCard(),
-                  ),
-                );
-              },
-              markAsUnfavourtireState: () {
-                return StreamBuilder(
-                  stream: appUserStream,
-                  builder: (context, snapshot) => ListView.separated(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 10),
-                    itemCount: snapshot.data?.favouriteDishes?.length ?? 0,
-                    separatorBuilder: (context, index) =>
-                        const Padding(padding: EdgeInsets.only(bottom: 10)),
-                    itemBuilder: (context, index) => const DishCard(),
-                  ),
-                );
-              },
-              realTimeSubscribedState: (value) {
-                return StreamBuilder(
-                  stream: appUserStream,
-                  builder: (context, snapshot) => ListView.separated(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 10),
-                    itemCount: snapshot.data?.favouriteDishes?.length ?? 0,
-                    separatorBuilder: (context, index) =>
-                        const Padding(padding: EdgeInsets.only(bottom: 10)),
-                    itemBuilder: (context, index) => const DishCard(),
-                  ),
-                );
-              },
-            );
-          },
-        ),
+      ),
+    );
+  }
+}
+
+class MyFavDishStream extends StatelessWidget {
+  final Stream<AppUser> userData;
+  const MyFavDishStream({required this.userData, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: userData,
+      builder: (context, snapshot) => ListView.separated(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        itemCount: snapshot.data?.favouriteDishes?.length ?? 0,
+        separatorBuilder: (context, index) =>
+            const Padding(padding: EdgeInsets.only(bottom: 10)),
+        itemBuilder: (context, index) => const DishCard(),
       ),
     );
   }
