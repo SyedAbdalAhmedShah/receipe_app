@@ -12,6 +12,7 @@ class AppBottomNavBar extends StatelessWidget {
     return BlocBuilder<NavigationBarCubit, NavigationBarState>(
       builder: (context, state) {
         return BottomAppBar(
+          color: Colors.amber,
           notchMargin: 10,
           shape: const CircularNotchedRectangle(),
           child: Row(
@@ -79,8 +80,4 @@ class AppBottomNavBar extends StatelessWidget {
       },
     );
   }
-
-
-
-  
 }
