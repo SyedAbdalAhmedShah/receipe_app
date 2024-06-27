@@ -4,6 +4,7 @@ import 'package:receipe_app/constants/app_colors.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String buttonName;
+  final EdgeInsets? padding;
   final IconData icon;
   final Function() onTap;
   final double? gapBTWidget;
@@ -11,6 +12,7 @@ class PrimaryButton extends StatelessWidget {
   const PrimaryButton(
       {required this.buttonName,
       required this.onTap,
+      this.padding,
       this.gapBTWidget,
       required this.icon,
       super.key});
@@ -21,6 +23,7 @@ class PrimaryButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        margin: padding ?? EdgeInsets.zero,
         height: size.height * 0.08,
         alignment: Alignment.center,
         decoration: BoxDecoration(
