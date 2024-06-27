@@ -12,9 +12,10 @@ class AppBottomNavBar extends StatelessWidget {
     return BlocBuilder<NavigationBarCubit, NavigationBarState>(
       builder: (context, state) {
         return BottomAppBar(
-          color: Colors.amber,
+          color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
           notchMargin: 10,
           shape: const CircularNotchedRectangle(),
+          shadowColor: Colors.transparent,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
