@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -19,9 +20,10 @@ class BottomNavScreen extends StatefulWidget {
 }
 
 class _BottomNavScreenState extends State<BottomNavScreen> {
+  late StreamSubscription streamSubscription;
   @override
-  void initState()  {
-     connectWebSockets();
+  void initState() {
+    connectWebSockets();
     super.initState();
   }
 
@@ -30,8 +32,10 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         "ws://cloud.appwrite.io/v1/realtime?project=662d029d002952b12a38&channels%5B%5D=databases.663a732a0007f78c7d69.collections.66423f64001a67aebc41.documents");
     final channel = WebSocketChannel.connect(wsUri);
     await channel.ready;
-    channel.stream.listen((event) => log("event $event"),
+    streamSubscription = channel.stream.listen((event) => log("event $event"),
         onError: (error) => log("Error $error"));
+
+        streamSubscription.onData((data) => log("date $data"),  );
   }
 
   @override

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:receipe_app/blocs/fav_dish/favourtire_dish_bloc.dart';
 import 'package:receipe_app/constants/app_strings.dart';
+import 'package:receipe_app/model/prodcut/product_model.dart';
 import 'package:receipe_app/model/user/app_user.dart';
 import 'package:receipe_app/pages/profile/widgets/dish_card.dart';
 import 'package:receipe_app/repositories/fav_dish_repo.dart';
@@ -66,7 +67,14 @@ class MyFavDishStream extends StatelessWidget {
         itemCount: snapshot.data?.favouriteDishes?.length ?? 0,
         separatorBuilder: (context, index) =>
             const Padding(padding: EdgeInsets.only(bottom: 10)),
-        itemBuilder: (context, index) => const DishCard(),
+        itemBuilder: (context, index) {
+          List<ProductModel> favDishes = snapshot.data?.favouriteDishes ?? [];
+          return DishCard(
+            title: favDishes[index].title,
+            imagePath: favDishes[index].image,
+            selectedFavIcon: true,
+          );
+        },
       ),
     );
   }

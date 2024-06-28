@@ -2,20 +2,26 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:gap/gap.dart';
 import 'package:receipe_app/blocs/fav_dish/favourtire_dish_bloc.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/model/prodcut/product_model.dart';
+import 'package:receipe_app/model/user/app_user.dart';
+import 'package:receipe_app/pages/home/product_detail_screen.dart';
+import 'package:receipe_app/repositories/fav_dish_repo.dart';
+import 'package:receipe_app/utils/extensions.dart';
 import 'package:receipe_app/widgets/cache_image.dart';
 
-class ReciepCard extends StatelessWidget {
+class ReciepCard extends StatelessWidget with FavouriteDishRepository {
   final ProductModel productModel;
-  const ReciepCard({required this.productModel, super.key});
+  ReciepCard({required this.productModel, super.key});
 
   @override
   Widget build(BuildContext context) {
+    Stream<AppUser> user = getMyFavRealTime();
     final size = MediaQuery.sizeOf(context);
     return InkWell(
       borderRadius: BorderRadius.circular(15.0),
@@ -85,17 +91,28 @@ class ReciepCard extends StatelessWidget {
                         FavourtireDishEvent.markAsFavourtire(
                             favDish: productModel));
                   },
-                  child: CircleAvatar(
-                    radius: 15,
-                    backgroundColor: AppColor.whiteColor,
-                    child: Image(
-                      image: AssetImage(productModel.id == "1"
-                          ? AppAssets.selectedFav
-                          : AppAssets.favIcon),
-                      height: 20,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
+                  child: StreamBuilder(
+                      stream: getMyFavRealTime(),
+                      builder: (context, snapshot) {
+                        List<ProductModel>? haveProduct =
+                            snapshot.data?.favouriteDishes!
+                                .where(
+                                  (element) => element.id == productModel.id,
+                                )
+                                .toList();
+                        return CircleAvatar(
+                          radius: 15,
+                          backgroundColor: AppColor.whiteColor,
+                          child: Image(
+                            image: AssetImage(
+                                haveProduct != null && haveProduct.isNotEmpty
+                                    ? AppAssets.selectedFav
+                                    : AppAssets.favIcon),
+                            height: 20,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        );
+                      }),
                 )
               ],
             )

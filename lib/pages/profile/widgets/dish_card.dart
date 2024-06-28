@@ -8,8 +8,15 @@ class DishCard extends StatelessWidget {
   final String? title;
   final String? minutes;
   final String? cheifName;
-
-  const DishCard({this.cheifName, this.minutes, this.title, super.key});
+  final String? imagePath;
+  final bool selectedFavIcon;
+  const DishCard(
+      {this.imagePath,
+      this.cheifName,
+      this.selectedFavIcon = false,
+      this.minutes,
+      this.title,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +41,11 @@ class DishCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
         image: DecorationImage(
-          image: const AssetImage(
-            AppAssets.dummyDish2,
-          ),
+          image: imagePath != null
+              ? NetworkImage(imagePath!)
+              : const AssetImage(
+                  AppAssets.dummyDish2,
+                ) as ImageProvider,
           fit: BoxFit.cover,
           colorFilter: ColorFilter.mode(
               Colors.black.withOpacity(0.6), BlendMode.dstATop),
@@ -52,7 +61,7 @@ class DishCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  'Traditional spare ribs baked',
+                  title ?? "",
                   maxLines: 2,
                   style: Styles.miniBold.copyWith(fontSize: 20),
                 ),
@@ -95,7 +104,9 @@ class DishCard extends StatelessWidget {
                     radius: 15,
                     backgroundColor: AppColor.whiteColor,
                     child: Image(
-                      image: const AssetImage(AppAssets.favIcon),
+                      image: AssetImage(selectedFavIcon
+                          ? AppAssets.selectedFav
+                          : AppAssets.favIcon),
                       height: 20,
                       color: Theme.of(context).colorScheme.primary,
                     ),
