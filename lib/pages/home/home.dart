@@ -135,6 +135,7 @@ class _HomeSectionState extends State<_HomeSection> {
                     Padding(padding: EdgeInsets.only(right: size.width * 0.05)),
                 itemBuilder: (context, index) => ReciepCard(
                   productModel: widget.products[index],
+                  index: index,
                 ),
               ),
             ),

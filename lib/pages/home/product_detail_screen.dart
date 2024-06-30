@@ -1,10 +1,13 @@
+import 'dart:developer';
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:receipe_app/constants/app_assets.dart';
 import 'package:receipe_app/constants/app_colors.dart';
 import 'package:receipe_app/constants/styles.dart';
 import 'package:receipe_app/model/prodcut/product_model.dart';
-
+import 'package:receipe_app/widgets/cache_image.dart';
 
 class ProdcutDetailScreen extends StatelessWidget {
   final ProductModel productModel;
@@ -14,6 +17,7 @@ class ProdcutDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("Image ${productModel.image}");
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -37,9 +41,12 @@ class ProdcutDetailScreen extends StatelessWidget {
                       )
                     ],
                     borderRadius: BorderRadius.circular(20.0),
-                    image: const DecorationImage(
+                    image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage(AppAssets.dummyDish))),
+                        image: productModel.image != null
+                            ? CachedNetworkImageProvider(productModel.image!)
+                            : const AssetImage(AppAssets.dummyDish)
+                                as ImageProvider)),
               ),
             ),
             const Gap(20),

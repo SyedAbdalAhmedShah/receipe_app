@@ -17,23 +17,22 @@ import 'package:receipe_app/widgets/cache_image.dart';
 
 class ReciepCard extends StatelessWidget with FavouriteDishRepository {
   final ProductModel productModel;
-  ReciepCard({required this.productModel, super.key});
+  final int index;
+  ReciepCard({required this.productModel, required this.index, super.key});
 
   @override
   Widget build(BuildContext context) {
-    Stream<AppUser> user = getMyFavRealTime();
     final size = MediaQuery.sizeOf(context);
     return InkWell(
       borderRadius: BorderRadius.circular(15.0),
       onTap: () {
         log("message", level: 2);
-        // context.push(
-        // child: ProdcutDetailScreen(
-        //   heroTag: "Product-Image $index",
-        //   productModel: const ProductModel(
-        //       productImage: AppAssets.dummyDish,
-        //       prodcutName: "Classic Greek Salad"),
-        // ),
+        context.push(
+            child: ProdcutDetailScreen(
+          heroTag: productModel.id ?? index.toString(),
+          productModel: ProductModel(
+              image: productModel.image, title: productModel.title),
+        ));
       },
       child: Container(
         width: size.width * 0.5,
